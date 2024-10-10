@@ -832,8 +832,11 @@ Topics:
 - Name: Triggering updates on image stream changes
   File: triggering-updates-on-imagestream-changes
   Distros: openshift-rosa
-- Name: Image configuration resources
+- Name: Image configuration resources (Classic)
   File: image-configuration
+  Distros: openshift-rosa
+- Name: Image configuration resources (HCP)
+  File: image-configuration-hcp
   Distros: openshift-rosa
 - Name: Using templates
   File: using-templates
@@ -1446,6 +1449,7 @@ Topics:
   - Name: Configuring cluster memory to meet container memory and risk requirements
     File: nodes-cluster-resource-configure
     Distros: openshift-rosa
+# TODO: Remove the whole nodes-cluster-overcommit file for OSDOCS-10853?
   - Name: Configuring your cluster to place pods on overcommited nodes
     File: nodes-cluster-overcommit
     Distros: openshift-rosa
