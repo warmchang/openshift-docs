@@ -7,7 +7,7 @@
 [id="nw-multus-bridge-object_{context}"]
 = Configuration for a bridge secondary network
 
-[role="_abstract"] 
+[role="_abstract"]
 The bridge CNI plugin JSON configuration object describes the configuration parameters for the Bridge CNI plugin. The following table details these parameters:
 
 [cols=".^2,.^2,.^6",options="header"]
@@ -74,7 +74,7 @@ ifndef::microshift[]
 
 |`preserveDefaultVlan`
 |`string`
-|Optional: Indicates whether the default vlan must be preserved on the `veth` end connected to the bridge. Defaults to `true`.
+|Optional: Indicates whether the default vlan must be preserved on the `veth` end connected to the bridge. Defaults to `false`.
 
 |`vlanTrunk`
 |`list`
