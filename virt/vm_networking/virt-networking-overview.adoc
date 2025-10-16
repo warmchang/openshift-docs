@@ -9,10 +9,12 @@ toc::[]
 [role="_abstract"]
 To connect Virtual Machines (VMs) to cluster networks, configure default and user-defined networking options in {VirtProductName}.
 
+ifndef::openshift-dedicated[]
 {VirtProductName} support for single-stack IPv6 clusters is limited to the OVN-Kubernetes localnet and Linux bridge Container Network Interface (CNI) plugins.
 
 :FeatureName: Deploying {VirtProductName} on a single-stack IPv6 cluster
 include::snippets/technology-preview.adoc[]
+endif::openshift-dedicated[]
 
 The following figure illustrates the typical network setup of {VirtProductName}. Other configurations are also possible.
 
@@ -33,16 +35,17 @@ image:darkcircle-6.png[20,20] The machine network can be defined over a selected
 
 image:darkcircle-7.png[20,20] Secondary VM networks are typically bridged directly to a physical network, with or without VLAN encapsulation. It is also possible to create virtual overlay networks for secondary networks.
 
+ifndef::openshift-dedicated[]
 [IMPORTANT]
 ====
-Connecting VMs directly to the underlay network is not supported on {product-rosa}, {azure-short} for {product-title}, {gcp-first}, or {oci-first}.
+Connecting VMs directly to the underlay network is not supported on {product-rosa}, {azure-short},{dedicated}, {gcp-first}, or {oci-first}.
 ====
 
 [NOTE]
 ====
 Connecting VMs to user-defined networks with the `layer2` topology is recommended on public clouds.
 ====
-
+endif::openshift-dedicated[]
 image:darkcircle-8.png[20,20] Secondary VM networks can be defined on dedicated set of NICs, as shown in Figure 1, or they can use the machine network.
 
 include::modules/virt-networking-glossary.adoc[leveloffset=+1]

@@ -49,6 +49,7 @@ spec:
 ** `spec.desiredState.interfaces.bridge.options.stp.enabled` defines whether STP is active. Setting this to `false` disables STP on this bridge.
 ** `spec.desiredState.interfaces.bridge.port.name` defines the node NIC to which the bridge is attached.
 +
+ifndef::openshift-dedicated[]
 [NOTE]
 ====
 To create the NNCP manifest for a Linux bridge using OSA with {ibm-z-name}, you must disable VLAN filtering by the setting the `rx-vlan-filter` to `false` in the `NodeNetworkConfigurationPolicy` manifest.
@@ -60,3 +61,4 @@ Alternatively, if you have SSH access to the node, you can disable VLAN filterin
 $ sudo ethtool -K <osa-interface-name> rx-vlan-filter off
 ----
 ====
+endif::openshift-dedicated[]

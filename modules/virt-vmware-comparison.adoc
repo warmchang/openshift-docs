@@ -22,7 +22,12 @@ a|Persistent volume (PV)
 
 Persistent volume claim (PVC)
 
+ifdef::openshift-dedicated[]
+|Stores VM disks. A PV represents existing storage and is attached to a VM through a PVC. When configured for shared access, PVCs can be mounted by multiple VMs simultaneously.
+endif::openshift-dedicated[]
+ifndef::openshift-dedicated[]
 |Stores VM disks. A PV represents existing storage and is attached to a VM through a PVC. When created with the `ReadWriteMany` (RWX) access mode, PVCs can be mounted by multiple VMs simultaneously.
+endif::openshift-dedicated[]
 
 |Dynamic Resource Scheduling (DRS)
 a|Pod eviction policy
@@ -53,7 +58,12 @@ vRealize Operations
 
 |vMotion
 |Live migration
+ifdef::openshift-dedicated[]
+|Moves a running VM to another node without interruption. For live migration to be available, the PVC attached to the VM must use storage that supports live migration.
+endif::openshift-dedicated[]
+ifndef::openshift-dedicated[]
 |Moves a running VM to another node without interruption. For live migration to be available, the PVC attached to the VM must have the `ReadWriteMany` (RWX) access mode.
+endif::openshift-dedicated[]
 
 a|vSwitch
 

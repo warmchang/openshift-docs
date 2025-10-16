@@ -8,6 +8,11 @@
 [role="_abstract"]
 The following items were added during the first quarter of 2026.
 
+*  **Virtualization support for {product-title} on {GCP}.** {product-title} on {GCP} version 4.21.5 now supports running virtualized workloads using the {VirtProductName} Operator version 4.21.1, leveraging {GCP} C3 bare-metal instances and {GCP} Hyperdisk. This enables you to migrate and modernize virtual machines (VMs) from existing platforms directly onto {product-title}, managing them alongside containerized workloads on a single, unified application platform.
++
+For more information about using {VirtProductName} on {product-title} on {gcp}, see link:https://docs.redhat.com/en/documentation/openshift_dedicated/4/html/virtualization/index[Virtualization].
+//link to Virtualization 4.21.z release note documentation to be added when available
+
 * **{product-title} now available in {GCP} console.**
 {product-title} is now available directly within the link:https://console.cloud.google.com/redhat-openshift/landing[{GCP} console], making it easier to find and deploy alongside native {GCP} services. This integration simplifies the initial setup by allowing you to validate environment prerequisites for {product-title} cluster deployment.
 +

@@ -48,12 +48,13 @@ endif::[]
 . In the web console, navigate to *Virtualization* -> *Catalog*.
 +
 The *InstanceTypes* tab opens by default.
+ifndef::openshift-dedicated[]
 +
 [NOTE]
 ====
 When configuring a downward-metrics device on an {ibm-z-name} system that uses a VM preference, set the `spec.preference.name` value to `rhel.9.s390x` or another available preference with the format `*.s390x`.
 ====
-
+endif::openshift-dedicated[]
 . Heterogeneous clusters only: To filter the bootable volumes using the options provided, click *Architecture*.
 
 . Select either of the following options:

@@ -7,12 +7,22 @@
 = Enabling persistent EFI
 
 [role="_abstract"]
+ifdef::openshift-dedicated[]
+You can enable EFI persistence in a VM by configuring a suitable storage class at the cluster level and adjusting the settings in the EFI section of the VM.
+endif::openshift-dedicated[]
+ifndef::openshift-dedicated[]
 You can enable EFI persistence in a VM by configuring an RWX storage class at the cluster level and adjusting the settings in the EFI section of the VM.
+endif::openshift-dedicated[]
 
 .Prerequisites
 
 * You must have cluster administrator privileges.
+ifdef::openshift-dedicated[]
+* You must have a storage class that supports filesystem (`FS`) volume mode and the access mode required for persistent EFI state.
+endif::openshift-dedicated[]
+ifndef::openshift-dedicated[]
 * You must have a storage class that supports RWX access mode and FS volume mode.
+endif::openshift-dedicated[]
 * You have installed the {oc-first}.
 
 .Procedure

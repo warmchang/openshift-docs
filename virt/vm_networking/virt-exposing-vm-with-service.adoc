@@ -18,7 +18,10 @@ ifndef::openshift-rosa,openshift-dedicated,openshift-rosa-hcp[]
 * xref:../../networking/ingress_load_balancing/metallb/metallb-configure-services.adoc#metallb-configure-services[Configuring services to use MetalLB]
 endif::openshift-rosa,openshift-dedicated,openshift-rosa-hcp[]
 
+// Dual-stack (IPv4/IPv6) service configuration is not documented for OpenShift Dedicated
+ifndef::openshift-dedicated[]
 include::modules/virt-dual-stack-support-services.adoc[leveloffset=+1]
+endif::openshift-dedicated[]
 
 include::modules/virt-creating-service-cli.adoc[leveloffset=+1]
 
