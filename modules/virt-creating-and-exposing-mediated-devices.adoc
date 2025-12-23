@@ -117,8 +117,10 @@ spec:
     mediatedDevices:
     - mdevNameSelector: NVIDIA A2-2Q
       resourceName: nvidia.com/NVIDIA_A2-2Q
+      externalResourceProvider: true
     - mdevNameSelector: NVIDIA A2-4Q
       resourceName: nvidia.com/NVIDIA_A2-4Q
+      externalResourceProvider: true
 # ...
 ----
 +
