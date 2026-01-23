@@ -177,6 +177,10 @@ ifdef::telco-core[]
 :rds: telco core
 :rds-caps: Telco core
 endif::[]
+ifdef::telco-hub[]
+:rds: telco hub
+:rds-caps: Telco hub
+endif::[]
 //lightspeed
 :ols-official: Red{nbsp}Hat OpenShift Lightspeed
 :ols: OpenShift Lightspeed

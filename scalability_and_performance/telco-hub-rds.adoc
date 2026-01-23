@@ -218,6 +218,8 @@ include::modules/telco-hub-oadp-operator.adoc[leveloffset=+2]
 
 include::modules/telco-hub-rds-container.adoc[leveloffset=+1]
 
+include::modules/using-cluster-compare-telco-hub.adoc[leveloffset=+1]
+
 include::modules/hub-cluster-ref-config-crs.adoc[leveloffset=+1]
 
 include::modules/telco-hub-crs-advanced-cluster-management.adoc[leveloffset=+1]
