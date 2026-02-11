@@ -1730,6 +1730,9 @@ Topics:
     File: virt-post-install-network-config
   - Name: Storage configuration
     File: virt-post-install-storage-config
+# Hiding in ROSA/OSD as Cluster checkup framework TP not supported
+#  - Name: Self validation checkups
+#    File: virt-self-validation-checkups
   - Name: Configuring certificate rotation
     File: virt-configuring-certificate-rotation
 - Name: Updating
@@ -1940,6 +1943,10 @@ Topics:
 # Hiding in ROSA/OSD as TP not supported
 #  - Name: Cluster checkup framework
 #    File: virt-running-cluster-checkups
+#  - Name: Latency checkups
+#    File: virt-latency-checkups
+#  - Name: Storage checkups
+#    File: virt-storage-checkups
   - Name: Prometheus queries for virtual resources
     File: virt-prometheus-queries
   - Name: Virtual machine custom metrics
