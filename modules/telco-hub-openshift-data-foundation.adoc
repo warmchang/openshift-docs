@@ -6,6 +6,7 @@
 [id="telco-hub-openshift-data-foundation_{context}"]
 = {rh-storage-first}
 
+[role="_abstract"]
 New in this release::
 * No reference design updates in this release
 

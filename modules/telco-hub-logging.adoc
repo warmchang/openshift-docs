@@ -6,6 +6,7 @@
 [id="telco-hub-logging_{context}"]
 = Logging
 
+[role="_abstract"]
 New in this release::
 * No reference design updates in this release
 

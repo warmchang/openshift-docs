@@ -6,6 +6,7 @@
 [id="telco-hub-gitops-operator-and-ztp-plugins_{context}"]
 = GitOps Operator and {ztp}
 
+[role="_abstract"]
 New in this release::
 * No reference design updates in this release
 

@@ -6,3 +6,4 @@
 [id="telco-hub-hub-components_{context}"]
 = Hub cluster components
 
+[role="_abstract"]

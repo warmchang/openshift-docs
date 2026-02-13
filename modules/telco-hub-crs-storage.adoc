@@ -6,6 +6,9 @@
 [id="storage-crs_{context}"]
 = Storage reference CRs
 
+[role="_abstract"]
+The following custom resources (CRs) configure storage for the telco hub cluster.
+
 .Storage CRs
 [cols="4*", options="header", format=csv]
 |====

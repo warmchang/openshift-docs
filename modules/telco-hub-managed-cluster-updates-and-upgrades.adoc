@@ -6,6 +6,7 @@
 [id="telco-hub-managed-cluster-updates-and-upgrades_{context}"]
 = Managed cluster updates
 
+[role="_abstract"]
 Description::
 +
 --

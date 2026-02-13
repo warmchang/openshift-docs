@@ -6,6 +6,9 @@
 [id="installation-crs_{context}"]
 = Installation reference CRs
 
+[role="_abstract"]
+The following custom resources (CRs) configure the installation for the telco hub cluster.
+
 .Installation CRs
 [cols="4*", options="header", format=csv]
 |====
