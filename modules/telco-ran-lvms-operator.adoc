@@ -6,6 +6,9 @@
 [id="telco-ran-lvms-operator_{context}"]
 = Logical Volume Manager Storage
 
+[role="_abstract"]
+{lvms-first} provides dynamic provisioning of block and file storage by creating logical volumes from local devices that can be consumed as persistent volume claim (PVC) resources by applications.
+
 New in this release::
 * No reference design updates in this release
 

@@ -6,6 +6,9 @@
 [id="day-2-operators-crs_{context}"]
 = Day 2 Operators reference CRs
 
+[role="_abstract"]
+Use the following custom resources (CRs) to configure Day 2 Operators for the telco RAN DU reference design.
+
 .Day 2 Operators CRs
 [cols="4*", options="header", format=csv]
 |====
