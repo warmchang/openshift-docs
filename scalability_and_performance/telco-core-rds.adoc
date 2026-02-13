@@ -42,10 +42,7 @@ include::modules/telco-core-application-workloads.adoc[leveloffset=+2]
 
 include::modules/telco-core-signaling-workloads.adoc[leveloffset=+2]
 
-[id="telco-core-rds-components"]
-== Telco core RDS components
-
-The following sections describe the various {product-title} components and configurations that you use to configure and deploy clusters to run telco core workloads.
+include::modules/telco-core-rds-components.adoc[leveloffset=+1]
 
 include::modules/telco-core-cpu-partitioning-and-performance-tuning.adoc[leveloffset=+2]
 
@@ -134,10 +131,7 @@ include::modules/telco-core-openshift-data-foundation.adoc[leveloffset=+3]
 
 include::modules/telco-core-additional-storage-solutions.adoc[leveloffset=+3]
 
-[id="telco-reference-core-deployment-components_{context}"]
-== Telco core deployment components
-
-The following sections describe the various {product-title} components and configurations that you use to configure the hub cluster with {rh-rhacm-first}.
+include::modules/telco-core-deployment-components.adoc[leveloffset=+1]
 
 include::modules/telco-core-red-hat-advanced-cluster-management.adoc[leveloffset=+2]
 
@@ -228,11 +222,7 @@ include::modules/telco-core-cert-manager-operator.adoc[leveloffset=+1]
 
 include::modules/telco-core-scalability.adoc[leveloffset=+1]
 
-[id="telco-core-reference-configuration-crs"]
-== Telco core reference configuration CRs
-
-Use the following custom resources (CRs) to configure and deploy {product-title} clusters with the telco core profile.
-Use the CRs to form the common baseline used in all the specific use models unless otherwise indicated.
+include::modules/telco-core-reference-configuration-crs.adoc[leveloffset=+1]
 
 include::modules/telco-core-rds-container.adoc[leveloffset=+2]
 

@@ -6,6 +6,9 @@
 [id="telco-core-scalability_{context}"]
 = Scalability
 
+[role="_abstract"]
+Telco core clusters can scale to at least 120 nodes to support large-scale telco application workloads.
+
 New in this release::
 * No reference design updates in this release.
 

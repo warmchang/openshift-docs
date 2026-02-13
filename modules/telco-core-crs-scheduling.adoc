@@ -6,6 +6,9 @@
 [id="scheduling-crs_{context}"]
 = Scheduling reference CRs
 
+[role="_abstract"]
+Use the following custom resources (CRs) to configure scheduling for the telco core profile.
+
 .Scheduling CRs
 [cols="4*", options="header", format=csv]
 |====

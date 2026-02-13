@@ -6,6 +6,9 @@
 [id="telco-core-security_{context}"]
 = Security
 
+[role="_abstract"]
+Telco core clusters require hardening against multiple attack vectors through various security features and configurations.
+
 New in this release::
 * No reference design updates in this release.
 
