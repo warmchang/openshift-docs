@@ -8,4 +8,13 @@
 [role="_abstract"]
 The following items were added during the second quarter of 2026.
 
+* **{product-title} managed DNS zones now available.**
+You can now create and manage your own DNS zones for Shared VPC deployments on {GCP}, giving you greater control over your {product-title} cluster's network configuration and security. This new capability allows you to maintain ownership of your DNS infrastructure while still leveraging the powerful features of {product-title}.
++
+By using managed DNS zones, you can ensure that your cluster's DNS records are managed according to your organization's policies and compliance requirements, without granting broad administrative access to your host projects. This improvement enhances security and provides a more flexible deployment option for customers with strict governance needs.
++
+To support these managed DNS zones, additional permissions have been added to the Workload Identity Federation (WIF) template for {product-title} versions link:https://github.com/openshift/managed-cluster-config/blob/master/resources/wif/4.20/vanilla.yaml[4.20] and link:https://github.com/openshift/managed-cluster-config/blob/master/resources/wif/4.21/vanilla.yaml[4.21]. The deployer service account now includes the `dns.managedZones.update` permission so that the deployer can perform update operations on managed DNS zones.
++
+For more information about managed DNS zones for {product-title} on {GCP}, see link:https://docs.redhat.com/en/documentation/openshift_dedicated/4/html/planning_your_environment/gcp-ccs#ocm-cli-create-managed-dns-zone_gcp-ccs[Creating a managed DNS zone].
+
 * **Support for new {gcp-short} instances.** {product-title} version 4.18 and later now supports `c2d`, `c3d`, `n2d` and `t2d` instance types on {gcp-full}. For more information, see link:https://docs.redhat.com/en/documentation/openshift_dedicated/4/html/introduction_to_openshift_dedicated/policies-and-service-definition#gcp-compute-types_osd-service-definition[{gcp-full} compute types].

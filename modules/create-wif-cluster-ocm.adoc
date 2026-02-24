@@ -45,7 +45,7 @@ Workload Identity Federation (WIF) is {gcp-full}'s recommended method of authent
 .. In the *Cluster name* field, enter a name for your cluster.
 .. Optional: Cluster creation generates a domain prefix as a subdomain for your provisioned cluster on `openshiftapps.com`. If the cluster name is less than or equal to 15 characters, that name is used for the domain prefix. If the cluster name is longer than 15 characters, the domain prefix is randomly generated as a 15-character string.
 +
-To customize the subdomain prefix, select the *Create custom domain prefix* checkbox, and enter your domain prefix name in the *Domain prefix* field. The domain prefix cannot be longer than 15 characters, must be unique within your organization, and cannot be changed after cluster creation.
+To customize the subdomain prefix, select the *Create custom domain prefix* checkbox, and enter your domain prefix name in the *Domain prefix* field. The domain prefix cannot be longer than 15 characters, must be unique within your organization, and cannot be changed after cluster creation. If you plan to install the cluster into a Shared VPC and select a managed DNS zone in a later step, the *DNS Zone* list is filtered to show only zones that begin with this domain prefix; ensure the prefix matches the managed DNS zones you have created or intend to use.
 .. Select a cluster version from the *Version* drop-down menu.
 +
 [NOTE]
@@ -142,23 +142,33 @@ For more information about custom application ingress settings, click on the inf
 +
 --
 include::snippets/snip_install-cluster-in-vpc.adoc[]
-
-[IMPORTANT]
-====
-The VPC owner of the host project must enable a project as a host project in their {gcp-full} console and add the *Computer Network Administrator*, *Compute Security Administrator*, and *DNS Administrator* roles to the following service accounts before cluster installation:
-
-* **osd-deployer**
-* **osd-control-plane**
-* **openshift-machine-api-gcp**
-
-Failure to do so will cause the cluster go into the "Installation Waiting" state. If this occurs, you must contact the VPC owner of the host project to assign the roles to the service accounts listed above.
-The VPC owner of the host project has 30 days to grant the listed permissions before the cluster creation fails.
-For more information, see link:https://cloud.google.com/vpc/docs/provisioning-shared-vpc#set-up-shared-vpc[Enable a host project] and link:https://cloud.google.com/vpc/docs/provisioning-shared-vpc#migs-service-accounts[Provision Shared VPC].
-====
-
+--
 .. Select *Install into {gcp-short} Shared VPC*.
 .. Specify the *Host project ID*. If the specified host project ID is incorrect, cluster creation fails.
---
++
+[NOTE]
+====
+In a typical Shared VPC deployment, the following {gcp-short} roles are required on the project hosting the VPC:
+
+* `roles/compute.networkAdmin`
+* `roles/compute.securityAdmin`
+* `roles/dns.admin`
+
+If you use a managed DNS zone (by selecting a zone from the *DNS Zone* list), the `roles/dns.admin` role is not required on the host project.
+====
++
+.. Optional. To use a pre-created DNS zone and reduce host project permissions, complete the following actions:
+... View the provided CLI command instructions to create a zone if you have not already done so. For more information about creating a DNS zone using the ocm CLI, see _Creating a managed DNS zone_ in the _Additional resources_ section.
+... Click the **Refresh** button to update the list of available zones.
+... Select your preferred zone from the **DNS Zone** list. The list displays the zone ID alongside the {GCP} project and managed zone ID for easy identification.
++
+[NOTE]
+====
+A custom domain prefix must be specified on a previous step  on the *Details* page before zones appear in the *DNS Zone* list. The *DNS Zone* list is filtered to show only zones that begin with the domain prefix you specified. The list may be empty if no matching DNS zones exist, or if the domain prefix was entered incorrectly. If the list is empty, verify your domain prefix and ensure you have created a managed DNS zone with a matching prefix.
+====
++
+If no zone is selected, the installer will attempt to create one automatically, which requires higher-level permissions in the host project.
+
 +
 . If you opted to install the cluster in an existing {GCP} VPC, provide your VPC subnet settings and select *Next*. You must ensure that your VPC is configured to allow outbound internet access to the domains required for the {product-title} service. This outbound access is required for the {product-title} service to communicate with Red{nbsp}Hat's management plane and SRE tooling via secure and encrypted endpoints over the public internet.
 +
