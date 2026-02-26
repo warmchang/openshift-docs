@@ -6,7 +6,8 @@
 [id="microshift-generic-device-plugin-configuration-parameters_{context}"]
 = Generic Device Plugin configuration reference
 
-This section provides a detailed reference for the configuration parameters available for the Generic Device Plugin within the {microshift-short} `config.yaml` file.
+[role="_abstract"]
+The Generic Device Plugin configuration reference lists and describes the parameters in the `genericDevicePlugin` section of the` config.yaml` file in {product-title}. You can use this reference when you enable the GDP and define which host devices to expose.
 
 .GDP configuration fields definitions table
 [cols="1,2"]
