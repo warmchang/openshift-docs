@@ -25,12 +25,15 @@ $ oc label node <node> --overwrite nvidia.com/vgpu.config=<profile>
 ----
 ** Replace `<node>` with the fully qualified domain name (FQDN) of your compute node.
 ** Replace `<profile>` with a supported MIG profile.
-
-.Example command
++
+Example command:
++
 [source,terminal]
 ----
 $ oc label node worker_1 --overwrite nvidia.com/vgpu.config=A30-1-6C
 ----
 
-For more information about MIG profiles, see the link:https://docs.nvidia.com/datacenter/tesla/mig-user-guide/supported-mig-profiles.html[MIG User Guide].
+[role="_additional-resources"]
+.Additional resources
+* link:https://docs.nvidia.com/datacenter/tesla/mig-user-guide/supported-mig-profiles.html[MIG User Guide]
 
