@@ -1,6 +1,6 @@
 // Module included in the following assemblies:
 //
-// * virt/vm_networking/virt-connecting-vm-to-sriov.adoc
+// * virt/vm_networking/virt-using-dpdk-with-sriov.adoc
 
 :_mod-docs-content-type: PROCEDURE
 [id="virt-configuring-vm-project-dpdk_{context}"]
@@ -10,10 +10,12 @@
 You can configure the project to run DPDK workloads on SR-IOV hardware.
 
 .Prerequisites
+
 * Your cluster is configured to run DPDK workloads.
 * You have installed the {oc-first}.
 
 .Procedure
+
 . Create a namespace for your DPDK applications:
 +
 [source,terminal]
@@ -52,5 +54,3 @@ spec:
 ----
 <1> The namespace where the `NetworkAttachmentDefinition` object is deployed.
 <2> The value of the `spec.resourceName` attribute of the `SriovNetworkNodePolicy` object that was created when configuring the cluster for DPDK workloads.
-
-. Optional: Run the virtual machine latency checkup to verify that the network is properly configured.

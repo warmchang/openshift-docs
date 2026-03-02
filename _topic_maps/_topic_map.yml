@@ -5030,8 +5030,6 @@ Topics:
     File: virt-monitoring-overview
   - Name: Cluster checkup framework
     File: virt-running-cluster-checkups
-  - Name: Latency checkups
-    File: virt-latency-checkups
   - Name: Storage checkups
     File: virt-storage-checkups
   - Name: Prometheus queries for virtual resources
