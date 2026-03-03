@@ -80,9 +80,10 @@ endif::[]
 | * link:https://learn.microsoft.com/en-us/azure/openshift/howto-create-openshift-virtualization[{VirtProductName} for Azure Red Hat OpenShift (preview)] in the Microsoft documentation
 
 | {gcp-first}
-| Technology Preview
+| GA, as of {VirtProductName} 4.21.1
 | {gcp-short} native storage
-| * link:https://access.redhat.com/articles/7120382[{VirtProductName} and {gcp-full} known storage issues and limitations] in the Red{nbsp}Hat Knowledgebase
+| * link:https://access.redhat.com/articles/7139046[Storage configuration for {VirtProductName} {product-version}.x on {gcp-full}] in the Red{nbsp}Hat Knowledgebase
+* link:https://access.redhat.com/articles/7139682[{VirtProductName} on {gcp-full}: Known issues and limitations] in the Red{nbsp}Hat Knowledgebase
 
 // tracker: https://issues.redhat.com/browse/XCMSTRAT-1191
 // | {product-dedicated}
