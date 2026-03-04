@@ -22,6 +22,8 @@ include::modules/nw-ingress-gateway-api-enable.adoc[leveloffset=+1]
 
 include::modules/nw-ingress-gateway-api-deployment-topologies.adoc[leveloffset=+1]
 
+include::modules/nw-ingress-gateway-api-verifying-status.adoc[leveloffset=+1]
+
 include::modules/nw-ingress-gateway-api-troubleshooting-degraded.adoc[leveloffset=+1]
 
 .Additional resources
