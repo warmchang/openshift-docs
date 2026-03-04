@@ -6,7 +6,7 @@
 = Using S2i to deploy OSToy on your cluster
 
 [role="_abstract"]
-You can use the source-to-image(s2i) to deploy your OSToy application on your cluster.
+To simplify your deployment process, you can deploy OSToy on your cluster by using the Source-to-Image (S2I) builder. This tool saves you time by automatically building a reproducible container image directly from the source binaries.
 
 .Procedure
 . Add a secret to {ocp-short}.

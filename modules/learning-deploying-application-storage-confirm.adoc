@@ -6,7 +6,7 @@
 = Confirming persistent storage
 
 [role="_abstract"]
-Within your OSToy application, you can verify that you configured your application's persistent storage.
+To ensure your data is retained after a pod shuts down, you can verify the persistent storage configuration for your OSToy application.
 
 .Procedure
 . Wait for the pod to re-create.

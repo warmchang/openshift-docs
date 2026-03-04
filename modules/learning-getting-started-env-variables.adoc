@@ -6,7 +6,7 @@
 = Creating additional environment variables
 
 [role="_abstract"]
-You can use environmental variables to make it easier to run the command to create a {product-title} cluster.
+To simplify your command-line execution and reduce repetitive typing, configure environment variables for your cluster deployments. Using these variables makes it faster and more efficient to run the command to create a {product-title} cluster.
 
 .Procedure
 * Run the following command to set up environment variables:

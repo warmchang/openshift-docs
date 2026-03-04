@@ -6,7 +6,7 @@
 = Crashing the pod 
 
 [role="_abstract"]
-You can test the failure states for your application by forcing the pod to crash.
+To test the failure states for your application, you can force the pod to crash. Observing this crash demonstrates how the system handles unexpected terminations and initiates recovery.
 
 .Procedure
 . From the OSToy application web console, click *Home* in the left menu, and enter a message in the *Crash Pod* box, for example, `This is goodbye!`. 

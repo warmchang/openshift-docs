@@ -6,4 +6,4 @@
 = Using persistent volumes
 
 [role="_abstract"]
-Use the following procedures to create a file, store it on a persistent volume in your cluster, and confirm that it still exists after pod failure and re-creation.
+Test your cluster's persistent volume by creating a file, storing it, then purposefully causing a pod failure. Confirming that the file still exists after the pod is re-created demonstrates how your data is protected during unexpected outages.

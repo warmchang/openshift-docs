@@ -6,7 +6,7 @@
 = Lab resources
 
 [role="_abstract"]
-The following materials are used throughout this lab tutorial.
+To successfully complete the lab tutorial, review the provided reference materials. These supporting materials guide you through the required configurations and core concepts.
 
 * link:https://github.com/openshift-cs/ostoy[OSToy application source code]
 * link:https://quay.io/ostoylab/ostoy-frontend[OSToy front-end container image]

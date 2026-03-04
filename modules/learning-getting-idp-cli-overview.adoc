@@ -6,7 +6,7 @@
 = Viewing IDP options
 
 [role="_abstract"]
-You can view your IDP options by using {rosa-cli-first}.
+To determine which authentication methods are available for your cluster's users, view your identity provider (IDP) options. You can quickly list these supported configurations by using the {rosa-cli}.
 
 .Procedure
 * Before creating your IDP, you can view all IDP options by running the following command:

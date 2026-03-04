@@ -3,10 +3,10 @@
 // * rosa_learning/creating_cluster_workshop/learning-getting-started-support.adoc
 :_mod-docs-content-type: PROCEDURE
 [id="learning-getting-started-deleting-cli_{context}"]
-= Deleting a {product-title} cluster using the ROSA CLI
+= Deleting a {product-title} cluster using the {rosa-cli}
 
 [role="_abstract"]
-You can delete your cluster using the {rosa-cli-first}.
+To free up system resources and avoid unnecessary costs when an environment is no longer needed, you can delete your {product-title} cluster. You can easily perform this complete removal process by using the {rosa-cli-first}.
 
 .Procedure
 . *Optional:* List your clusters to make sure you are deleting the correct one by running the following command:

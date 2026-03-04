@@ -6,7 +6,7 @@
 = Accessing the cluster via the {hybrid-console-second}
 
 [role="_abstract"]
-You can access your cluster by using {hybrid-console-second}.
+You can access your cluster by using the {hybrid-console-second}, which serves as a primary portal for managing {product-title} environments. Use {hybrid-console-second} to access tools for cluster provisioning, registration, and health monitoring.
 
 .Procedure
 . Log in to the {cluster-manager-url}.

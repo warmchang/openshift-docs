@@ -6,7 +6,7 @@
 = Deploying the back-end microservice
 
 [role="_abstract"]
-The microservice serves internal web requests and returns a JSON object containing the current hostname and a randomly generated color string.
+You can deploy a microservice to start the OSToy backend processes. The microservice serves internal web requests and returns a JSON object containing the current hostname and a randomly generated color string.
 
 .Procedure
 * Deploy the microservice by running the following command:

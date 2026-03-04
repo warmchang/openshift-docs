@@ -6,7 +6,7 @@
 = Retrieving your login command
 
 [role="_abstract"]
-Before creating your cluster, you need to log in to the {rosa-cli-first}.
+To create your cluster, log in to the {rosa-cli-first}. If you need to authenticate, use a token from {cluster-manager-first}.
 
 .Procedure
 . Confirm you are logged in to the {rosa-cli} by running the following command:

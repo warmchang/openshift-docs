@@ -6,7 +6,7 @@
 = Making the application malfunction
 
 [role="_abstract"]
-You can test your application's failure responses by intentionally causing the application to malfunction. 
+You can test your application's failure responses by purposefully causing the application to malfunction. By causing this failure, you can observe how your system handles unexpected errors and verify that it recovers correctly.
 
 .Procedure
 

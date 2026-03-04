@@ -6,7 +6,7 @@
 = Enabling autoscaling for an existing machine pool using the CLI
 
 [role="_abstract"]
-Cluster autoscaling can be enabled at cluster creation and when creating a new machine pool by using the `--enable-autoscaling` option.
+To ensure your environment dynamically adapts to changing workload demands, you can enable cluster autoscaling at cluster creation or when creating a new machine pool. To do this, use the `--enable-autoscaling` option.
 
 .Procedure
 . Autoscaling is set based on machine pool availability. To find out which machine pools are available for autoscaling, run the following command:

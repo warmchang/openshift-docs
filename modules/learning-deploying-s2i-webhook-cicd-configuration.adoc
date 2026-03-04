@@ -6,7 +6,7 @@
 = Configuring your automated deployment
 
 [role="_abstract"]
-By using a GitHub webhook, you can configure an automated deployment for your OSToy application.
+Configure a GitHub webhook to set up automated deployments for your OSToy application. Using this webhook saves you time by automatically triggering a new build every time you update your source code.
 
 .Procedure
 . Obtain the GitHub webhook trigger secret by running the following command:

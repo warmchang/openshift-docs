@@ -6,7 +6,7 @@
 = Creating a cluster
 
 [role="_abstract"]
-You can create your {product-title} cluster using the {rosa-cli}.
+To deploy and manage containerized applications in a cloud environment, create a {product-title} cluster. You can efficiently perform this installation process by using the {rosa-cli}.
 
 .Procedure
 . *Optional:* Run the following command to create the account-wide roles and policies, including the Operator policies and the AWS IAM roles and policies:
