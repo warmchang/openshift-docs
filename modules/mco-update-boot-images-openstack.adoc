@@ -1,7 +1,6 @@
 // Module included in the following assemblies:
 //
-// * machine_configuration/mco-update-boot-images.adoc
-// * nodes/nodes/nodes-update-boot-images.adoc
+// * machine_configuration/mco-update-boot-images-manual.adoc
 
 :_mod-docs-content-type: PROCEDURE
 [id="mco-update-boot-images-openstack_{context}"]
