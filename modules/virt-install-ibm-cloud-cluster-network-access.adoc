@@ -2,7 +2,7 @@
 //
 // * virt/install/virt-install-ibm-cloud-bm-nodes.adoc
 
-:_mod-docs-content-type: PROCEDURE 
+:_mod-docs-content-type: PROCEDURE
 [id="virt-install-ibm-cloud-cluster-network-access_{context}"]
 = Configuring cluster networking and access
 
@@ -10,6 +10,7 @@
 Configure networking and access to allow for remote management of the cluster.
 
 .Procedure
+
 . Edit `/etc/samba/smb.conf` to use the following configuration:
 +
 [source,text]
@@ -78,12 +79,12 @@ $ sudo MotionPro --host $<vpn_endpoint> --user $<vpn_username> --passwd $<vpn_pa
 ----
 +
 where:
-
-<vpn_endpoint>:: The appropriate SSL VPN endpoint.
-<vpn_username>:: The SSL VPN user name you configured.
-<vpn_password>:: The SSL VPN password you configured.
++
+`<vpn_endpoint>`:: Specifies the appropriate SSL VPN endpoint.
+`<vpn_username>`:: Specifies the SSL VPN user name you configured.
+`<vpn_password>`:: Specifies the SSL VPN password you configured.
 +
 [NOTE]
 ====
-Connecting to the {ibm-cloud-title} SSL VPN will disconnect you from any open VPN connections.
+Connecting to the {ibm-cloud-title} SSL VPN disconnects you from any open VPN connections.
 ====
