@@ -1528,8 +1528,8 @@ code <variable_2>
 +
 where:
 
-<variable_1>:: Specifies the explanation of the first variable.
-<variable_2>:: Specifies the explanation of the first variable.
+`<variable_1>`:: Specifies the explanation of the first variable.
+`<variable_2>`:: Specifies the explanation of the first variable.
 ....
 +
 For example:
