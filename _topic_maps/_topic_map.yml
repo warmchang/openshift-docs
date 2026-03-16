@@ -1792,6 +1792,8 @@ Topics:
       File: ingress-controller-dnsmgt
     - Name: Gateway API with OpenShift Container Platform networking
       File: ingress-gateway-api
+    - Name: Assigning network addresses to gateways
+      File: assigning-network-addresses-gateways
     - Name: Routing gRPC requests to services
       File: routing-grpc-requests-to-services
   - Name: Load balancing on OpenStack
