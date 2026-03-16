@@ -13,6 +13,7 @@ You can use the {js-operator} to manage and run large-scale, coordinated workloa
 
 The {js-operator} models a distributed batch workload as a group of Kubernetes Jobs. This allows you to easily specify different pod templates for different distinct groups of pods, for example, a leader, workers, parameter servers, and so on. 
 
+
 include::modules/kueue-installing-jobset.adoc[leveloffset=+1]
 [role="_additional-resources"]
 .Additional resources
@@ -21,7 +22,6 @@ include::modules/kueue-installing-jobset.adoc[leveloffset=+1]
 * link:https://kueue.sigs.k8s.io/docs/tasks/run/jobsets/[Run A JobSet (Kubernetes documentation)]
 
 * xref:../../security/cert_manager_operator/cert-manager-operator-install.adoc#installing-the-cert-manager-operator-for-red-hat-openshift[Installing the {cert-manager-operator} by using the web console]
-
 
 include::modules/kueue-running-jobset.adoc[leveloffset=+1]
 [role="_additional-resources"]
