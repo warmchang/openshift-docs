@@ -15,7 +15,7 @@ For more information, see link:https://access.redhat.com/support/policy/updates/
 [id="hcp-matrix-mgmt_{context}"]
 == Management cluster support
 
-Any supported standalone {product-title} cluster can be a management cluster.
+Any supported {product-title} cluster can be a management cluster.
 
 [NOTE]
 ====
