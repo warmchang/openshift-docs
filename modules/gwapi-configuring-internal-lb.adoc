@@ -1,0 +1,69 @@
+// Module included in the following assemblies:
+//
+// * networking/ingress_load_balancing/configuring_ingress_cluster_traffic/ingress-gateway-api.adoc
+
+:_mod-docs-content-type: PROCEDURE
+[id="gwapi-configuring-internal-lb_{context}"]
+= Provisioning an internal load balancer for a gateway
+
+[role="_abstract"] 
+By default, the Gateway API provisions an external load balancer. You can configure the Gateway API to provision an internal load balancer by adding a cloud-specific annotation to your `Gateway` custom resource (CR).
+
+.Prerequisites
+
+* You have access to the cluster as a user with the `cluster-admin` role.
+* You have installed the {oc-first}.
+* You have configured a `GatewayClass` object.
+
+.Procedure
+
+. Create or edit your `Gateway` CR to include the cloud-specific annotation under `spec.infrastructure.annotations`. 
++
+[NOTE]
+====
+For a complete list of supported annotations and values, see "Cloud provider annotations for internal gateway load balancers".
+====
++
+The following example provisions an internal load balancer for an {aws-short} cluster:
++
+.Example `Gateway` CR for an {aws-short} internal load balancer
+[source,yaml]
+----
+apiVersion: gateway.networking.k8s.io/v1
+kind: Gateway
+metadata:
+  name: mygateway
+  namespace: openshift-ingress
+spec:
+  gatewayClassName: openshift-default
+  infrastructure:
+    annotations:
+    # Specifies the cloud provider annotation and value required to provision an internal load balancer:
+      service.beta.kubernetes.io/aws-load-balancer-internal: "true"
+  listeners:
+  - name: https
+    hostname: "*.example.com"
+    port: 443
+    protocol: HTTPS
+    tls:
+      mode: Terminate
+      certificateRefs:
+      - name: gateway-tls-secret
+# ...
+----
+
+. Apply the updated `Gateway` CR by running the following command:
++
+[source,terminal]
+----
+$ oc apply -f <gateway_filename>.yaml
+----
+
+.Verification
+
+* Verify that the load balancer service is provisioned and has an internal IP address by running the following command:
++
+[source,terminal]
+----
+$ oc -n openshift-ingress get svc
+----
