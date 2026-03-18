@@ -6,6 +6,7 @@ include::_attributes/attributes-microshift.adoc[]
 
 toc::[]
 
+[role="_abstract"]
 The Generic Device Plugin (GDP) for {microshift-short} enables your containerized applications to securely access physical host devices, such as serial ports, video cameras, or sound cards directly from within Kubernetes pods. By using GDP, you can extend capabilities of {microshift-short} to support applications that require direct hardware interaction, such as Internet of Things (IoT) applications.
 
 include::modules/microshift-con-understanding-generic-device-plugin.adoc[leveloffset=+1]
