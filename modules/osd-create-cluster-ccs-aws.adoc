@@ -8,12 +8,7 @@
 = Creating a cluster on AWS
 
 [role="_abstract"]
-By using the Customer Cloud Subscription (CCS) billing model, you can create an {product-title} cluster in an existing
-{AWS} account that you own.
-
-You can also select the Red{nbsp}Hat cloud account infrastructure type to deploy {product-title} in a cloud provider account that is owned by Red{nbsp}Hat.
-
-Complete the following prerequisites to use the CCS model to deploy and manage {product-title} into your AWS account.
+Deploy a {product-title} cluster with the Customer Cloud Subscription (CCS) or Red{nbsp}Hat cloud account billing model to get more financial control. By configuring AWS Identity and Access Management (IAM) roles, Virtual Private Clouds (VPC) networking, and PrivateLinks, you integrate your clusters into existing infrastructure while ensuring security.  
 
 .Prerequisites
 
