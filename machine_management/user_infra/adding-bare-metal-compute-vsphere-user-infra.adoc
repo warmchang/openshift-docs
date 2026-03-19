@@ -35,7 +35,6 @@ To use this feature, you must explicitly disable the native {vmw-short} Containe
 
 [role="_additional-resources"]
 .Additional resources
-* xref:../../migration_toolkit_for_containers/mtc-migrating-vms.adoc#mtc-migrating-vms[Migrating virtual machine storage]
 * xref:../../storage/container_storage_interface/persistent-storage-csi-vsphere.adoc#persistent-storage-csi-vsphere-disable-storage-procedure_persistent-storage-csi-vsphere[Disabling and enabling storage on vSphere]
 
 include::modules/bare-metal-vsphere-iso.adoc[leveloffset=+1]

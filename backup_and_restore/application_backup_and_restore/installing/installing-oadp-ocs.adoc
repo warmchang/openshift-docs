@@ -12,8 +12,6 @@ toc::[]
 [role="_abstract"]
 Install the {oadp-first} with {rh-storage} by installing the {oadp-short} Operator and configuring a backup location and a snapshot location. You then install the Data Protection Application.
 
-include::snippets/oadp-mtc-operator.adoc[]
-
 You can configure xref:../../../backup_and_restore/application_backup_and_restore/installing/installing-oadp-mcg.adoc#installing-oadp-mcg[Multicloud Object Gateway] or any AWS S3-compatible object storage as a backup location.
 
 You can create a `Secret` CR for the backup location and install the Data Protection Application. For more details, see xref:../../../backup_and_restore/application_backup_and_restore/installing/oadp-installing-operator.adoc#oadp-installing-operator-doc[Installing the OADP Operator].
