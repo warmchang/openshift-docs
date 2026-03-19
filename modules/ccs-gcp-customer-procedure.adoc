@@ -111,7 +111,7 @@ For more information about configuring {gcp-short} organization policy constrain
 
 |link:https://docs.cloud.google.com/marketplace/docs/reference/consumerprocurement/rest[Cloud Commerce Consumer Procurement API]
 |`cloudcommerceconsumerprocurement.googleapis.com`
-|Enables users to procure products from the {gcp-short}  Marketplace. Specifically, this permission is required to validate through this API that customers have accepted the  Marketplace terms and conditions for {product-title}.
+|Enables users to procure products from the {gcp-short}  Marketplace. Specifically, it is required to validate that customers have accepted the Marketplace terms and conditions for {product-title}.
 
 This API is required when transacting through the {gcp-short} Marketplace.
 
