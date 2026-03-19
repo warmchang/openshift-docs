@@ -7,7 +7,7 @@ include::_attributes/attributes-openshift-dedicated.adoc[]
 
 toc::[]
 [role="_abstract"]
-You can delete your {product-title} cluster using either the {rosa-cli-first} or the user interface (UI). 
+You might want to delete your {product-title} cluster if you created it for testing purposes only or no longer need it for other reasons. You can delete your cluster using either the {rosa-cli-first} or the user interface (UI). 
 
 include::modules/learning-getting-started-deleting-cli.adoc[leveloffset=+1]
 include::modules/learning-getting-started-deleting-web-ui.adoc[leveloffset=+1]
