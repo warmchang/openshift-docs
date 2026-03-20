@@ -27,7 +27,7 @@ The `ocm` is a Developer Preview feature only.
 For more information about the support scope of Red Hat Developer Preview features, see link:https://access.redhat.com/support/offerings/devpreview/[Developer Preview Support Scope].
 ====
 +
-* You have created a Workload Identity Federation configuration. For more information, see _Creating a Workforce Identity Federation configuration_.
+* You have created a Workload Identity Federation configuration. For more information, see _Creating a Workload Identity Federation configuration_.
 
 [NOTE]
 ====
