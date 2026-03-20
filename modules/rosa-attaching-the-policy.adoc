@@ -6,12 +6,12 @@
 = Attaching the identity-based IAM policy
 
 [role="_abstract"]
-Once you have created an identity-based IAM policy, attach it to the relevant IAM users, groups, or roles in your AWS account to prevent IP-based role assumption for those entities.
+After you create an Identity and Access Management (IAM) policy, attach it to the relevant IAM users, groups, or roles in your AWS account. The policy prevents IP-based role assumption for these entities.
 
 .Procedure
 
 . Navigate to the IAM console in the AWS Management Console.
-. Select the default IAM `ManagedOpenShift-Support-Role` role to which you want to attach the policy.
+. Select the default IAM `ManagedOpenShift-Support-Role` role to attach the policy.
 +
 [NOTE]
 ====
@@ -26,6 +26,6 @@ You can change the default IAM `ManagedOpenShift-Support-Role` role. For more in
 +
 [IMPORTANT]
 ====
-To ensure effective IP-based role assumption prevention, you must keep the allowlisted IPs up to date. Failure to do so may result in Red{nbsp}Hat site reliability engineering (SRE) being unable to access your account and affect your SLA. If you have further questions or require assistance, please reach out to our support team.
+To prevent IP-based role assumption, keep the allowlisted IPs up-to-date. Outdated IPs can block Red{nbsp}Hat site reliability engineering (SRE) from accessing your account and affect your Service Level Agreement (SLA).
 ====
 

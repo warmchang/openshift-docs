@@ -3,7 +3,7 @@
 // * security/rosa-configuring-the-log-forwarder.adoc
 :_mod-docs-content-type: REFERENCE
 [id="rosa-determine-log-groups_{context}"]
-= Determining what log groups to use 
+= Determining what log groups to use
 
 [role="_abstract"]
 When you forward control plane logs to Amazon CloudWatch or S3, you must decide on what log groups you want to use. Because of the existing AWS pricing for the respective services, you can expect additional costs associated with forwarding and storing your logs in S3 and CloudWatch. When you determine what log group to use, consider these additional costs along with other factors, such as your log retention requirements.
@@ -12,31 +12,33 @@ For each log group, you have access to different applications, and these applica
 
 When you forward log groups, you must specify a group or application. When you specify a group, the log forwarder collects all the applications in that group. Instead of selecting a group, you can select individual applications. When you set up your log forwarder, you must specify at least one group or application, but you do not need to specify both.
 
-See the following table to help you decide what log groups you need before you begin to forward your control plane logs: 
+The following table lists available log groups:
 
+.Log groups
+[cols="1,2,2",options="header"]
 |====
-| Log group name| Benefit of that log group| Example applications available for that log group  
+| Log group name| Benefit of that log group| Example applications available for that log group
 
-| api 
-| Records every request made to the cluster. Helps security by detecting unauthorized access attempts.
-a| 
+| api
+| Records every request made to the cluster. Supports security by detecting unauthorized access attempts.
+a|
 * `audit-webhook`
 * `kube-apiserver`
 * `oauth-openshift`
 * `openshift-apiserver`
 * `openshift-oauth-apiserver`
 * `packageserver`
-* `validation-webhook`  
+* `validation-webhook`
 
-| authentication  
-| Tracks login attempts and requests for tokens. Helps security by recording authenticated user information.
-a| 
+| authentication
+| Tracks login attempts and requests for tokens. Supports security by recording authenticated user information.
+a|
 * `ignition-server`
 * `konnectivity-agent`
 
-| controller manager  
-| Monitors the controllers that manages the state of your clusters. Helps explain the difference among the different cluster states, for example, the `Current`, `Desired`, `Health`, and `Feature` state.
-a| 
+| controller manager
+| Monitors the controllers that manages the state of your clusters. Clarifies differences among the different cluster states, for example, the `Current`, `Desired`, `Health`, and `Feature` state.
+a|
 * `aws-ebs-csi-driver-controller`
 * `capi-provider-controller-manager`
 * `catalog-operator`
@@ -61,21 +63,21 @@ a|
 * `olm-operator`
 * `openshift-controller-manager`
 * `openshift-route-controller-manager`
-* `ovnkube-control-plane`   
+* `ovnkube-control-plane`
 
-| scheduler    
-| Records the placement of each pod on every node. Helps you understand why pods are in a `Running` or `Pending` state.
-a| 
+| scheduler
+| Records the placement of each pod on every node. Shows why pods are in a `Running` or `Pending` state.
+a|
 * `kube-scheduler`
 
-| not applicable   
-| These applications do not belong to a defined log group. To forward their logs, set these applications in the `applications` array.  
-a| 
+| not applicable
+| These applications do not belong to a defined log group. To forward their logs, set these applications in the `applications` array.
+a|
 * `certified-operators-catalog`
 * `cluster-api`
 * `community-operators-catalog`
 * `etcd`
 * `private-router`
 * `redhat-marketplace-catalog`
-* `redhat-operators-catalog`    
+* `redhat-operators-catalog`
 |====
