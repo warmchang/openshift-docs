@@ -8,7 +8,7 @@ include::_attributes/attributes-openshift-dedicated.adoc[]
 toc::[]
 
 [role="_abstract"]
-{cluster-manager-first} is a managed service where you can install, modify, operate, and upgrade your Red Hat OpenShift clusters. This service allows you to work with all of your organization’s clusters from a single dashboard.
+{cluster-manager-first} is a managed service where you can install, modify, operate, and upgrade your Red Hat OpenShift clusters. As a cluster administrator, this service allows you to work with all of your organization's clusters from a single dashboard.
 
 {cluster-manager} guides you to install {OCP}, {rosa-classic-title}, {hcp-title-first}, and {dedicated} clusters. It is also responsible for both {OCP} clusters after self-installation as well as your {rosa-classic-title}, {hcp-title-first}, and {dedicated} clusters.
 
@@ -26,8 +26,6 @@ endif::openshift-rosa-hcp[]
 ifdef::openshift-rosa[]
 * Transferring cluster ownership
 endif::openshift-rosa[]
-
-For more information about {cluster-manager}, see the entire link:https://docs.redhat.com/en/documentation/openshift_cluster_manager/1-latest/html-single/managing_clusters/index[{cluster-manager} documentation].
 
 include::modules/ocm-accessing.adoc[leveloffset=+1]
 
@@ -57,8 +55,7 @@ include::modules/ocm-settings-tab.adoc[leveloffset=+2]
 
 [id="ocm-additional-resources"]
 == Additional resources
-
-* link:https://access.redhat.com/documentation/en-us/openshift_cluster_manager/2022/html-single/managing_clusters/index[{cluster-manager} documentation]
+* link:https://docs.redhat.com/en/documentation/openshift_cluster_manager/1-latest/html-single/managing_clusters/index[{cluster-manager}]
 ifdef::openshift-rosa,openshift-rosa-hcp[]
 * xref:../rosa_cluster_admin/rosa-cluster-notifications.adoc#add-notification-contact_rosa-cluster-notifications[Adding cluster notification contacts]
 * xref:../authentication/sd-configuring-identity-providers.adoc#sd-configuring-identity-providers[Configuring identity providers]
