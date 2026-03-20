@@ -7,7 +7,7 @@ include::_attributes/attributes-openshift-dedicated.adoc[]
 
 toc::[]
 
-[role="abstract"]
+[role="_abstract"]
 You can create a private {product-title} cluster on {GCP} using {gcp-full}'s security-enhanced networking feature Private Service Connect (PSC).
 
 include::modules/osd-understanding-private-service-connect.adoc[leveloffset=+1]

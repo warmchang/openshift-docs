@@ -6,7 +6,7 @@ include::_attributes/attributes-openshift-dedicated.adoc[]
 
 toc::[]
 
-[role="abstract"]
+[role="_abstract"]
 Through {cluster-manager-url}, you can create an {product-title} cluster on {GCP} using a standard cloud provider account owned by Red{nbsp}Hat.
 
 [id="osd-creating-a-cluster-on-gcp-prerequisites1_{context}"]

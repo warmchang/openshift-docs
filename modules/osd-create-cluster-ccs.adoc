@@ -8,7 +8,7 @@
 [id="osd-create-gcp-cluster-ccs1_{context}"]
 = Creating a cluster with Service Account authentication using {cluster-manager}
 
-[role="abstract"]
+[role="_abstract"]
 Through {cluster-manager-url}, you can create an {product-title} cluster on {GCP} using a cloud provider account that you own with the Service Account authentication type.
 
 .Procedure
