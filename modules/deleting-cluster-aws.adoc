@@ -8,7 +8,7 @@
 = Deleting your cluster
 
 [role="_abstract"]
-You can delete your {product-title} cluster in {cluster-manager-first}.
+Delete your {product-title} cluster from your {AWS} infrastructure to stop incurring costs and consuming cloud resources. 
 
 .Prerequisites
 
