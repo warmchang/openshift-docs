@@ -7,14 +7,14 @@ include::_attributes/attributes-openshift-dedicated.adoc[]
 
 toc::[]
 [role="_abstract"]
-The xref:../../rosa_cluster_admin/rosa_nodes/rosa-nodes-about-autoscaling-nodes.adoc#rosa-nodes-about-autoscaling-nodes[cluster autoscaler] adds or removes worker nodes from a cluster based on pod resources.
+Configure cluster autoscaling to improve performance and ensure that your environment dynamically adapts to changing workload demands. The cluster autoscaler adds or removes worker nodes from a cluster based on pod resources.
 
 The cluster autoscaler increases the size of the cluster when:
 
 * Pods fail to schedule on the current nodes due to insufficient resources.
 * Another node is necessary to meet deployment needs.
 
-The cluster autoscaler does not increase the cluster resources beyond the limits that you specify. 
+It does not increase the cluster resources beyond the limits that you specify. 
 
 The cluster autoscaler decreases the size of the cluster when:
 
@@ -22,3 +22,8 @@ The cluster autoscaler decreases the size of the cluster when:
 
 include::modules/learning-getting-started-autoscaling-cli.adoc[leveloffset=+1]
 include::modules/learning-getting-started-autoscaling-web-ui.adoc[leveloffset=+1]
+
+[role="_additional-resources"]
+== Additional resources
+
+* link:https://docs.redhat.com/en/documentation/red_hat_openshift_service_on_aws/latest/html-single/cluster_administration/index#rosa-nodes-about-autoscaling-nodes[Cluster autoscaler]
