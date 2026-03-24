@@ -50,5 +50,5 @@ include::modules/virt-about-libguestfs-tools-virtctl-guestfs.adoc[leveloffset=+2
 
 [id="using_ansible_{context}"]
 == Using Ansible
-To use the Ansible collection for {VirtProductName}, see link:https://console.redhat.com/ansible/automation-hub/repo/published/redhat/openshift_virtualization[Red{nbsp}Hat Ansible Automation Hub] ({hybrid-console}).
+To use the Ansible collection for {VirtProductName}, see link:https://console.redhat.com/ansible/automation-hub[Red{nbsp}Hat Ansible Automation Hub] ({hybrid-console}).
 

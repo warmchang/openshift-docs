@@ -15,7 +15,10 @@ Traffic passing through network interfaces to the default pod network is interru
 
 include::modules/virt-configuring-masquerade-mode-cli.adoc[leveloffset=+1]
 
+// Masquerade mode with IPv4/IPv6 dual-stack is not documented for OpenShift Dedicated
+ifndef::openshift-dedicated[]
 include::modules/virt-configuring-masquerade-mode-dual-stack.adoc[leveloffset=+1]
+endif::openshift-dedicated[]
 
 // TO DO: This should be moved to an optimization section
 include::modules/virt-jumbo-frames-vm-pod-nw.adoc[leveloffset=+1]

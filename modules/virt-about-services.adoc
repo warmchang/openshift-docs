@@ -23,9 +23,9 @@ For on-premise clusters, you can configure a load-balancing service by deploying
 ====
 endif::openshift-rosa,openshift-dedicated,openshift-rosa-hcp[]
 
-ifdef::openshift-rosa,openshift-dedicated,openshift-rosa-hcp[]
+ifdef::openshift-rosa,openshift-rosa-hcp[]
 [NOTE]
 ====
 For {product-rosa}, you must use `externalTrafficPolicy: Cluster` when configuring a load-balancing service, to minimize the network downtime during live migration.
 ====
-endif::openshift-rosa,openshift-dedicated,openshift-rosa-hcp[]
+endif::openshift-rosa,openshift-rosa-hcp[]

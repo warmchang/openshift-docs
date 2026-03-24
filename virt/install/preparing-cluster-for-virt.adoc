@@ -111,11 +111,14 @@ endif::openshift-rosa,openshift-dedicated,openshift-rosa-hcp[]
 
 include::modules/virt-aws-bm.adoc[leveloffset=+2]
 
+
 [role="_additional-resources"]
 .Additional resources
 * xref:../../virt/vm_networking/virt-connecting-vm-to-ovn-secondary-network.adoc#virt-connecting-vm-to-ovn-secondary-network[Connecting a virtual machine to an OVN-Kubernetes secondary network]
 * xref:../../virt/vm_networking/virt-exposing-vm-with-service.adoc#virt-exposing-vm-with-service[Exposing a virtual machine by using a service]
 
+//Hiding in OSD as not supported
+ifndef::openshift-dedicated[]
 [id="arm-compatibility_{context}"]
 === ARM64 compatibility
 
@@ -134,6 +137,7 @@ Live migration::
 VM creation::
 * {op-system-base} 10 supports instance types and preferences, but not templates.
 * {op-system-base} 9 supports templates, instance types, and preferences.
+endif::openshift-dedicated[]
 
 // Hiding in ROSA/OSD - todo: double check this
 ifndef::openshift-rosa,openshift-dedicated,openshift-rosa-hcp[]
@@ -206,11 +210,9 @@ If you deploy {VirtProductName} with {rh-storage-first}, you must create a dedic
 IPv6::
 {VirtProductName} support for single-stack IPv6 clusters is limited to the OVN-Kubernetes localnet and Linux bridge Container Network Interface (CNI) plugins.
 +
---
 :FeatureName: Deploying {VirtProductName} on a single-stack IPv6 cluster
 include::snippets/technology-preview.adoc[]
 :!FeatureName:
---
 
 endif::openshift-rosa,openshift-dedicated,openshift-rosa-hcp[]
 
@@ -285,7 +287,12 @@ include::modules/virt-about-storage-volumes-for-vm-disks.adoc[leveloffset=+3]
 [id="live-migration_preparing-cluster-for-virt"]
 == Live migration requirements
 
+ifdef::openshift-dedicated[]
+* Shared storage that supports live migration.
+endif::openshift-dedicated[]
+ifndef::openshift-dedicated[]
 * Shared storage with `ReadWriteMany` (RWX) access mode.
+endif::openshift-dedicated[]
 * Sufficient RAM and network bandwidth.
 +
 [NOTE]

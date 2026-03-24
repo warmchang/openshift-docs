@@ -16,7 +16,12 @@ By default, live migration traffic is encrypted using Transport Layer Security (
 
 Live migration has the following requirements:
 
+ifdef::openshift-dedicated[]
+* The cluster must have shared storage that supports live migration.
+endif::openshift-dedicated[]
+ifndef::openshift-dedicated[]
 * The cluster must have shared storage with `ReadWriteMany` (RWX) access mode.
+endif::openshift-dedicated[]
 * The cluster must have sufficient RAM and network bandwidth.
 +
 [NOTE]
