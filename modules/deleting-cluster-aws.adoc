@@ -17,7 +17,7 @@ Delete your {product-title} cluster from your {AWS} infrastructure to stop incur
 
 .Procedure
 
-. From {cluster-manager-url}, click on the cluster you want to delete.
+. From {cluster-manager-url}, click the cluster you want to delete.
 
 . Select *Delete cluster* from the *Actions* list.
 
