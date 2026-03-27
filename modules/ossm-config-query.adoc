@@ -6,6 +6,7 @@
 [id="ossm-config-query_{context}"]
 = Query configuration options
 
+[role="_abstract"]
 Query is a service that retrieves traces from storage and hosts the user interface to display them.
 
 .Parameters used by the {JaegerName} Operator to define Query

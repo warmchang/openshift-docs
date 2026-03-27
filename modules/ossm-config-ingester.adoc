@@ -6,7 +6,8 @@
 [id="ossm-config-ingester_{context}"]
 = Ingester configuration options
 
-Ingester is a service that reads from a Kafka topic and writes to the Elasticsearch storage backend. If you are using the `allInOne` or `production` deployment strategies, you do not need to configure the Ingester service.
+[role="_abstract"]
+Use the Ingester to read data from a Kafka topic and to write data to Elasticsearch. You do not need the Ingester for `allInOne` or `production` strategies.
 
 .Jaeger parameters passed to the Ingester
 [options="header"]
@@ -29,7 +30,7 @@ The deadlock interval is disabled by default (set to `0`), to avoid terminating 
   kafka:
     consumer:
       topic:
-|The `topic` parameter identifies the Kafka configuration used by the collector to produce the messages, and the Ingester to consume the messages.
+|The `topic` value names the Kafka setup. The collector writes to it. The Ingester reads from it.
 |Label for the consumer. For example, `jaeger-spans`.
 
 |options:

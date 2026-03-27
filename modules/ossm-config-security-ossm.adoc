@@ -6,6 +6,11 @@
 [id="ossm-config-security-ossm_{context}"]
 = Configuring distributed tracing security for service mesh
 
-The {JaegerShortName} uses OAuth for default authentication. However {SMProductName} uses a secret called `htpasswd` to facilitate communication between dependent services such as Grafana, Kiali, and the {JaegerShortName}. When you configure your {JaegerShortName} in the `ServiceMeshControlPlane` the {SMProductShortName} automatically configures security settings to use `htpasswd`.
+[role="_abstract"]
+By default, the {JaegerShortName} uses OAuth to sign users in.
 
-If you are specifying your {JaegerShortName} configuration in a Jaeger custom resource, you must manually configure the `htpasswd` settings and ensure the `htpasswd` secret is mounted into your Jaeger instance so that Kiali can communicate with it.
+{SMProductName} also uses a secret named `htpasswd`. Grafana, Kiali, and the {JaegerShortName} use this secret to talk to each other.
+
+When you set Jaeger in the `ServiceMeshControlPlane`, service mesh turns on `htpasswd` security for you.
+
+If you set Jaeger in a Jaeger custom resource instead, you must add the `htpasswd` settings yourself. Mount the `htpasswd` secret in your Jaeger instance so Kiali can reach it.

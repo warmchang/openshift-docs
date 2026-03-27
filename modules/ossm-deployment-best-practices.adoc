@@ -6,6 +6,9 @@
 [id="ossm-deployment-best-practices_{context}"]
 = Deployment best practices
 
-* {DTProductName} instance names must be unique. If you want to have multiple {JaegerName} instances and are using sidecar injected agents, then the {JaegerName} instances should have unique names, and the injection annotation should explicitly specify the {JaegerName} instance name the tracing data should be reported to.
+[role="_abstract"]
+Use these tips when you deploy {DTProductName} and {JaegerName} with service mesh.
 
-* If you have a multitenant implementation and tenants are separated by namespaces, deploy a {JaegerName} instance to each tenant namespace.
+* Each {DTProductName} instance needs a unique name. If you run more than one {JaegerName} instance with sidecar agents, give each instance a unique name. Set the injection annotation to the instance name that should receive trace data.
+
+* If each tenant has its own namespace, deploy one {JaegerName} instance in each of those namespaces.

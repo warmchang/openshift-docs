@@ -6,22 +6,23 @@
 [id="ossm-distr-tracing-config-sampling_{context}"]
 = Distributed tracing sampling configuration options
 
-The {JaegerName} Operator can be used to define sampling strategies that will be supplied to tracers that have been configured to use a remote sampler.
+[role="_abstract"]
+The {JaegerName} Operator sets sampling plans for tracers that use a remote sampler.
 
-While all traces are generated, only a few are sampled. Sampling a trace marks the trace for further processing and storage.
+The system creates all traces, but only some are sampled. A sampled trace is kept for more work and storage.
 
 [NOTE]
 ====
-This is not relevant if a trace was started by the Envoy proxy, as the sampling decision is made there. The Jaeger sampling decision is only relevant when the trace is started by an application using the client.
+This does not apply if the Envoy proxy starts the trace. The proxy makes the sampling choice there. Jaeger sampling only applies when an app starts the trace with the client.
 ====
 
-When a service receives a request that contains no trace context, the client starts a new trace, assigns it a random trace ID, and makes a sampling decision based on the currently installed sampling strategy. The sampling decision propagates to all subsequent requests in the trace so that other services are not making the sampling decision again.
+When a service gets a request with no trace data, the client starts a new trace. It picks a random trace ID. It samples based on the current plan. That choice applies to later requests in the same trace. Other services do not sample again.
 
-{JaegerShortName} libraries support the following samplers:
+{JaegerShortName} libraries support these samplers:
 
-* *Probabilistic* - The sampler makes a random sampling decision with the probability of sampling equal to the value of the `sampling.param` property. For example, using `sampling.param=0.1` samples approximately 1 in 10 traces.
+* *Probabilistic* - The sampler picks at random. The chance of sampling matches `sampling.param`. For example, `sampling.param=0.1` keeps about 1 in 10 traces.
 
-* *Rate Limiting* - The sampler uses a leaky bucket rate limiter to ensure that traces are sampled with a certain constant rate. For example, using `sampling.param=2.0` samples requests with the rate of 2 traces per second.
+* *Rate Limiting* - The sampler uses a rate limiter. Traces are sampled at a steady rate. For example, `sampling.param=2.0` keeps 2 traces per second.
 
 .Jaeger sampling options
 [options="header"]
@@ -54,7 +55,7 @@ service_strategy:
 |1
 |===
 
-This example defines a default sampling strategy that is probabilistic, with a 50% chance of the trace instances being sampled.
+This example sets the default plan to probabilistic sampling. It keeps half of the traces.
 
 .Probabilistic sampling example
 [source,yaml]

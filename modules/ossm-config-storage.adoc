@@ -6,7 +6,8 @@
 [id="ossm-config-storage_{context}"]
 = Distributed tracing storage configuration options
 
-You configure storage for the Collector, Ingester, and Query services under `spec.storage`. Multiple instances of each of these components can be provisioned as required for performance and resilience purposes.
+[role="_abstract"]
+Use the `spec.storage` field to set storage for the Collector, Ingester, and Query . You can run more than one copy of each part when you need better speed or uptime.
 
 .General storage parameters used by the {JaegerName} Operator to define distributed tracing storage
 
@@ -19,7 +20,7 @@ You configure storage for the Collector, Ingester, and Query services under `spe
     type:
 |Type of storage to use for the deployment.
 |`memory` or `elasticsearch`.
-Memory storage is only appropriate for development, testing, demonstrations, and proof of concept environments as the data does not persist if the pod is shut down. For production environments {JaegerShortName} supports Elasticsearch for persistent storage.
+Use memory storage only for dev, test, demos, or proofs of concept. Data is lost if the pod stops. For production, use Elasticsearch so data persists.
 |`memory`
 
 |storage:
@@ -65,25 +66,25 @@ Memory storage is only appropriate for development, testing, demonstrations, and
 [id="distributed-tracing-config-auto-provisioning-es_{context}"]
 == Auto-provisioning an Elasticsearch instance
 
-When you deploy a Jaeger custom resource, the {JaegerName} Operator uses the {es-op} to create an Elasticsearch cluster based on the configuration provided in the `storage` section of the custom resource file. The {JaegerName} Operator will provision Elasticsearch if the following configurations are set:
+When you deploy a Jaeger CR, the {JaegerName} Operator can use the {es-op} to create an Elasticsearch cluster. It uses the `storage` section of the Jaeger CR. The Operator provisions Elasticsearch when all of these are true:
 
-* `spec.storage:type` is set to `elasticsearch`
-* `spec.storage.elasticsearch.doNotProvision` set to `false`
-* `spec.storage.options.es.server-urls` is not defined, that is, there is no connection to an Elasticsearch instance that was not provisioned by the {es-op}.
+* `spec.storage.type` is `elasticsearch`
+* `spec.storage.elasticsearch.doNotProvision` is `false`
+* `spec.storage.options.es.server-urls` is not set (no link to Elasticsearch that the {es-op} did not create)
 
-When provisioning Elasticsearch, the {JaegerName} Operator sets the Elasticsearch custom resource `name` to the value of `spec.storage.elasticsearch.name` from the Jaeger custom resource.  If you do not specify a value for `spec.storage.elasticsearch.name`, the Operator uses `elasticsearch`.
+When it provisions Elasticsearch, the Operator sets the Elasticsearch CR `name` from `spec.storage.elasticsearch.name` in the Jaeger CR. If you omit that field, the name is `elasticsearch`.
 
-.Restrictions
+*Restrictions*
 
-* You can have only one {JaegerShortName} with self-provisioned Elasticsearch instance per namespace. The Elasticsearch cluster is meant to be dedicated for a single {JaegerShortName} instance.
+* You can run only one {JaegerShortName} with self-provisioned Elasticsearch in each namespace. That Elasticsearch cluster is for one {JaegerShortName} only.
 * There can be only one Elasticsearch per namespace.
 
 [NOTE]
 ====
-If you already have installed Elasticsearch as part of OpenShift Logging, the {JaegerName} Operator can use the installed {es-op} to provision storage.
+If you already installed Elasticsearch with OpenShift Logging, the {JaegerName} Operator can use the same {es-op} to provision storage.
 ====
 
-The following configuration parameters are for a _self-provisioned_ Elasticsearch instance, that is an instance created by the {JaegerName} Operator using the {es-op}. You specify configuration options for self-provisioned Elasticsearch under `spec:storage:elasticsearch` in your configuration file.
+These parameters apply to _self-provisioned_ Elasticsearch. That means the {JaegerName} Operator creates the instance with the {es-op}. Set those options under `spec:storage:elasticsearch` in your file.
 
 .Elasticsearch resource configuration parameters
 [options="header"]
@@ -161,7 +162,7 @@ Minimum deployment = 16Gi*
 
 |===
 
-Each Elasticsearch node can operate with a lower memory setting though this is NOT recommended for production deployments. For production use, you must have no less than 16 Gi allocated to each pod by default, but preferably allocate as much as you can, up to 64 Gi per pod.
+You can give each Elasticsearch node less memory, but do not do that in production. In production, give each pod at least 16 Gi by default. Use as much as you can, up to 64 Gi per pod.
 
 .Production storage example
 [source,yaml]
@@ -195,9 +196,9 @@ spec:
   strategy: production
   storage:
     type: elasticsearch
-    elasticsearch:
+      elasticsearch:
       nodeCount: 1
-      storage: # <1>
+      storage:
         storageClassName: gp2
         size: 5Gi
       resources:
@@ -209,27 +210,27 @@ spec:
       redundancyPolicy: ZeroRedundancy
 ----
 
-<1> Persistent storage configuration. In this case AWS `gp2` with `5Gi` size. When no value is specified, {JaegerShortName} uses `emptyDir`. The {es-op} provisions `PersistentVolumeClaim` and `PersistentVolume` which are not removed with {JaegerShortName} instance. You can mount the same volumes if you create a {JaegerShortName} instance with the same name and namespace.
+The `storage` field under `elasticsearch` sets persistent storage. This example uses AWS `gp2` with size `5Gi`. If you omit it, {JaegerShortName} uses `emptyDir`. The {es-op} creates `PersistentVolumeClaim` and `PersistentVolume` objects. They stay when you remove the {JaegerShortName} instance. You can attach the same volumes to a new {JaegerShortName} with the same name and namespace.
 
 
 [id="distributed-tracing-config-external-es_{context}"]
 == Connecting to an existing Elasticsearch instance
 
-You can use an existing Elasticsearch cluster for storage with {DTShortName}. An existing Elasticsearch cluster, also known as an _external_ Elasticsearch instance, is an instance that was not installed by the {JaegerName} Operator or by the {es-op}.
+You can use an existing Elasticsearch cluster for {DTShortName} storage. An _external_ cluster is one that the {JaegerName} Operator or {es-op} did not install.
 
-When you deploy a Jaeger custom resource, the {JaegerName} Operator will not provision Elasticsearch if the following configurations are set:
+When you deploy a Jaeger CR, the Operator does not provision Elasticsearch if any of these are true:
 
 * `spec.storage.elasticsearch.doNotProvision` set to `true`
 * `spec.storage.options.es.server-urls` has a value
-* `spec.storage.elasticsearch.name` has a value, or if the Elasticsearch instance name is `elasticsearch`.
+* `spec.storage.elasticsearch.name` is set, or the Elasticsearch instance name is `elasticsearch`.
 
-The {JaegerName} Operator uses the Elasticsearch instance specified in `spec.storage.elasticsearch.name` to connect to Elasticsearch.
+The {JaegerName} Operator connects to the cluster named in `spec.storage.elasticsearch.name`.
 
-.Restrictions
+*Restrictions*
 
-* You cannot share or reuse a {product-title} logging Elasticsearch instance with {JaegerShortName}. The Elasticsearch cluster is meant to be dedicated for a single {JaegerShortName} instance.
+* Do not share the {product-title} logging Elasticsearch cluster with {JaegerShortName}. Use a cluster that is only for one {JaegerShortName} instance.
 
-The following configuration parameters are for an already existing Elasticsearch instance, also known as an _external_ Elasticsearch instance. In this case, you specify configuration options for Elasticsearch under `spec:storage:options:es` in your custom resource file.
+These parameters apply to an existing cluster (_external_ Elasticsearch). Set them under `spec:storage:options:es` in your CR.
 
 .General ES configuration parameters
 [options="header"]
@@ -611,7 +612,7 @@ spec:
         secretName: quickstart-es-http-certs-public
 ----
 
-The following example shows a Jaeger CR using an external Elasticsearch cluster with TLS CA certificate mounted from a volume and user/password stored in a secret.
+The next example uses an external Elasticsearch cluster. It mounts a TLS CA from a volume. It stores the user name and password in a secret.
 
 .External Elasticsearch example
 [source,yaml]
@@ -626,12 +627,12 @@ spec:
     type: elasticsearch
     options:
       es:
-        server-urls: https://quickstart-es-http.default.svc:9200 # <1>
+        server-urls: https://quickstart-es-http.default.svc:9200
         index-prefix: my-prefix
-        tls: # <2>
+        tls:
           ca: /es/certificates/ca.crt
-    secretName: tracing-secret # <3>
-  volumeMounts: # <4>
+    secretName: tracing-secret
+  volumeMounts:
     - name: certificates
       mountPath: /es/certificates/
       readOnly: true
@@ -640,86 +641,9 @@ spec:
       secret:
         secretName: quickstart-es-http-certs-public
 ----
-<1> URL to Elasticsearch service running in default namespace.
-<2> TLS configuration. In this case only CA certificate, but it can also contain es.tls.key and es.tls.cert when using mutual TLS.
-<3> Secret which defines environment variables ES_PASSWORD and ES_USERNAME. Created by kubectl create secret generic tracing-secret --from-literal=ES_PASSWORD=changeme --from-literal=ES_USERNAME=elastic
-<4> Volume mounts and volumes which are mounted into all storage components.
+The example uses these settings:
 
-ifndef::openshift-rosa,openshift-rosa-hcp,openshift-dedicated[]
-[id="distr-tracing-manage-es-certificates_{context}"]
-= Managing certificates with Elasticsearch
-
-You can create and manage certificates using the {es-op}. Managing certificates using the {es-op} also lets you use a single Elasticsearch cluster with multiple Jaeger Collectors.
-
-:FeatureName: Managing certificates with Elasticsearch
-include::snippets/technology-preview.adoc[leveloffset=+1]
-
-Starting with version 2.4, the {JaegerName} Operator delegates certificate creation to the {es-op} by using the following annotations in the Elasticsearch custom resource:
-
-* `logging.openshift.io/elasticsearch-cert-management: "true"`
-* `logging.openshift.io/elasticsearch-cert.jaeger-<shared-es-node-name>: "user.jaeger"`
-* `logging.openshift.io/elasticsearch-cert.curator-<shared-es-node-name>: "system.logging.curator"`
-
-Where the `<shared-es-node-name>` is the name of the Elasticsearch node. For example, if you create an Elasticsearch node named `custom-es`, your custom resource might look like the following example.
-
-.Example Elasticsearch CR showing annotations
-[source,yaml]
-----
-apiVersion: logging.openshift.io/v1
-kind: Elasticsearch
-metadata:
-  annotations:
-    logging.openshift.io/elasticsearch-cert-management: "true"
-    logging.openshift.io/elasticsearch-cert.jaeger-custom-es: "user.jaeger"
-    logging.openshift.io/elasticsearch-cert.curator-custom-es: "system.logging.curator"
-  name: custom-es
-spec:
-  managementState: Managed
-  nodeSpec:
-    resources:
-      limits:
-        memory: 16Gi
-      requests:
-        cpu: 1
-        memory: 16Gi
-  nodes:
-    - nodeCount: 3
-      proxyResources: {}
-      resources: {}
-      roles:
-        - master
-        - client
-        - data
-      storage: {}
-  redundancyPolicy: ZeroRedundancy
-----
-
-.Prerequisites
-
-* The {SMProductName} Operator is installed.
-* The {logging-title} is installed with default configuration in your cluster.
-* The Elasticsearch node and the Jaeger instances must be deployed in the same namespace. For example, `tracing-system`.
-
-You enable certificate management by setting `spec.storage.elasticsearch.useCertManagement` to `true` in the Jaeger custom resource.
-
-.Example showing `useCertManagement`
-[source,yaml]
-----
-apiVersion: jaegertracing.io/v1
-kind: Jaeger
-metadata:
-  name: jaeger-prod
-spec:
-  strategy: production
-  storage:
-    type: elasticsearch
-    elasticsearch:
-      name: custom-es
-      doNotProvision: true
-      useCertManagement: true
-----
-
-The {JaegerName} Operator sets the Elasticsearch custom resource `name` to the value of `spec.storage.elasticsearch.name` from the Jaeger custom resource when provisioning Elasticsearch.
-
-The certificates are provisioned by the {es-op} and the {JaegerName} Operator injects the certificates.
-endif::openshift-rosa,openshift-rosa-hcp,openshift-dedicated[]
+* `server-urls` — Address of the Elasticsearch service in the default namespace.
+* `tls` — TLS settings. Here only the CA is set. For mutual TLS you can also set `es.tls.key` and `es.tls.cert`.
+* `secretName` — Secret for `ES_PASSWORD` and `ES_USERNAME`. For example: `kubectl create secret generic tracing-secret --from-literal=ES_PASSWORD=changeme --from-literal=ES_USERNAME=elastic`.
+* `volumeMounts` and `volumes` — Mounts used by all storage parts.

@@ -2,10 +2,11 @@
 //
 // * service_mesh/v2x/customizing-installation-ossm.adoc
 
-
+:_mod-docs-content-type: CONCEPT
 [id="ossm-enabling-tracing_{context}"]
 = Enabling and disabling tracing
 
+[role="_abstract"]
 You enable distributed tracing by specifying a tracing type and a sampling rate in the `ServiceMeshControlPlane` resource.
 
 .Default `all-in-one` Jaeger parameters

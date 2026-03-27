@@ -6,7 +6,8 @@
 [id="ossm-config-default_{context}"]
 = Distributed tracing default configuration options
 
-The Jaeger custom resource (CR) defines the architecture and settings to be used when creating the {JaegerShortName} resources. You can modify these parameters to customize your {JaegerShortName} implementation to your business needs.
+[role="_abstract"]
+See the Jaeger custom resource (CR) for a description for building your {JaegerShortName}. Change the fields to match what you need.
 
 .Generic YAML example of the Jaeger CR
 [source,yaml]
@@ -67,7 +68,7 @@ spec:
 
 |`spec:`
 |Specification for the object to be created.
-|Contains all of the configuration parameters for your {JaegerShortName} instance. When a common definition for all Jaeger components is required, it is defined under the `spec` node. When the definition relates to an individual component, it is placed under the `spec/<component>` node.
+|Lists all settings for your {JaegerShortName} instance. Put shared settings under `spec`. Put settings for one part under `spec/<component>`.
 |N/A
 
 |`strategy:`

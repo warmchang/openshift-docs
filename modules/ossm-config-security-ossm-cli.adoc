@@ -6,6 +6,7 @@
 [id="ossm-config-security-ossm-cli_{context}"]
 = Configuring distributed tracing security for service mesh from the command line
 
+[role="_abstract"]
 You can modify the Jaeger resource to configure {JaegerShortName} security for use with {SMproductShortName} from the command line by running the {oc-first}.
 
 .Prerequisites
