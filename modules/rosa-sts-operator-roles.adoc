@@ -8,7 +8,7 @@
 = Cluster-specific Operator IAM role reference
 
 [role="_abstract"]
-Operator roles are used to obtain the temporary permissions required to carry out cluster operations, such as managing back-end storage, cloud ingress controller, and external access to a cluster.
+Some cluster capabilities, including several capabilities provided by default, are managed using Operators. Cluster-specific Operator roles  use the OpenID Connect (OIDC) provider for the cluster to temporarily authenticate Operator access to AWS resources. Use Operator roles to obtain the temporary permissions forcluster operations, such as managing back-end storage, cloud ingress controller, and external access to a cluster.
 
 When you create the Operator roles, the account-wide Operator policies for the matching cluster version are attached to the roles.
 ifdef::openshift-rosa[]

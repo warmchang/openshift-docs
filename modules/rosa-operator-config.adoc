@@ -22,7 +22,7 @@ When you deploy a {product-title} cluster, you must create the Operator IAM role
 
 .Procedure
 
-. To create your Operator roles, run the following command:
+* To create your Operator roles, run the following command:
 +
 [source,terminal]
 ----
