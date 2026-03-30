@@ -6,22 +6,22 @@
 = Setting up the CloudWatch log group
 
 [role="_abstract"]
-If you have logs requiring immediate action or organization, set up an Amazon CloudWatch log group.   
+If you have logs that require immediate action or organization, set up an Amazon CloudWatch log group.
 
 .Prerequisites
 
-* You have created an IAM role and policy. 
+* You have created an IAM role and policy.
 
 .Procedure
 
-. Create the CloudWatch log group by running the following command: 
+. Create the CloudWatch log group by running the following command:
 +
 [source,terminal]
 ----
 $ aws logs create-log-group –log-group-name <your_log_group_name>
 ----
 +
-. In your {product-title} cluster, configure the log forwarder to use the CloudWatch log group by applying the following JSON sample:  
+. In your {product-title} cluster, configure the log forwarder to use the CloudWatch log group by applying the following JSON sample:
 +
 [source,json]
 ----
@@ -50,7 +50,7 @@ $ aws logs create-log-group –log-group-name <your_log_group_name>
 }
 ----
 +
-. Attach the policy to the CloudWatch role by running the following command: 
+. Attach the policy to the CloudWatch role by running the following command:
 +
 [source,terminal]
 ----
@@ -60,43 +60,47 @@ $ aws iam put-role-policy \
     --policy-document file://cloudwatch-policy.json
 ----
 +
-. Configure your {product-title} cluster to forward logs to the CloudWatch log group by applying the following sample YAML list. Specify an application, or group, or both:  
+. Configure your {product-title} cluster to forward logs to the CloudWatch log group by applying the following sample YAML list. Specify an application, or group, or both:
 +
 [source,yaml]
 ----
 cloudwatch:
   cloudwatch_log_role_arn: "arn:aws:iam::123456789012:role/RosaCloudWatch"
   cloudwatch_log_group_name: "rosa-logs"
-  applications: 
+  applications:
     - "<example_app1>"
-  groups: 
+  groups:
     - "<example_group1>"
 ----
++
+where:
+
 <example_app1>:: Add one or more applications. For a list of applications, see the table in "Determining what log groups to use".
-<example_group1>:: Add one or more of the following groups: `api`, `authentication`, `controller manager`, `scheduler`. 
-. Enable the log forwarder to send logs to your {product-title} cluster. 
-.. To enable control plane log forwarding on a new cluster, include the log forwarding configuration by running the following command:  
+<example_group1>:: Add one or more of the following groups: `api`, `authentication`, `controller manager`, `scheduler`.
+
+. Enable the log forwarder to send logs to your {product-title} cluster.
+.. To enable control plane log forwarding on a new cluster, include the log forwarding configuration by running the following command:
 +
 [source,terminal]
 ----
 $ rosa create cluster --log-fwd-config="<path_to_file>.yaml"
 ----
 +
-.. To enable control plane log forwarding on an existing cluster, include the log forwarding configuration by running the following command:    
+.. To enable control plane log forwarding on an existing cluster, include the log forwarding configuration by running the following command:
 +
 [source,terminal]
 ----
 $ rosa create log-forwarder -c <cluster> --log-fwd-config="<path_to_file>.yaml" -o yaml
 ----
-. *Optional:* For an example for forwarding logs to the CloudWatch log group, apply the following sample YAML:  
+. Optional: For an example for forwarding logs to the CloudWatch log group, apply the following sample YAML:
 +
 [source,yaml]
 ----
 cloudwatch:
   cloudwatch_log_role_arn: "cloudwatch-log-role-arn"
   cloudwatch_log_group_name: "cloudwatch-group-name"
-  applications: 
+  applications:
     - "<example_app1>"
-  groups: 
+  groups:
     - "<example_group1>"
 ----

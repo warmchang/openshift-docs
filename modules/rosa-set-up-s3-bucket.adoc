@@ -10,11 +10,11 @@ If you have logs that need long-term storage or large-scale data analysis, set u
 
 .Prerequisites
 
-* If you want to prevent limitations for the managed keys for your S3 bucket, you must have created an IAM role and policy. 
+* If you want to prevent limitations for the managed keys for your S3 bucket, you must have created an IAM role and policy.
 
 .Procedure
 
-. Create the S3 bucket by running the following command: 
+. Create the S3 bucket by running the following command:
 +
 [source,terminal]
 ----
@@ -24,7 +24,7 @@ $ aws s3api create-bucket \
     --create-bucket-configuration LocationConstraint=<cluster_aws_region>
 ----
 +
-. Configure the policy for the S3 bucket by applying the following S3 bucket policy sample:  
+. Configure the policy for the S3 bucket by applying the following S3 bucket policy sample:
 +
 [source,json]
 ----
@@ -48,7 +48,7 @@ $ aws s3api create-bucket \
 }
 ----
 +
-. Attach the policy to the S3 role by running the following command: 
+. Attach the policy to the S3 role by running the following command:
 +
 [source,terminal]
 ----
@@ -57,42 +57,42 @@ $ aws s3api put-bucket-policy \
     --policy file://s3-bucket-policy.json
 ----
 +
-. Configure your {product-title} cluster to forward logs to the S3 bucket by applying the following sample YAML list. Specify an application, or group, or both:    
+. Configure your {product-title} cluster to forward logs to the S3 bucket by applying the following sample YAML list. Specify an application, or group, or both:
 +
 [source,yaml]
 ----
 s3:
   s3_config_bucket_name: "my-log-bucket"
   s3_config_bucket_prefix: "my-bucket-prefix"
-  applications: 
+  applications:
     - "<example_app1>"
-  groups: 
+  groups:
     - "<example_group1>"
 ----
 <example_app1>:: Add one or more applications. For a list of applications, see the table in "Determining what log groups to use".
-<example_group1>:: Add one or more of the following groups: `api`, `authentication`, `controller manager`, `scheduler`. 
-. Enable the log forwarder to send logs to your {product-title} cluster. 
-.. To enable control plane log forwarding on a new cluster, include the log forwarding configuration by running the following command:   
+<example_group1>:: Add one or more of the following groups: `api`, `authentication`, `controller manager`, `scheduler`.
+. Enable the log forwarder to send logs to your {product-title} cluster.
+.. To enable control plane log forwarding on a new cluster, include the log forwarding configuration by running the following command:
 +
 [source,terminal]
 ----
 $ rosa create cluster --log-fwd-config="<path_to_file>.yaml"
 ----
 +
-.. To enable control plane log forwarding on an existing cluster, include the log forwarding configuration by running the following command:    
+.. To enable control plane log forwarding on an existing cluster, include the log forwarding configuration by running the following command:
 +
 [source,terminal]
 ----
 $ rosa create log-forwarder -c <cluster> --log-fwd-config="<path_to_file>.yaml" -o yaml
 ----
 +
-. *Optional:* For an example for forwarding logs to the S3 bucket, apply the following sample YAML:  
+. Optional: For an example for forwarding logs to the S3 bucket, apply the following sample YAML:
 +
 [source,yaml]
 ----
 s3:
   s3_config_bucket_name: "s3-bucket-name"
   s3_config_bucket_prefix: "s3-bucket-prefix"
-  groups: 
+  groups:
     - "<example_group1>"
 ----
