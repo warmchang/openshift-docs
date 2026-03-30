@@ -6,6 +6,7 @@ include::_attributes/common-attributes.adoc[]
 
 toc::[]
 
+[role="_abstract"]
 When the {SMProductShortName} Operator deploys the `ServiceMeshControlPlane` resource, it can also create the resources for distributed tracing. {SMProductShortName} uses Jaeger for distributed tracing.
 
 [IMPORTANT]
@@ -25,10 +26,6 @@ include::modules/ossm-configuring-external-jaeger.adoc[leveloffset=+1]
 
 include::modules/ossm-deployment-best-practices.adoc[leveloffset=+2]
 
-ifdef::openshift-enterprise,openshift-dedicated[]
-For information about configuring persistent storage, see xref:../../storage/understanding-persistent-storage.adoc[Understanding persistent storage] and the appropriate configuration topic for your chosen storage option.
-endif::[]
-
 include::modules/ossm-config-security-ossm.adoc[leveloffset=+2]
 
 include::modules/ossm-config-security-ossm-web.adoc[leveloffset=+3]
@@ -43,6 +40,17 @@ include::modules/ossm-distr-tracing-config-sampling.adoc[leveloffset=+2]
 
 include::modules/ossm-config-storage.adoc[leveloffset=+2]
 
+ifndef::openshift-rosa,openshift-rosa-hcp,openshift-dedicated[]
+include::modules/ossm-config-manage-es-certificates.adoc[leveloffset=+2]
+endif::openshift-rosa,openshift-rosa-hcp,openshift-dedicated[]
+
 include::modules/ossm-config-query.adoc[leveloffset=+2]
 
 include::modules/ossm-config-ingester.adoc[leveloffset=+2]
+
+ifdef::openshift-dedicated[]
+[role="_additional-resources"]
+[id="additional-resources_{context}"]
+== Additional resources
+* xref:../../storage/understanding-persistent-storage.adoc#understanding-persistent-storage[Understanding persistent storage]
+endif::openshift-dedicated[]

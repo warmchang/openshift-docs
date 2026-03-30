@@ -1,0 +1,82 @@
+// Module included in the following assemblies:
+//
+// * service_mesh/v2x/ossm-reference-jaeger.adoc
+
+:_mod-docs-content-type: CONCEPT
+[id="distr-tracing-manage-es-certificates_{context}"]
+= Managing certificates with Elasticsearch
+
+[role="_abstract"]
+You can create and manage certificates with the {es-op}. You can also use one Elasticsearch cluster with more than one Jaeger Collector.
+
+:FeatureName: Managing certificates with Elasticsearch
+include::snippets/technology-preview.adoc[leveloffset=+1]
+
+Starting with version 2.4, the {JaegerName} Operator asks the {es-op} to create certificates. Add these annotations to the Elasticsearch custom resource:
+
+* `logging.openshift.io/elasticsearch-cert-management: "true"`
+* `logging.openshift.io/elasticsearch-cert.jaeger-<shared-es-node-name>: "user.jaeger"`
+* `logging.openshift.io/elasticsearch-cert.curator-<shared-es-node-name>: "system.logging.curator"`
+
+Where the `<shared-es-node-name>` is the name of the Elasticsearch node. For example, if you create an Elasticsearch node named `custom-es`, your custom resource might look like the following example.
+
+.Example Elasticsearch CR showing annotations
+[source,yaml]
+----
+apiVersion: logging.openshift.io/v1
+kind: Elasticsearch
+metadata:
+  annotations:
+    logging.openshift.io/elasticsearch-cert-management: "true"
+    logging.openshift.io/elasticsearch-cert.jaeger-custom-es: "user.jaeger"
+    logging.openshift.io/elasticsearch-cert.curator-custom-es: "system.logging.curator"
+  name: custom-es
+spec:
+  managementState: Managed
+  nodeSpec:
+    resources:
+      limits:
+        memory: 16Gi
+      requests:
+        cpu: 1
+        memory: 16Gi
+  nodes:
+    - nodeCount: 3
+      proxyResources: {}
+      resources: {}
+      roles:
+        - master
+        - client
+        - data
+      storage: {}
+  redundancyPolicy: ZeroRedundancy
+----
+
+*Prerequisites*
+
+* Install the {SMProductName} Operator.
+* Install the {logging-title} with the default configuration in your cluster.
+* Deploy the Elasticsearch node and the Jaeger instances must be deployed in the same namespace. For example, `tracing-system`.
+
+Now, you can enable certificate management by setting `spec.storage.elasticsearch.useCertManagement` to `true` in the Jaeger custom resource.
+
+.Example showing `useCertManagement`
+[source,yaml]
+----
+apiVersion: jaegertracing.io/v1
+kind: Jaeger
+metadata:
+  name: jaeger-prod
+spec:
+  strategy: production
+  storage:
+    type: elasticsearch
+    elasticsearch:
+      name: custom-es
+      doNotProvision: true
+      useCertManagement: true
+----
+
+When it provisions Elasticsearch, the {JaegerName} Operator sets the Elasticsearch CR `name` from `spec.storage.elasticsearch.name` in the Jaeger CR.
+
+The {es-op} creates the certificates. The {JaegerName} Operator adds them to the deployment.

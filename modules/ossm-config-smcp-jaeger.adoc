@@ -6,6 +6,7 @@
 [id="ossm-specifying-jaeger-configuration_{context}"]
 = Specifying Jaeger configuration in the SMCP
 
-You configure Jaeger under the `addons` section of the `ServiceMeshControlPlane` resource. However, there are some limitations to what you can configure in the SMCP.
+[role="_abstract"]
+Set Jaeger options in the `addons` section of the `ServiceMeshControlPlane` resource. The SMCP only supports some settings.
 
-When the SMCP passes configuration information to the {JaegerName} Operator, it triggers one of three deployment strategies: `allInOne`, `production`, or `streaming`.
+When the SMCP sends settings to the {JaegerName} Operator, the Operator picks one of three deployment strategies: `allInOne`, `production`, or `streaming`.

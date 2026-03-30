@@ -6,9 +6,10 @@
 [id="ossm-config-jaeger-collector_{context}"]
 = Jaeger Collector configuration options
 
-The Jaeger Collector is the component responsible for receiving the spans that were captured by the tracer and writing them to persistent Elasticsearch storage when using the `production` strategy, or to AMQ Streams when using the `streaming` strategy.
+[role="_abstract"]
+The Jaeger Collector receives spans from the tracer. When you apply the `production` strategy, the Jaeger Collector sends them to Elasticsearch. When you apply the`streaming` strategy, it sends them to AMQ Streams.
 
-The Collectors are stateless and thus many instances of Jaeger Collector can be run in parallel. Collectors require almost no configuration, except for the location of the Elasticsearch cluster.
+Collectors do not store state. You can run many Collectors at the same time. You only need to set where Elasticsearch runs.
 
 .Parameters used by the Operator to define the Jaeger Collector
 [options="header"]
@@ -49,14 +50,14 @@ The Collectors are stateless and thus many instances of Jaeger Collector can be 
   kafka:
     producer:
       topic: jaeger-spans
-|The `topic` parameter identifies the Kafka configuration used by the Collector to produce the messages, and the Ingester to consume the messages.
+|The `topic` value names the Kafka setup. The Collector writes to it. The Ingester reads from it.
 |Label for the producer.
 
 |options:
   kafka:
     producer:
       brokers: my-cluster-kafka-brokers.kafka:9092
-|Identifies the Kafka configuration used by the Collector to produce the messages. If brokers are not specified, and you have AMQ Streams 1.4.0+ installed, the {JaegerName} Operator will self-provision Kafka.
+|Names the Kafka setup for the Collector. If you omit brokers and AMQ Streams 1.4.0+ is installed, the {JaegerName} Operator creates Kafka for you.
 |
 
 |options:
