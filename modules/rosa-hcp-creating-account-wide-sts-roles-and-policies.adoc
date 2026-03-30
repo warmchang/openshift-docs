@@ -15,7 +15,7 @@ endif::[]
 = Creating the account-wide STS roles and policies
 
 [role="_abstract"]
-Before you create your {product-title} cluster, you must create the required account-wide roles and policies.
+Account-wide roles, like,  `account-roles` in the {rosa-cli-first} are required to create or manage {product-title} clusters. Create these roles by using the {rosa-cli} (`rosa`), regardless of whether you typically use {cluster-manager} or the {rosa-cli} to create and manage your clusters. Before you create your {product-title} cluster, you must create the required account-wide roles and policies.
 
 [NOTE]
 ====

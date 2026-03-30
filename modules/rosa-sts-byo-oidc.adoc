@@ -21,7 +21,7 @@ endif::[]
 = Creating an OpenID Connect configuration
 
 [role="_abstract"]
-When creating a {product-title} cluster, you can create the OpenID Connect (OIDC) configuration before creating your cluster. This configuration is registered to be used with {cluster-manager}.
+{product-title} clusters use OIDC and the AWS Security Token Service (STS) to authenticate Operator access to AWS resources they require to perform their functions. Each production cluster requires its own OIDC configuration. When creating a {product-title} cluster, you can create the OpenID Connect (OIDC) configuration before creating your cluster. 
 
 .Prerequisites
 
