@@ -47,7 +47,7 @@ $ oc get agents -A
 
 * For version 4.21, {hcp} pins all Cluster API images to the `4.20.10-multi` release image for compatibility reasons. {hcp-capital} pins the images when Cluster API deployments are generated. The `4.20.10-multi` image must always be mirrored and available in order for the Cluster API to work with {hcp} version 4.21.
 
-* Intermittent egressIP outages occur when a hosted cluster uses the following combined settings:
+* Intermittent egress IP outages occur when a hosted cluster uses the following combined settings:
 
 ** The service publishing strategy for the `Konnectivity` service is set to `Route`.
 ** The management cluster uses Virtual Router Redundancy Protocol (VRRP) VIP for ingress.
