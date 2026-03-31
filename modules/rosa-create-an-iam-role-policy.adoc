@@ -10,7 +10,7 @@ When you forward your logs to an Amazon CloudWatch group or S3 bucket, those loc
 
 [NOTE]
 ====
-To use a CloudWatch group, you must create an IAM role and policy. To use an S3 bucket, you do not need an IAM role and policy. However, if you do not have an IAM role and policy created for the S3 bucket to use, then the encryption for the S3 bucket is limited to Amazon S3 managed keys, `SSE-S3`.
+To use a CloudWatch group, you must create an IAM role and policy. To use an S3 bucket, you do not need an IAM role and policy. The only supported Amazon S3-managed encryption method is `SSE-S3`.
 ====
 
 .Prerequisites
