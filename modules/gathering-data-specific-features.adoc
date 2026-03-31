@@ -38,9 +38,6 @@ ifndef::openshift-origin[]
 |`registry.redhat.io/multicluster-engine/must-gather-rhel8`
 |Data collection for {hcp}.
 
-|`registry.redhat.io/rhmtc/openshift-migration-must-gather-rhel8:v<installed_version_migration_toolkit>`
-|Data collection for the {mtc-full}.
-
 ifndef::openshift-rosa,openshift-dedicated[]
 |`registry.redhat.io/odf4/odf-must-gather-rhel9:v<installed_version_ODF>`
 |Data collection for {rh-storage-first}.

@@ -1,8 +1,6 @@
 // Module included in the following assemblies:
 //
 // * backup_and_restore/application_backup_and_restore/troubleshooting/velero-cli-tool.adoc
-// * migrating_from_ocp_3_to_4/troubleshooting-3-4.adoc
-// * migration_toolkit_for_containers/troubleshooting-mtc
 
 :_mod-docs-content-type: PROCEDURE
 [id="migration-debugging-velero-resources_{context}"]
