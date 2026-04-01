@@ -19,7 +19,7 @@ You can use {cluster-manager} to schedule recurring, automatic upgrades for z-st
 
 . To schedule recurring upgrades, select *Recurring updates*.
 
-. Provide an administrator’s acknowledgment and click *Approve and continue*. {cluster-manager} does not start scheduled y-stream updates for minor versions without receiving an administrator’s acknowledgment.
+. Provide an administrator's acknowledgment and click *Approve and continue*. {cluster-manager} does not start scheduled y-stream updates for minor versions without receiving an administrator's acknowledgment.
 +
 [IMPORTANT]
 ====

@@ -53,5 +53,5 @@ Before upgrading a Workload Identity Federation (WIF)-enabled {product-title} on
 
 [WARNING]
 ====
-In the event that a CVE or other critical issue to {product-title} is found, all clusters are upgraded within 48 hours of the fix being released. You are notified when the fix is available and informed that the cluster will be automatically upgraded at your latest preferred start time before the 48 hour window closes. You can also upgrade manually at any time before the recurring upgrade starts.
+If a Common Vulnerabilities and Exposures (CVE) or other critical issue to {product-title} is found, all clusters are upgraded within 48 hours of the fix being released. You are notified when the fix is available and informed that the cluster will be automatically upgraded at your latest preferred start time before the 48 hour window closes. You can also upgrade manually at any time before the recurring upgrade starts.
 ====

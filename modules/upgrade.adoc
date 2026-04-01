@@ -21,7 +21,7 @@ You can also set a grace period for how long `PodDisruptionBudget` protected wor
 
 [NOTE]
 ====
-All Kubernetes objects and PVs in each {product-title} cluster are backed up as part of the {product-title} service. Application and application data backups are not a part of the {product-title} service. Ensure you have a backup policy in place for your applications and application data prior to scheduling upgrades.
+All Kubernetes objects and Persistent Volumes (PVs) in each {product-title} cluster are backed up as part of the {product-title} service. Application and application data backups are not a part of the {product-title} service. Ensure you have a backup policy in place for your applications and application data before scheduling upgrades.
 ====
 
 [NOTE]
@@ -34,7 +34,7 @@ When following a scheduled upgrade policy, there might be a delay of an hour or 
 
 Upgrades can be scheduled to occur automatically on a day and time specified by the cluster owner or administrator. Upgrades occur on a weekly basis, unless an upgrade is unavailable for that week.
 
-If you select recurring updates for your cluster, you must provide an administrator’s acknowledgment. {cluster-manager} does not start scheduled y-stream updates for minor versions without receiving an administrator’s acknowledgment.
+If you select recurring updates for your cluster, you must provide an administrator's acknowledgment. {cluster-manager} does not start scheduled y-stream updates for minor versions without receiving an administrator's acknowledgment.
 
 [NOTE]
 ====
@@ -44,9 +44,9 @@ Recurring upgrade policies are optional and if they are not set, the upgrade pol
 [id="upgrade-manual_upgrades_{context}"]
 == Individual upgrades
 
-If you opt for individual upgrades, you are responsible for updating your cluster. If you select an update version that requires approval, you must provide an administrator’s acknowledgment.
+If you opt for individual upgrades, you are responsible for updating your cluster. If you select an update version that requires approval, you must provide an administrator's acknowledgment.
 
-If your cluster version becomes outdated, it will transition to a limited support status. For more information on OpenShift life cycle policies, see xref:../osd_architecture/osd_policy/osd-life-cycle.adoc#osd-life-cycle[{product-title} update life cycle].
+If your cluster version becomes outdated, it changes to a limited support status.
 
 [id="upgrade-notifications_{context}"]
 == Upgrade notifications
@@ -71,7 +71,7 @@ For recurring upgrades, you will also receive email notifications before the upg
 
 [id="wif-upgrades_{context}"]
 == Cluster upgrades with Workload Identity Federation (WIF)
-Before upgrading an {product-title} on {GCP} cluster with WIF authentication type to a newer y-stream version, you must update the WIF configuration to that version as well. Failure to do so before attempting to upgrade the cluster version will result in an error.
+Before upgrading an {product-title} on {GCP} cluster with WIF authentication type to a newer y-stream version, you must update the WIF configuration to that version. Failure to do so before attempting to upgrade the cluster version will result in an error.
 For more information on how to update a WIF configuration, see the  _Additional resources_ section.
 
 [NOTE]
