@@ -11,7 +11,6 @@
 You must have an AWS Virtual Private Cloud (VPC) to create a {product-title} cluster. You can use the following methods to create a VPC:
 
 * Create a VPC using the {rosa-cli}
-* Create a VPC by using a Terraform template
 * Manually create the VPC resources in the AWS console
 
 [NOTE]

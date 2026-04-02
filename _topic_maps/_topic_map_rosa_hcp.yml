@@ -194,6 +194,8 @@ Topics:
     File: rosa-hcp-creating-a-cluster-quickly-terraform
 - Name: Creating ROSA clusters using a custom AWS KMS encryption key
   File: rosa-hcp-creating-cluster-with-aws-kms-key
+- Name: Deploying Red Hat OpenShift Service on AWS clusters using FIPS encryption
+  File: rosa-hcp-creating-cluster-with-fips-encryption
 - Name: Configuring a shared virtual private cloud for ROSA clusters
   File: rosa-hcp-shared-vpc-config
 - Name: Creating a private cluster on ROSA

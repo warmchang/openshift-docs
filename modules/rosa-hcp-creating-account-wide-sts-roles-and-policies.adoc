@@ -9,6 +9,9 @@
 ifeval::["{context}" == "rosa-hcp-egress-zero-install"]
 :egress-lockdown:
 endif::[]
+ifeval::["{context}" == "rosa-hcp-creating-cluster-with-fips-encryption"]
+:fips:
+endif::[]
 
 :_mod-docs-content-type: PROCEDURE
 [id="rosa-sts-creating-account-wide-sts-roles-and-policies_{context}"]
@@ -19,7 +22,7 @@ Account-wide roles, like,  `account-roles` in the {rosa-cli-first} are required 
 
 [NOTE]
 ====
-Specific AWS-managed policies for {product-title} must be attached to each role. Customer-managed policies must not be used with these required account roles. For more information regarding AWS-managed policies for {product-title} clusters, see link:https://docs.aws.amazon.com/ROSA/latest/userguide/security-iam-awsmanpol-account-policies.html[AWS managed policies for ROSA].
+Specific AWS-managed policies for {product-title} must be attached to each role. Customer-managed policies must not be used with these required account roles. For more information regarding AWS-managed policies for {product-title} clusters, see link:https://docs.aws.amazon.com/ROSA/latest/userguide/security-iam-awsmanpol-account-policies.html[AWS managed policies for {product-title}].
 ====
 
 .Prerequisites
@@ -27,17 +30,27 @@ Specific AWS-managed policies for {product-title} must be attached to each role.
 * You have completed the AWS prerequisites for {product-title}.
 * You have available AWS service quotas.
 * You have enabled the {product-title} in the AWS Console.
-* You have installed and configured the latest ROSA CLI (`rosa`) on your installation host.
-* You have logged in to your Red{nbsp}Hat account by using the ROSA CLI.
+* You have installed and configured the latest {rosa-cli-first} on your installation host.
+* You have logged in to your Red{nbsp}Hat account by using the {rosa-cli}.
 
 .Procedure
 
 . If they do not exist in your AWS account, create the required account-wide STS roles and attach the policies by running the following command:
 +
+ifndef::fips[]
 [source,terminal]
 ----
 $ rosa create account-roles --hosted-cp
 ----
+endif::fips[]
+ifdef::fips[]
+[source,terminal]
+----
+$ export PREFIX=<custom_prefix>; rosa create account-roles --hosted-cp --prefix $PREFIX
+----
++
+When using FIPS encryption, you need to set a custom prefix instead of using the default `ManagedOpenShift` prefix.
+endif::fips[]
 
 ifdef::egress-lockdown[]
 . Ensure that the your worker role has the correct AWS policy by running the following command:
@@ -54,6 +67,7 @@ $ aws iam attach-role-policy \
 --
 endif::egress-lockdown[]
 
+ifndef::fips[]
 . Optional: Set your prefix as an environmental variable by running the following command:
 +
 [source,terminal]
@@ -74,9 +88,16 @@ For example:
 ----
 ManagedOpenShift
 ----
-+
-For more information regarding AWS managed IAM policies for {product-title}, see link:https://docs.aws.amazon.com/ROSA/latest/userguide/security-iam-awsmanpol.html[AWS managed IAM policies for ROSA].
+endif::fips[]
 
+[role="_additional-resources"]
+.Additional resources
+
+* link:https://docs.aws.amazon.com/ROSA/latest/userguide/security-iam-awsmanpol.html[AWS managed IAM policies for {product-title}]
+
+ifeval::["{context}" == "rosa-hcp-creating-cluster-with-fips-encryption"]
+:!fips:
+endif::[]
 ifeval::["{context}" == "rosa-hcp-egress-zero-install"]
 :!egress-lockdown:
 endif::[]

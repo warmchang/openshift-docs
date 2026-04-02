@@ -63,6 +63,8 @@ ifdef::openshift-rosa-hcp[]
 |===
 | Compliance | {hcp-title-first}
 
+| FIPS | Yes
+
 | HIPAA Qualified^[1]^ | Yes
 
 | ISO 27001 | Yes
