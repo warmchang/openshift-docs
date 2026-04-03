@@ -8,4 +8,6 @@
 [role="_abstract"]
 The following items were added during the second quarter of 2026.
 
-* **Users can create FIPS-encrypted Red Hat OpenShift Service on AWS clusters**. With this update, you can create Red Hat OpenShift Service on AWS clusters with Federal Information Processing Standards (FIPS) encryption that adhere to the highest data security levels.
+ifdef::openshift-rosa-hcp[]
+* **Users can create FIPS-encrypted Red Hat OpenShift Service on AWS clusters**. With this update, you can create Red Hat OpenShift Service on AWS clusters with Federal Information Processing Standards (FIPS) encryption that adhere to the highest data security levels. For more information, see link:https://docs.redhat.com/en/documentation/red_hat_openshift_service_on_aws/4/html-single/install_clusters/index#rosa-hcp-creating-cluster-with-fips-encryption[Deploying {product-title} clusters using FIPS encryption].
+endif::openshift-rosa-hcp[]
