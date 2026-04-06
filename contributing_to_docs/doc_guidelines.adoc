@@ -435,7 +435,10 @@ Use a gerund in the procedure title, such as "Creating".
 
 [IMPORTANT]
 ====
-Most modules cannot contain xrefs. If you must include a link in a module, use the `link` attribute type and treat it as an external reference. The only exception is release notes modules, which may contain xrefs as long as the module is included in only one location.
+Most modules cannot contain xrefs. However, the following situations have an exception to allow xrefs in modules as long as the module is only ever included once from one assembly:
+
+* Release notes modules
+* Modules created from assembly content for DITA migration compliance
 
 // TODO: Check w/ Jeana on updating this:
 Use version attributes for the maintainability of xrefs and links whenever you can.
@@ -835,7 +838,10 @@ In OpenShift Container Platform docs:
 +
 [IMPORTANT]
 ====
-Exception: You may use cross-references (`xref`) in modules only for release notes. The module must only ever be included once from one assembly.
+The following situations have an exception to allow xrefs in modules as long as the module is only ever included once from one assembly:
+
+* Release notes modules
+* Modules created from assembly content for DITA migration compliance
 ====
 * All links to external websites are created by using the `link` attribute.
 * Links between different distributions, or _distros_, such as from ROSA to OpenShift Container Platform, are external links and not cross-references. These external links use `link` instead of `xref` and must be in distro-specific files or a conditionalized state to apply to the relevant distros.
@@ -928,7 +934,10 @@ xref:../../architecture/networking/routes.adoc#architecture-core-concepts-routes
 
 [IMPORTANT]
 ====
-In OpenShift docs, you can normally only use `xref` in assemblies, not in modules. The only exception is release notes modules, which may contain xrefs as long as the module is included in only one location.
+In OpenShift docs, you can normally only use `xref` in assemblies, not in modules. However, the following situations have an exception to allow xrefs in modules as long as the module is only ever included once from one assembly:
+
+* Release notes modules
+* Modules created from assembly content for DITA migration compliance
 ====
 
 .Markup example of cross-referencing
