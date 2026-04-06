@@ -24,7 +24,7 @@ ifdef::openshift-dedicated[]
 If you are using a firewall to control egress traffic from {product-title}, you must configure your firewall to grant access to the certain domain and port combinations below. {product-title} requires this access to provide a fully managed OpenShift service.
 endif::openshift-dedicated[]
 
-== Domains for installation packages and tools
+.Domains for installation packages and tools
 [cols="6,1,6",options="header"]
 |===
 |Domain | Port | Function
@@ -123,7 +123,7 @@ ifdef::openshift-rosa[]
 endif::openshift-rosa[]
 |===
 
-== Domains for telemetry
+.Domains for telemetry
 [cols="6,1,6",options="header"]
 |===
 |Domain | Port | Function
@@ -173,7 +173,7 @@ endif::openshift-rosa[]
 
 Managed clusters require enabling telemetry to allow Red{nbsp}Hat to react more quickly to problems, better support the customers, and better understand how product upgrades impact clusters. For more information about how remote health monitoring data is used by Red{nbsp}Hat, see _About remote health monitoring_ in the _Additional resources_ section.
 
-== Domains for Amazon Web Services (AWS) APIs
+.Domains for Amazon Web Services (AWS) APIs
 [cols="6,1,6",options="header"]
 |===
 |Domain | Port | Function
@@ -233,7 +233,7 @@ Alternatively, if you choose to not use a wildcard for Amazon Web Services (AWS)
 |Allows the assignment of metadata about AWS resources in the form of tags.
 |===
 
-== Domains for OpenShift
+.Domains for OpenShift
 [cols="6,1,6",options="header"]
 |===
 |Domain | Port | Function
@@ -247,7 +247,7 @@ Alternatively, if you choose to not use a wildcard for Amazon Web Services (AWS)
 |Used to check if updates are available for the cluster.
 |===
 
-== Domains for your site reliability engineering (SRE) and management
+.Domains for your Site Reliability Engineering (SRE) and management
 [cols="6,1,6",options="header"]
 |===
 |Domain | Port | Function

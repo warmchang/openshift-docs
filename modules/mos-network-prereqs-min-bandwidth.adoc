@@ -10,11 +10,4 @@
 = Networking prerequisites
 
 [role="_abstract"]
-The following sections detail the requirements to create your cluster.
-
-[id="mos-network-prereqs-min-bandwidth_{context}"]
-== Minimum bandwidth
-
-During cluster deployment, {product-title} requires a minimum bandwidth of 120{nbsp}Mbps between cluster infrastructure and the public internet or private network locations that provide deployment artifacts and resources. When network connectivity is slower than 120{nbsp}Mbps (for example, when connecting through a proxy) the cluster installation process times out and deployment fails.
-
-After cluster deployment, network requirements are determined by your workload. However, a minimum bandwidth of 120{nbsp}Mbps helps to ensure timely cluster and operator upgrades.
+During cluster deployment, {product-title} requires a minimum bandwidth of 120{nbsp}Mbps between cluster infrastructure and the public internet or private network locations that give deployment resources. When network connectivity is slower than 120{nbsp}Mbps, the cluster installation process times out, and deployment fails. After cluster deployment, your workloads determine network requirements. A minimum bandwidth of 120{nbsp}Mbps helps to ensure timely cluster and Operator upgrades.
