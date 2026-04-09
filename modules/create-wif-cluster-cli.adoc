@@ -17,7 +17,7 @@ You can create an {product-title} on {GCP} cluster with Workload Identity Federa
 * You have downloaded the latest version of the {cluster-manager} CLI (`ocm`) for your operating system from the link:https://console.redhat.com/openshift/downloads[Downloads] page on {cluster-manager}.
 
 .Procedure
-You can create a WIF cluster using the `interactive` mode or the `non-interactive` mode.
+You can create a WIF cluster using the `interactive` or the `non-interactive` mode.
 
 In `interactive` mode, cluster attributes are displayed automatically as prompts during the creation of the cluster. You enter the values for those prompts based on specified requirements in the fields provided.
 
@@ -36,12 +36,8 @@ where:
 
 `--interactive`:: Specifies that the cluster is created in interactive mode. This mode prompts you to enter the required configuration options during cluster creation. If you do not include this parameter, the cluster is created in `non-interactive` mode by default.
 +
-** Create a cluster in non-interactive mode by running the following command:
-+
-[NOTE]
-====
-The following example is made up optional and required parameters and may differ from your `non-interactive` mode command. Parameters not identified as optional are required. For additional details about these and other parameters, run the `ocm create cluster --help flag` command in you terminal window.
-====
+** Create a cluster in non-interactive mode by running the following command.
+The following example is made up of optional and required parameters and might differ from your `non-interactive` mode command. Parameters not identified as optional are required. For additional details about these and other parameters, run the `ocm create cluster --help flag` command in you terminal window.
 +
 [source,terminal]
 ----
@@ -49,6 +45,7 @@ $ ocm create cluster <cluster_name> \
 --provider=gcp \
 --ccs=true \
 --wif-config <wif_name> \
+--dns-zone-id <dns_zone_id> \
 --region <gcp_region> \
 --subscription-type=marketplace-gcp \
 --marketplace-gcp-terms=true \
@@ -71,9 +68,11 @@ where:
 
 `--wif-config <wif_name>`:: Specifies the name of the WIF configuration to assign to the cluster. Replace `<wif_name>` with the name of your WIF configuration.
 
+`--dns-zone-id <dns_zone_id>`:: Optional. Specifies the DNS zone ID to use for the cluster. Replace `<dns_zone_id>` with the ID of your DNS zone. For more information about this parameter, see _Creating a managed DNS zone_ in the _Additional resources_ section.
+
 `--region <gcp_region>`:: Specifies the {GCP} region where the new cluster will be deployed. Replace `<gcp_region>` with the desired {GCP} region.
 
-`--subscription-type=marketplace-gcp`:: Specifies the subscription billing model for the cluster. This parameter is optional.
+`--subscription-type=marketplace-gcp`:: Optional. Specifies the subscription billing model for the cluster.
 
 `--marketplace-gcp-terms=true`:: Confirms that you have accepted the {GCP} Marketplace terms and agreements for the OpenShift Dedicated product listing. This parameter is required if you provided a value of `marketplace-gcp` for the `subscription-type` parameter.
 
