@@ -9,9 +9,14 @@
 {product-title} offers the following worker node types and sizes on {gcp-full} that are chosen to have a common CPU and memory capacity that are the same as other cloud instance types:
 [NOTE]
 ====
-`a2`, `a3`, `e2`, `c3`, `n4`, `c2d`, `c3d`, `n2d`, and `t2d` instance types are available for Customer Cloud Subscription (CCS) only.
 
-`c3` and `n4` instance types are available for {osd} version 4.18 and later.
+`a2`, `a3`, `e2`, `c3`, `n4`, `c2d`, `c3d`, `g2`, `g4`, `n2d`, and `t2d` instance types are available for clusters created with the Customer Cloud Subscription (CCS) infrastructure type only.
+
+`custom`, `c2`, and `n2` instance types are available for clusters created with both CCS and Red{nbsp}Hat cloud account infrastructure types.
+
+`g2` and `g4` instance types are available for {product-title} version 4.21 and later.
+
+`c3` and `n4` instance types are available for {product-title} version 4.18 and later.
 ====
 
 .General purpose
@@ -197,10 +202,6 @@
 * n4-highcpu-48 (48 vCPU, 96 GiB)
 * n4-highcpu-64 (64 vCPU, 128 GiB)
 * n4-highcpu-80 (80 vCPU, 160 GiB)
-
-
-
-
 ====
 
 .Accelerated computing
@@ -221,4 +222,19 @@
 * a3-highgpu-8g (208 vCPU, 1872 GiB)
 * a3-megagpu-8g (208 vCPU, 1872 GiB)
 * a3-edgegpu-8g (208 vCPU, 1872 GiB)
+* g2-standard-4 (4 vCPU, 16 GiB)
+* g2-standard-8 (8 vCPU, 32 GiB)
+* g2-standard-12 (12 vCPU, 48 GiB)
+* g2-standard-16 (16 vCPU, 64 GiB)
+* g2-standard-24 (24 vCPU, 96 GiB)
+* g2-standard-32 (32 vCPU, 128 GiB)
+* g2-standard-48 (48 vCPU, 192 GiB)
+* g2-standard-96 (96 vCPU, 384 GiB)
+* g4-standard-6 (6 vCPU, 22 GiB)
+* g4-standard-12 (12 vCPU, 45 GiB)
+* g4-standard-24 (24 vCPU, 90 GiB)
+* g4-standard-48 (48 vCPU, 180 GiB)
+* g4-standard-96 (96 vCPU, 360 GiB)
+* g4-standard-192 (192 vCPU, 720 GiB)
+* g4-standard-384 (384 vCPU, 1440 GiB)
 ====

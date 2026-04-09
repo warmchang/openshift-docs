@@ -8,6 +8,8 @@
 [role="_abstract"]
 The following items were added during the second quarter of 2026.
 
+* **Support for new {gcp-short} instances.** You can now create clusters with `g2` and `g4` instance types on {product-title} version 4.21 and later. For more information, see link:https://docs.redhat.com/en/documentation/openshift_dedicated/4/html/introduction_to_openshift_dedicated/policies-and-service-definition#gcp-compute-types_osd-service-definition[{gcp-full} instance types].
+
 * **{product-title} managed DNS zones now available.**
 You can now create and manage your own DNS zones for Shared VPC deployments on {GCP}, giving you greater control over your {product-title} cluster's network configuration and security. This new capability allows you to maintain ownership of your DNS infrastructure while still leveraging the powerful features of {product-title}.
 +
@@ -18,3 +20,4 @@ To support these managed DNS zones, additional permissions have been added to th
 For more information about managed DNS zones for {product-title} on {GCP}, see link:https://docs.redhat.com/en/documentation/openshift_dedicated/4/html/planning_your_environment/gcp-ccs#ocm-cli-create-managed-dns-zone_gcp-ccs[Creating a managed DNS zone].
 
 * **Support for new {gcp-short} instances.** {product-title} version 4.18 and later now supports `c2d`, `c3d`, `n2d` and `t2d` instance types on {gcp-full}. For more information, see link:https://docs.redhat.com/en/documentation/openshift_dedicated/4/html/introduction_to_openshift_dedicated/policies-and-service-definition#gcp-compute-types_osd-service-definition[{gcp-full} compute types].
+
