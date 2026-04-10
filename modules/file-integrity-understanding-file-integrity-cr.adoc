@@ -12,7 +12,7 @@ Each `FileIntegrity` CR is backed by a daemon set running AIDE on the nodes matc
 
 [NOTE]
 ====
-For all-in-one control plane and worker nodes, separate `FileIntegrity` CRs that use `node-role.kubernetes.io/master` and `node-role.kubernetes.io/worker` selectors can schedule multiple AIDE daemon sets on the same nodes, because schedulable control plane nodes often have both labels. Redundant scans waste resources and can complicate file integrity monitoring. You can avoid this by using a single `FileIntegrity` CR whose `nodeSelector` targets each node only once for your cluster layout.
+For all-in-one control plane and worker nodes, separate `FileIntegrity` CRs that use `node-role.kubernetes.io/master` and `node-role.kubernetes.io/worker` selectors can schedule many daemon sets that run Advanced Intrusion Detection Environment (AIDE) on the same nodes, because schedulable control plane nodes often have both labels. Redundant scans waste resources and can complicate file integrity monitoring. You can avoid this by using a single `FileIntegrity` CR whose `nodeSelector` targets each node only once for your cluster layout.
 ====
 
 .Procedure
