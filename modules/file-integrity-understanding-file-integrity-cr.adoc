@@ -10,6 +10,11 @@ An instance of a `FileIntegrity` custom resource (CR) represents a set of contin
 
 Each `FileIntegrity` CR is backed by a daemon set running AIDE on the nodes matching the `FileIntegrity` CR specification.
 
+[NOTE]
+====
+For all-in-one control plane and worker nodes, separate `FileIntegrity` CRs that use `node-role.kubernetes.io/master` and `node-role.kubernetes.io/worker` selectors can schedule multiple AIDE daemon sets on the same nodes, because schedulable control plane nodes often have both labels. Redundant scans waste resources and can complicate file integrity monitoring. You can avoid this by using a single `FileIntegrity` CR whose `nodeSelector` targets each node only once for your cluster layout.
+====
+
 .Procedure
 
 . Create the following example `FileIntegrity` CR named `worker-fileintegrity.yaml` to enable scans on worker nodes:
