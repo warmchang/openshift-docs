@@ -8,7 +8,7 @@ include::_attributes/attributes-openshift-dedicated.adoc[]
 toc::[]
 
 [role="_abstract"]
-For help with the installation of {product-title} clusters, see the following sections.
+Troubleshoot the installation of {product-title} clusters by completing the following instructions.
 
 include::modules/rosa-troubleshooting-installing.adoc[leveloffset=+1]
 

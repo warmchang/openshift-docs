@@ -7,6 +7,6 @@ include::_attributes/attributes-openshift-dedicated.adoc[]
 toc::[]
 
 [role="_abstract"]
-You can troubleshoot expired offline access tokens that prevent access to your {product-title} cluster.
+Troubleshoot expired offline access tokens that prevent access to your {product-title} cluster.
 
 include::modules/rosa-troubleshooting-expired-token.adoc[leveloffset=+1]

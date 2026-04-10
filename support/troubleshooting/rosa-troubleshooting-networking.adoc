@@ -8,6 +8,6 @@ include::_attributes/attributes-openshift-dedicated.adoc[]
 toc::[]
 
 [role="_abstract"]
-This document describes how to troubleshoot networking errors.
+Troubleshoot networking errors by completing the following instructions.  
 
 include::modules/rosa-troubleshooting-networking-nlb.adoc[leveloffset=+1]
