@@ -6,7 +6,7 @@
 = Understanding the OSToy UI
 
 [role="_abstract"]
-The following image shows a breakdown of the OSToy application.
+You can explore the different components of the OSToy application by reviewing its architectural breakdown. Understanding this structure prepares you to successfully deploy and manage its microservices.
 
 image::ostoy-homepage.png[Preview of the OSToy homepage]
 

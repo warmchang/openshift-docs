@@ -6,7 +6,7 @@
 = Viewing the application
 
 [role="_abstract"]
-You can view the deployed OSToy application by going to the application's URL.
+After you deploy OSToy, you can view the application by accessing its URL.
 
 .Procedure
 . Copy the `ostoy-route-ostoy.apps.<your-rosa-cluster>.abcd.p1.openshiftapps.com` URL output from the previous step.

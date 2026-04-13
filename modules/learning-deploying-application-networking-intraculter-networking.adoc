@@ -6,7 +6,7 @@
 = Configuring intra-cluster networking
 
 [role="_abstract"]
-You can view your networking configurations in your OSToy application.
+You can view your networking configurations such as internal ClusterIP addresses and microservices in your OSToy application. These isolated processes help improve application stability and demonstrate how internal web requests are handled.
 
 .Procedure
 . In the OSToy application web console, click *Networking* in the left menu. 

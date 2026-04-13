@@ -6,7 +6,7 @@
 = Enabling autoscaling for an existing machine pool using the UI
 
 [role="_abstract"]
-Cluster autoscaling can be enabled at cluster creation by checking the *Enable autoscaling* checkbox when creating machine pools.
+You can enable cluster autoscaling when creating a cluster to ensure your environment automatically adapts to workload demands. To do this, select the *Enable autoscaling* checkbox when you create machine pools.
 
 .Procedure
 . Go to the *Machine pools* tab and click the three dots in the right..

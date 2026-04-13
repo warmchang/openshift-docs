@@ -6,7 +6,7 @@
 = Checking the installation status
 
 [role="_abstract"]
-You can check the status of your cluster by using the {rosa-cli-first}.
+To verify that your environment is operating correctly and to monitor the health of your deployments, youu can check the status of your cluster. You can quickly perform this check by using the {rosa-cli-first}.
 
 .Procedure
 . Run one of the following commands to check the status of the cluster:

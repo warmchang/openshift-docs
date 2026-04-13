@@ -6,7 +6,7 @@
 = Viewing the revived pod
 
 [role="_abstract"]
-You can check the status of your revived pod within {cluster-manager-url}.
+You can check the status of your revived pod within {cluster-manager-url}. Check the status to see how quickly the system revives the pod and recovers from unexpected failures.
 
 .Procedure
 * From the {ocp-short} web console, quickly switch to the *Deployments* screen. You will see that the pod turns yellow, which means it is down. It should quickly revive and turn blue. The revival process happens quickly.

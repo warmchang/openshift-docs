@@ -6,7 +6,7 @@
 = Setting up an IDP with GitHub
 
 [role="_abstract"]
-You can use GitHub to set up your identity provider.
+To streamline the login process and allow users to authenticate with their existing credentials, configure GitHub as an identity provider. This integration simplifies access management across your organization by centralizing user authentication.
 
 .Procedure
 . Log in to your GitHub account.

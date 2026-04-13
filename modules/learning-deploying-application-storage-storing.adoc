@@ -6,7 +6,7 @@
 = Storing your file
 
 [role="_abstract"]
-You can store files within your application from the OSToy application's console.
+To demonstrate the persistent storage capabilities of the cluster, store files within your application by using the OSToy console.
 
 .Procedure
 . In the OSToy app console, click *Persistent Storage* in the left menu.

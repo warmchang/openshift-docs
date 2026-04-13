@@ -6,7 +6,7 @@
 = Creating a new project
 
 [role="_abstract"]
-You can use the {oc-first} to create a new project within your cluster.
+You can use the {oc-first} to create a new project within your cluster. To get started with the integrated Source-to-Image (S2I) deployment process, create a new project within your cluster by using the {oc-first}.
 
 .Procedure
 * Create a new project from the CLI by running the following command:

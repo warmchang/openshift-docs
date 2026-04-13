@@ -6,7 +6,7 @@
 = Fork the OSToy repository
 
 [role="_abstract"]
-To trigger automated builds based on changes to the source code, you must set up a GitHub webhook. The webhook will trigger S2I builds when you push code into your GitHub repository. 
+To trigger automated builds based on changes to the source code, you must fork the OSToy repository and set up a GitHub webhook. The webhook triggers S2I builds when you push code into your GitHub repository. 
 
 .Procedure
 * To set up the webhook, you must first link:https://github.com/openshift-cs/ostoy/fork[Create a new fork].

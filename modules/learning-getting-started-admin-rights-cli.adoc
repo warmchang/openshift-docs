@@ -6,7 +6,7 @@
 = Using the {rosa-cli}
 
 [role="_abstract"]
-You can use the {rosa-cli} to grant your user roles administrative access.
+To allow specific users to manage your environment, you can use the {rosa-cli} to grant administrative access to your user roles. Assigning these permissions ensures that authorized team members can effectively configure and monitor your cluster's resources.
 
 Red{nbsp}Hat offers two types of admin privileges:
 

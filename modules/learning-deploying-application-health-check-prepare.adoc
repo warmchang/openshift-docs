@@ -6,7 +6,7 @@
 = Preparing your desktop
 
 [role="_abstract"]
-You can set up your OSToy application from {cluster-manager-url}.
+To prepare your desktop for the health check procedures, access your OSToy application from {cluster-manager-url}.
 
 
 .Procedure

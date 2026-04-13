@@ -6,7 +6,7 @@
 = Ending the session
 
 [role="_abstract"]
-You can end your session from your terminal.
+To securely close your workspace and free up system resources, end your session from the terminal.
 
 .Procedure
 * Type `exit` in your terminal to quit the session and return to the CLI.
