@@ -7,7 +7,7 @@ include::_attributes/attributes-openshift-dedicated.adoc[]
 
 toc::[]
 [role="_abstract"]
-See how Kubernetes responds to pod failure by intentionally crashing your pod and making it unresponsive to the Kubernetes liveness probes.
+You can see how Kubernetes responds to pod failure by purposely crashing your pod and making it unresponsive to Kubernetes liveness probes. Observing this failure allows you to verify how the cluster automatically handles recovery.
 
 include::modules/learning-deploying-application-health-check-prepare.adoc[leveloffset=+1]
 include::modules/learning-deploying-application-health-check-crash-pod.adoc[leveloffset=+1]
