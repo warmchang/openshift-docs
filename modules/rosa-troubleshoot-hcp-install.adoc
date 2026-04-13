@@ -16,11 +16,11 @@ The following table lists {product-title} installation error codes and what you 
 
 | OCM3999
 | Unknown error.
-| Check the cluster installation logs for more details, or delete this cluster and retry cluster installation. If this issue persists, contact support by logging in to the link:https://access.redhat.com/support/cases/#/case/list[*Customer Support* page].
+| Check the cluster installation logs for more details, or delete this cluster and retry cluster installation. If this issue persists, contact Red{nbsp}Hat support. See _Additional resources_ for more information.
 
 | OCM5001
 | {product-title} cluster provision has failed.
-| Check the cluster installation logs for more details, or delete this cluster and retry cluster installation. If this issue persists, contact support by logging in to the link:https://access.redhat.com/support/cases/#/case/list[*Customer Support* page].
+| Check the cluster installation logs for more details, or delete this cluster and retry cluster installation. If this issue persists, contact Red{nbsp}Hat support. See _Additional resources_ for more information.
 
 | OCM5002
 | The maximum resource tag size of 25 has been exceeded.
@@ -67,3 +67,7 @@ For more information about {product-title} IAM role resources, see _ROSA IAM rol
 | Try your cluster installation in another region or retry cluster installation.
 
 |===
+
+[role="_additional-resources"]
+.Additional resources
+* link:https://access.redhat.com/support/cases/#/case/list[Red Hat Customer Support]

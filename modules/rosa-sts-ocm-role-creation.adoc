@@ -8,7 +8,7 @@
 = Creating an ocm-role IAM role
 
 [role="_abstract"]
-You create your `ocm-role` IAM roles by using the {rosa-cli-first}. If you want to create and manage clusters using only the {rosa-cli-first} and the OpenShift CLI (`oc`), you do not need these roles. You only need these roles when you want to use {cluster-manager} to create and manage clusters.
+You create your `ocm-role` IAM roles by using the {rosa-cli-first}. If you want to create and manage clusters by using only the {rosa-cli-first} and the OpenShift CLI (`oc`), you do not need these roles. You only need these roles when you want to use {cluster-manager} to create and manage clusters.
 
 .Prerequisites
 
@@ -33,7 +33,7 @@ $ rosa create ocm-role --admin
 ----
 +
 This command allows you to create the role by specifying specific attributes. The following example output shows the "auto mode" selected, which lets the {rosa-cli} (`rosa`) create your Operator roles and policies.
-See "Methods of account-wide role creation" for more information. The following example shows what your creation flow may look like.
+See "Methods of account-wide role creation" for more information. The following example shows what your creation flow might look like.
 +
 [source,terminal]
 ----
@@ -65,8 +65,8 @@ You do not see this prompt if you used the `--admin` option.
 +
 `Permissions boundary ARN (optional)`:: The Amazon Resource Name (ARN) of the policy to set permission boundaries.
 `Role Path (optional)`:: Specify an IAM path for the user name.
-`Role creation mode`:: Choose the method to create your AWS roles. Using `auto`, the {rosa-cli} generates and links the roles and policies. In the `auto` mode, you receive some different prompts to create the AWS roles.
-`Create the 'ManagedOpenShift-OCM-Role-182' role?`:: The `auto` method asks if you want to create a specific `ocm-role` using your prefix.
+`Role creation mode`:: Choose the method to create your AWS roles. By using `auto`, the {rosa-cli} generates and links the roles and policies. In the `auto` mode, you receive some different prompts to create the AWS roles.
+`Create the 'ManagedOpenShift-OCM-Role-182' role?`:: The `auto` method asks if you want to create a specific `ocm-role` by using your prefix.
 `OCM Role ARN`:: Confirm that you want to associate your IAM role with your {cluster-manager}.
 `Link the 'arn:aws:iam::<ARN>:role/ManagedOpenShift-OCM-Role-182' role with organization '<AWS ARN>'?`:: Links the created role with your AWS organization.
 --

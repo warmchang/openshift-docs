@@ -62,12 +62,12 @@ Run the following command to verify you have the available quota on your AWS acc
 $ rosa verify quota
 ----
 +
-AWS quotas change based on region. Be sure you are verifying your quota for the correct AWS region. If you need to increase your quota, navigate to your link:https://aws.amazon.com/console/[AWS console], and request a quota increase for the service that failed.
+AWS quotas change based on region. Be sure you are verifying your quota for the correct AWS region. If you need to increase your quota, go to your link:https://aws.amazon.com/console/[AWS console], and request a quota increase for the service that failed.
 
 * AWS notification emails:
 +
 When creating a cluster, the {product-title} service creates small instances in all supported regions. This check ensures the AWS account being used can deploy to each supported region.
 +
-For AWS accounts that are not using all supported regions, AWS may send one or more emails confirming that "Your Request For Accessing AWS Resources Has Been Validated". Typically the sender of this email is aws-verification@amazon.com.
+For AWS accounts that are not using all supported regions, AWS might send one or more emails confirming that "Your Request For Accessing AWS Resources Has Been Validated." Typically the sender of this email is aws-verification@amazon.com.
 +
 This is expected behavior as the {product-title} service is validating your AWS account configuration.

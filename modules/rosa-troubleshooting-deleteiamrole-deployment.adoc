@@ -6,9 +6,8 @@
 = Troubleshooting cluster creation with a DeletingIAMRole error
 
 [role="_abstract"]
-If a cluster creation action fails, you might receive the following error message.
+If a cluster creation action fails, you might receive the following error message:
 
-.Example output
 [source,terminal]
 ----
 OCM3031: Error deleting IAM Role (role-name): DeleteConflict: Cannot delete entity, must detach all policies first.\nlevel=error msg=\tstatus code: 409
@@ -25,7 +24,8 @@ The cluster's installation was blocked as the cluster installer was not able to 
 $ aws iam list-attached-role-policies --role-name <role-name>
 ----
 +
-.Example output
+This command returns output similar to the following:
++
 [source,terminal]
 ----
 {

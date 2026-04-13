@@ -8,13 +8,15 @@
 [role="_abstract"]
 If a cluster creation action fails, you might receive the following error messages.
 
-.Example install logs output
+The following example shows the install logs output:
+
 [source,terminal]
 ----
 Failed to create cluster: Error creating NAT Gateway: NatGatewayLimitExceeded: Performing this operation would exceed the limit of 5 NAT gateways.
 ----
 
-.Example {cluster-manager} output
+The following example shows the {cluster-manager} output:
+
 [source,terminal]
 ----
 Provisioning Error Code:    OCM3019

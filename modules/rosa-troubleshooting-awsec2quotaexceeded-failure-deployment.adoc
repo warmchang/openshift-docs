@@ -8,7 +8,8 @@
 [role="_abstract"]
 If a cluster creation action fails, you might receive the following error message.
 
-.Example output
+The following example shows the output:
+
 [source,terminal]
 ----
 Provisioning Error Code:    OCM3042
@@ -33,7 +34,7 @@ This error indicates that you have reached the EC2 quota limit for the region me
 .. If you have a CNAME record for your domain that points to your load balancer, point it to a new location and wait for the DNS change to take effect before deleting your load balancer.
 .. Open the link:https://console.aws.amazon.com/ec2/[Amazon EC2 console].
 .. On the navigation pane, choose **Instances**.
-.. Select the instance, and choose **Terminate instance**.
+.. Select the instance, and choose **Stop instance**.
 
 
 
