@@ -7,7 +7,7 @@ include::_attributes/attributes-openshift-dedicated.adoc[]
 
 toc::[]
 [role="_abstract"]
-{rosa-classic-first} and {product-title} support storing persistent volumes with either link:https://aws.amazon.com/ebs/[Amazon Web Services (AWS) Elastic Block Store (EBS)] or link:https://aws.amazon.com/efs/[AWS Elastic File System (EFS)].
+Configure persistent volumes for your {product-title} clusters by using Amazon Web Services (AWS) Elastic Block Store (EBS) or AWS Elastic File System (EFS). Utilizing these storage options allows you to safely retain and manage your containerized application data.
 
 include::modules/learning-deploying-application-storage-using-persistent-volumes.adoc[leveloffset=+1]
 include::modules/learning-deploying-application-storage-viewing.adoc[leveloffset=+2]
@@ -18,5 +18,7 @@ include::modules/learning-deploying-application-storage-end-session.adoc[levelof
 
 [role="_additional-resources"]
 == Additional resources
-* xref:../../storage/understanding-persistent-storage.adoc#persistent-volumes_understanding-persistent-storage[Understanding persistent storage]
-* xref:../../storage/index.adoc#storage-overview[Storage overview]
+* link:https://docs.redhat.com/en/documentation/red_hat_openshift_service_on_aws/latest/html-single/storage/index#persistent-volumes_understanding-persistent-storage[Understanding persistent storage]
+* link:https://docs.redhat.com/en/documentation/red_hat_openshift_service_on_aws/latest/html-single/storage/index#storage-overview[Storage overview]
+* link:https://aws.amazon.com/ebs/[Amazon Web Services (AWS) Elastic Block Store (EBS)]
+* link:https://aws.amazon.com/efs/[AWS Elastic File System (EFS)]
