@@ -23,7 +23,7 @@ If you have a heterogeneous cluster but do not want to enable multiple architect
 +
 [source,terminal,subs="attributes+"]
 ----
-$ oc edit hyperconverged kubevirt-hyperconverged -n {CNVNamespace}
+$ oc edit {HCOCliKind} kubevirt-hyperconverged -n {CNVNamespace}
 ----
 
 . Edit the `HyperConverged` CR, to modify the workloads node placement to include only nodes with a specific architecture. For example:

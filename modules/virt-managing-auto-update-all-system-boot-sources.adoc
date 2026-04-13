@@ -29,7 +29,7 @@ Custom boot sources are not affected by this setting.
 +
 [source,terminal,subs="attributes+"]
 ----
-$ oc patch hyperconverged kubevirt-hyperconverged -n {CNVNamespace} \
+$ oc patch {HCOCliKind} kubevirt-hyperconverged -n {CNVNamespace} \
   --type json -p '[{"op": "replace", "path": \
   "/spec/enableCommonBootImageImport", \
   "value": false}]'
@@ -39,7 +39,7 @@ $ oc patch hyperconverged kubevirt-hyperconverged -n {CNVNamespace} \
 +
 [source,terminal,subs="attributes+"]
 ----
-$ oc patch hyperconverged kubevirt-hyperconverged -n {CNVNamespace} \
+$ oc patch {HCOCliKind} kubevirt-hyperconverged -n {CNVNamespace} \
   --type json -p '[{"op": "replace", "path": \
   "/spec/enableCommonBootImageImport", \
   "value": true}]'

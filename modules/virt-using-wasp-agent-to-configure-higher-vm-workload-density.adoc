@@ -147,9 +147,9 @@ The *Memory density* field shows the actual and requested values.
 * CLI
 ** Configure your {VirtProductName} to enable higher memory density and set the overcommit rate:
 +
-[source,terminal]
+[source,terminal,subs="attributes+"]
 ----
-$ oc -n openshift-cnv patch HyperConverged/kubevirt-hyperconverged --type='json' -p='[ \
+$ oc patch -n {CNVNamespace} {HCOCliKind} kubevirt-hyperconverged --type='json' -p='[ \
   { \
   "op": "replace", \
   "path": "/spec/higherWorkloadDensity/memoryOvercommitPercentage", \
@@ -212,9 +212,9 @@ If swap is provisioned, an amount greater than zero is displayed in the `Swap:` 
 
 . Verify the {VirtProductName} memory overcommitment configuration by running the following command:
 +
-[source,terminal]
+[source,terminal,subs="attributes+"]
 ----
-$ oc -n openshift-cnv get HyperConverged/kubevirt-hyperconverged -o jsonpath='{.spec.higherWorkloadDensity}{"\n"}'
+$ oc get -n {CNVNamespace} {HCOCliKind} kubevirt-hyperconverged -o jsonpath='{.spec.higherWorkloadDensity}{"\n"}'
 ----
 +
 Example output:

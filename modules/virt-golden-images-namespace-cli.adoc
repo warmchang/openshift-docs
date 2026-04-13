@@ -20,7 +20,7 @@ You can configure a custom namespace for golden images in your cluster by settin
 +
 [source,terminal,subs="attributes+"]
 ----
-$ oc edit hyperconverged kubevirt-hyperconverged -n {CNVNamespace}
+$ oc edit {HCOCliKind} kubevirt-hyperconverged -n {CNVNamespace}
 ----
 
 . Configure the custom namespace by updating the value of the `spec.commonBootImageNamespace` field.
@@ -29,7 +29,7 @@ Example configuration file:
 +
 [source,yaml,subs="attributes+"]
 ----
-apiVersion: hco.kubevirt.io/v1
+apiVersion: hco.kubevirt.io/v1beta1
 kind: HyperConverged
 metadata:
   name: kubevirt-hyperconverged

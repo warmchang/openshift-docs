@@ -18,9 +18,9 @@ You can configure virtual machine (VM) access to a USB device. This configuratio
 
 . In the `HyperConverged` custom resource (CR), find the assigned resource name of the USB device:
 +
-[source,terminal]
+[source,terminal,subs="attributes+"]
 ----
-$ oc get hyperconverged kubevirt-hyperconverged -n openshift-cnv
+$ oc get {HCOCliKind} kubevirt-hyperconverged -n {CNVNamespace}
 ----
 +
 *Example output*

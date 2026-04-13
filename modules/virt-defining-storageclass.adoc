@@ -19,7 +19,7 @@ You can define the storage class that the Containerized Data Importer (CDI) uses
 +
 [source,terminal,subs="attributes+"]
 ----
-$ oc edit hyperconverged kubevirt-hyperconverged -n {CNVNamespace}
+$ oc edit {HCOCliKind} kubevirt-hyperconverged -n {CNVNamespace}
 ----
 
 . Add the `spec.scratchSpaceStorageClass` field to the CR, setting the value to the name of a storage class that exists in the cluster:

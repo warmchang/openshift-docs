@@ -31,6 +31,6 @@ endif::openshift-dedicated[]
 +
 [source,terminal,subs="attributes+"]
 ----
-$ oc patch hyperconverged kubevirt-hyperconverged -n {CNVNamespace} \
+$ oc patch {HCOCliKind} kubevirt-hyperconverged -n {CNVNamespace} \
   --type json -p '[{"op":"replace","path":"/spec/featureGates/VMPersistentState", "value": true}]'
 ----

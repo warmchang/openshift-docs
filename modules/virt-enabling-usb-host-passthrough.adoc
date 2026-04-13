@@ -79,10 +79,10 @@ Device: 3-7
 
 . Add the required USB device to the `permittedHostDevices` stanza of the `HyperConvered` CR. The following example adds a device with vendor ID `045e` and product ID `07a5`: 
 +
-[source,terminal]
+[source,terminal,subs="attributes+"]
 ----
-oc patch hyperconverged kubevirt-hyperconverged \
-  -n openshift-cnv \
+oc patch {HCOCliKind} kubevirt-hyperconverged \
+  -n {CNVNamespace} \
   --type=merge \
   -p '{
     "metadata": {
@@ -97,9 +97,9 @@ oc patch hyperconverged kubevirt-hyperconverged \
 
 * Ensure that the HCO CR contains the required USB devices:
 +
-[source,terminal]
+[source,terminal,subs="attributes+"]
 ----
-$ oc get hyperconverged kubevirt-hyperconverged -n openshift-cnv
+$ oc get {HCOCliKind} kubevirt-hyperconverged -n {CNVNamespace}
 ----
 +
 *Example output*

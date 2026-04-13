@@ -9,7 +9,7 @@
 +
 [source,yaml,subs="attributes+"]
 ----
-apiVersion: hco.kubevirt.io/v1
+apiVersion: hco.kubevirt.io/v1beta1
 kind: HyperConverged
 metadata:
   name: kubevirt-hyperconverged
@@ -23,7 +23,7 @@ spec:
 +
 [source,yaml,subs="attributes+"]
 ----
-apiVersion: hco.kubevirt.io/v1
+apiVersion: hco.kubevirt.io/v1beta1
 kind: HyperConverged
 metadata:
   name: kubevirt-hyperconverged

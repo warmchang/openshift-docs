@@ -20,7 +20,7 @@ You can determine if a boot source is system-defined or custom by viewing the `H
 +
 [source,terminal,subs="attributes+"]
 ----
-$ oc get hyperconverged kubevirt-hyperconverged -n {CNVNamespace} -o yaml
+$ oc get {HCOCliKind} kubevirt-hyperconverged -n {CNVNamespace} -o yaml
 ----
 +
 Example output:

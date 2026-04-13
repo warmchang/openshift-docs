@@ -19,7 +19,7 @@ You can configure the verbosity level of {VirtProductName} pod logs by editing t
 +
 [source,terminal,subs="attributes+"]
 ----
-$ oc edit hyperconverged kubevirt-hyperconverged -n {CNVNamespace}
+$ oc edit {HCOCliKind} kubevirt-hyperconverged -n {CNVNamespace}
 ----
 
 . Set the log level for one or more components by editing the `spec.logVerbosityConfig` stanza. For example:

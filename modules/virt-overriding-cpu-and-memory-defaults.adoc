@@ -19,7 +19,7 @@ Modify the default settings for CPU and memory requests and limits for your use 
 +
 [source,terminal,subs="attributes+"]
 ----
-$ oc edit hyperconverged kubevirt-hyperconverged -n {CNVNamespace}
+$ oc edit {HCOCliKind} kubevirt-hyperconverged -n {CNVNamespace}
 ----
 
 . Add the `spec.resourceRequirements.storageWorkloads` stanza to the CR, setting the values based on your use case. For example:

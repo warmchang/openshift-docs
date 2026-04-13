@@ -26,7 +26,7 @@ If a `VirtualMachineInstance` CR contains `evictionStrategy: LiveMigrate` and th
 +
 [source,terminal,subs="attributes+"]
 ----
-$ oc edit hyperconverged kubevirt-hyperconverged -n {CNVNamespace}
+$ oc edit {HCOCliKind} kubevirt-hyperconverged -n {CNVNamespace}
 ----
 
 . Edit the `workloadUpdateStrategy` stanza of the `HyperConverged` CR. For example:

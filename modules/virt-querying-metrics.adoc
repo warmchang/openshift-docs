@@ -195,13 +195,13 @@ You can expose and ignore specific labels by editing the `kubevirt-vm-labels-con
 +
 Example config map:
 +
-[source,yaml]
+[source,yaml,subs="attributes+"]
 ----
 apiVersion: v1
 kind: ConfigMap
 metadata:
   name: kubevirt-vm-labels-config
-  namespace: openshift-cnv
+  namespace: {CNVNamespace}
 data:
   allowlist: "*"
   ignorelist: ""

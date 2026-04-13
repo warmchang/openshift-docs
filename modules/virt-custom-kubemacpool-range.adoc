@@ -22,7 +22,7 @@ As a cluster administrator, you can configure this range to ensure that MAC addr
 +
 [source,terminal,subs="attributes+"]
 ----
-$ oc edit hyperconverged kubevirt-hyperconverged -n {CNVNamespace}
+$ oc edit {HCOCliKind} kubevirt-hyperconverged -n {CNVNamespace}
 ----
 
 . Update the `HyperConverged` CR to configure the `rangeStart` and `rangeEnd` parameters that define your required MAC address range:
@@ -46,7 +46,7 @@ spec:
 +
 [source,terminal,subs="attributes+"]
 ----
-$ oc get hco kubevirt-hyperconverged -n {CNVNamespace} -o=jsonpath='{.spec.kubeMacPoolConfiguration}'
+$ oc get {HCOCliKind} kubevirt-hyperconverged -n {CNVNamespace} -o=jsonpath='{.spec.kubeMacPoolConfiguration}'
 ----
 +
 If you have successfully applied the configuration changes, the output shows the new MAC pool range you have configured:

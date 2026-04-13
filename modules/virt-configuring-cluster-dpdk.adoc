@@ -106,7 +106,7 @@ $ oc get performanceprofiles.performance.openshift.io profile-1 -o=jsonpath='{.s
 +
 [source,terminal,subs="attributes+"]
 ----
-$ oc patch hyperconverged kubevirt-hyperconverged -n {CNVNamespace} \
+$ oc patch {HCOCliKind} kubevirt-hyperconverged -n {CNVNamespace} \
     --type='json' -p='[{"op": "add", "path": "/spec/defaultRuntimeClass", "value":"<runtimeclass-name>"}]'
 ----
 +
@@ -119,7 +119,7 @@ Editing the `HyperConverged` CR changes a global setting that affects all VMs th
 +
 [source,terminal,subs="attributes+"]
 ----
-$ oc patch hyperconverged kubevirt-hyperconverged -n {CNVNamespace} \
+$ oc patch {HCOCliKind} kubevirt-hyperconverged -n {CNVNamespace} \
     --type='json' -p='[{"op": "replace", "path": "/spec/featureGates/alignCPUs", "value": true}]'
 ----
 +

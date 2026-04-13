@@ -86,7 +86,7 @@ NVIDIA A2-2Q
 +
 [source,terminal,subs="attributes+"]
 ----
-$ oc edit hyperconverged kubevirt-hyperconverged -n {CNVNamespace}
+$ oc edit {HCOCliKind} kubevirt-hyperconverged -n {CNVNamespace}
 ----
 
 . Create and expose the mediated devices by updating the configuration:
@@ -97,7 +97,7 @@ Example `HyperConverged` CR:
 +
 [source,yaml,subs="attributes+"]
 ----
-apiVersion: hco.kubevirt.io/v1
+apiVersion: hco.kubevirt.io/v1beta1
 kind: HyperConverged
 metadata:
   name: kubevirt-hyperconverged
