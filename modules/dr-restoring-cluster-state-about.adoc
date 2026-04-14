@@ -5,20 +5,21 @@
 
 :_mod-docs-content-type: CONCEPT
 [id="dr-scenario-2-restoring-cluster-state-about_{context}"]
-= About restoring to a previous cluster state
+= About restoring to an earlier cluster state
 
-To restore the cluster to a previous state, you must have previously backed up the `etcd` data by creating a snapshot. You will use this snapshot to restore the cluster state. For more information, see "Backing up etcd data".
+[role="_abstract"]
+To restore the cluster to an earlier state, you must have already backed up the `etcd` data by creating a snapshot. You can use this snapshot to restore the cluster state. For more information, see "Backing up etcd data".
 
-You can use an etcd backup to restore your cluster to a previous state. This can be used to recover from the following situations:
+You can use an etcd backup to restore your cluster to an earlier state. This can be used to recover from the following situations:
 
 * The cluster has lost the majority of control plane hosts (quorum loss).
 * An administrator has deleted something critical and must restore to recover the cluster.
 
 [WARNING]
 ====
-Restoring to a previous cluster state is a destructive and destablizing action to take on a running cluster. This should only be used as a last resort.
+Restoring to an earlier cluster state is a destructive and destablizing action to take on a running cluster. This should only be used as a last resort.
 
-If you are able to retrieve data using the Kubernetes API server, then etcd is available and you should not restore using an etcd backup.
+If you cannot retrieve data using the Kubernetes API server, then etcd is available and you should not restore using an etcd backup.
 ====
 
 Restoring etcd effectively takes a cluster back in time and all clients will experience a conflicting, parallel history. This can impact the behavior of watching components like kubelets, Kubernetes controller managers, persistent volume controllers, and {product-title} Operators, including the network Operator.
