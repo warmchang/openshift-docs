@@ -24,7 +24,7 @@ The `defaultCPUModel` is case sensitive.
 +
 [source,terminal,subs="attributes+"]
 ----
-$ oc edit hyperconverged kubevirt-hyperconverged -n {CNVNamespace}
+$ oc edit {HCOCliKind} kubevirt-hyperconverged -n {CNVNamespace}
 ----
 
 . Add the `defaultCPUModel` field to the CR and set the value to the name of a CPU model that exists in the cluster:

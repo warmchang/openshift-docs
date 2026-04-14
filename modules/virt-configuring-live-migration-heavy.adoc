@@ -22,7 +22,7 @@ Configure live migration for heavy workloads by updating the `HyperConverged` cu
 +
 [source,terminal,subs="attributes+"]
 ----
-$ oc edit hyperconverged kubevirt-hyperconverged -n {CNVNamespace}
+$ oc edit {HCOCliKind} kubevirt-hyperconverged -n {CNVNamespace}
 ----
 +
 Example configuration file:

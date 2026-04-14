@@ -25,7 +25,7 @@ To ensure stable behavior and avoid unnecessary re-importing, you can specify th
 +
 [source,terminal,subs="attributes+"]
 ----
-$ oc edit hyperconverged kubevirt-hyperconverged -n {CNVNamespace}
+$ oc edit {HCOCliKind} kubevirt-hyperconverged -n {CNVNamespace}
 ----
 
 . Add the `dataImportCronTemplate` to the spec section of the `HyperConverged` resource and set the `storageClassName`:

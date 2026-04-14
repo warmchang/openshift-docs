@@ -22,7 +22,7 @@ include::snippets/technology-preview.adoc[]
 +
 [source,terminal,subs="attributes+"]
 ----
-$ oc edit hyperconverged kubevirt-hyperconverged -n {CNVNamespace}
+$ oc edit {HCOCliKind} kubevirt-hyperconverged -n {CNVNamespace}
 ----
 
 . Edit the `HyperConverged` CR, adding the appropriate values for `ssp.kubevirt.io/dict.architectures` annotation in the `dataImportCronTemplates` section. For example:

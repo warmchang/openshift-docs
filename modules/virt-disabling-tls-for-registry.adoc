@@ -19,7 +19,7 @@ You can disable TLS (transport layer security) for one or more container registr
 +
 [source,terminal,subs="attributes+"]
 ----
-$ oc edit hyperconverged kubevirt-hyperconverged -n {CNVNamespace}
+$ oc edit {HCOCliKind} kubevirt-hyperconverged -n {CNVNamespace}
 ----
 
 . Add a list of insecure registries to the `spec.storageImport.insecureRegistries` field.

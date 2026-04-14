@@ -20,7 +20,7 @@ Configure live migration limits and timeouts for the cluster by updating the `Hy
 +
 [source,terminal,subs="attributes+"]
 ----
-$ oc edit hyperconverged kubevirt-hyperconverged -n {CNVNamespace}
+$ oc edit {HCOCliKind} kubevirt-hyperconverged -n {CNVNamespace}
 ----
 +
 Example configuration file:

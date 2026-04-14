@@ -52,7 +52,7 @@ $ oc get kv kubevirt-kubevirt-hyperconverged \
 +
 [source,terminal,subs="attributes+"]
 ----
-$ oc patch hyperconverged kubevirt-hyperconverged -n {CNVNamespace} \
+$ oc patch {HCOCliKind} kubevirt-hyperconverged -n {CNVNamespace} \
   --type json -p '[{"op":"replace","path":"/spec/workloadUpdateStrategy/workloadUpdateMethods", "value":[]}]'
 ----
 
@@ -60,7 +60,7 @@ $ oc patch hyperconverged kubevirt-hyperconverged -n {CNVNamespace} \
 +
 [source,terminal,subs="attributes+"]
 ----
-$ oc get hyperconverged kubevirt-hyperconverged -n {CNVNamespace} -o json | jq ".status.conditions"
+$ oc get {HCOCliKind} kubevirt-hyperconverged -n {CNVNamespace} -o json | jq ".status.conditions"
 ----
 
 . Update your cluster from the source EUS version to the next minor version of {product-title}:
@@ -98,7 +98,7 @@ $ oc get csv -n {CNVNamespace}
 +
 [source,terminal,subs="attributes+"]
 ----
-$ oc get hyperconverged kubevirt-hyperconverged -n {CNVNamespace} -o json | jq ".status.versions"
+$ oc get {HCOCliKind} kubevirt-hyperconverged -n {CNVNamespace} -o json | jq ".status.versions"
 ----
 
 . Wait until the `HyperConverged` Operator again reports the `Upgradeable` condition.
@@ -130,7 +130,7 @@ The update completes when the `VERSION` field matches the target EUS version and
 +
 [source,terminal,subs="attributes+"]
 ----
-$ oc patch hyperconverged kubevirt-hyperconverged -n {CNVNamespace} --type json -p \
+$ oc patch {HCOCliKind} kubevirt-hyperconverged -n {CNVNamespace} --type json -p \
 "[{\"op\":\"add\",\"path\":\"/spec/workloadUpdateStrategy/workloadUpdateMethods\", \"value\":{WorkloadUpdateMethodConfig}}]"
 ----
 

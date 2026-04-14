@@ -19,7 +19,7 @@ You can enable default access to VM guest system logs by editing the `HyperConve
 +
 [source,terminal,subs="attributes+"]
 ----
-$ oc edit hyperconverged kubevirt-hyperconverged -n {CNVNamespace}
+$ oc edit {HCOCliKind} kubevirt-hyperconverged -n {CNVNamespace}
 ----
 
 . Update the `disableSerialConsoleLog` value. For example:

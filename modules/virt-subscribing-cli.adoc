@@ -129,7 +129,7 @@ kubevirt-hyperconverged-operator.v{HCOVersion}   {VirtProductName}   {HCOVersion
 +
 [source,terminal,subs="attributes+"]
 ----
-$ oc get hco -n {CNVNamespace} kubevirt-hyperconverged -o json | jq .status.versions
+$ oc get {HCOCliKind} -n {CNVNamespace} kubevirt-hyperconverged -o json | jq .status.versions
 ----
 +
 Example output:
@@ -146,7 +146,7 @@ Example output:
 +
 [source,terminal,subs="attributes+"]
 ----
-$ oc get hco kubevirt-hyperconverged -n {CNVNamespace} -o json | jq -r '.status.conditions[] | {type,status}'
+$ oc get {HCOCliKind} kubevirt-hyperconverged -n {CNVNamespace} -o json | jq -r '.status.conditions[] | {type,status}'
 ----
 +
 Example output:

@@ -21,7 +21,7 @@ The Cluster Network Addons Operator (CNAO) deploys a Domain Name Server (DNS) se
 +
 [source,terminal,subs="attributes+"]
 ----
-$ oc edit hyperconverged kubevirt-hyperconverged -n {CNVNamespace}
+$ oc edit {HCOCliKind} kubevirt-hyperconverged -n {CNVNamespace}
 ----
 
 . Enable the DNS server and monitoring components according to the following example:
@@ -69,7 +69,7 @@ dns-lb     LoadBalancer     172.30.27.5    10.46.41.94      53:31829/TCP     5s
 +
 [source,terminal,subs="attributes+"]
 ----
-$ oc edit hyperconverged kubevirt-hyperconverged -n {CNVNamespace}
+$ oc edit {HCOCliKind} kubevirt-hyperconverged -n {CNVNamespace}
 ----
 
 . Add the external IP address that you previously retrieved to the `kubeSecondaryDNSNameServerIP` field in the enterprise DNS server records. For example:

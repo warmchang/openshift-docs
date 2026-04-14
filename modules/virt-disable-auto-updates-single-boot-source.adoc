@@ -20,7 +20,7 @@ You can disable automatic updates for an individual boot source, whether it is c
 +
 [source,terminal,subs="attributes+"]
 ----
-$ oc edit hyperconverged kubevirt-hyperconverged -n {CNVNamespace}
+$ oc edit {HCOCliKind} kubevirt-hyperconverged -n {CNVNamespace}
 ----
 
 . Disable automatic updates for an individual boot source by editing the `spec.dataImportCronTemplates` field.

@@ -14,23 +14,23 @@ In cases where KubeVirt virtual machines (VMs) cannot be live migrated, such as 
 +
 [source,terminal]
 ----
-$ oc explain hyperconverged.spec.evictionStrategy
+$ oc explain --api-version=hco.kubevirt.io/v1beta1 hyperconverged.spec.evictionStrategy
 ----
 
 . Patch the `hyperconverged` resource by entering the following command:
 +
-[source,terminal]
+[source,terminal,subs="attributes+"]
 ----
-$ oc -n openshift-cnv patch hyperconverged kubevirt-hyperconverged \
+$ oc patch -n {CNVNamespace} {HCOCliKind} kubevirt-hyperconverged \
   --type=merge \
   -p '{"spec": {"evictionStrategy": "External"}}'
 ----
 
 . Patch the workload update strategy and the workload update methods by entering the following command:
 +
-[source,terminal]
+[source,terminal,subs="attributes+"]
 ----
-$ oc -n openshift-cnv patch hyperconverged kubevirt-hyperconverged \
+$ oc patch -n {CNVNamespace} {HCOCliKind} kubevirt-hyperconverged \
   --type=merge \
   -p '{"spec": {"workloadUpdateStrategy": {"workloadUpdateMethods": ["LiveMigrate","Evict"]}}}'
 ----
@@ -41,9 +41,9 @@ By applying this patch, you specify that VMs should be live-migrated if possible
 
 * Check whether the patch command was applied properly by entering the following command:
 +
-[source,terminal]
+[source,terminal,subs="attributes+"]
 ----
-$ oc -n openshift-cnv get hyperconverged kubevirt-hyperconverged -ojsonpath='{.spec.evictionStrategy}'
+$ oc get -n {CNVNamespace} {HCOCliKind} kubevirt-hyperconverged -ojsonpath='{.spec.evictionStrategy}'
 ----
 +
 .Example output

@@ -20,7 +20,7 @@ You can use the `highBurst` profile to create and maintain a large number of vir
 +
 [source,terminal,subs="attributes+"]
 ----
-$ oc patch hyperconverged kubevirt-hyperconverged -n {CNVNamespace} \
+$ oc patch {HCOCliKind} kubevirt-hyperconverged -n {CNVNamespace} \
   --type=json -p='[{"op": "add", "path": "/spec/tuningPolicy", \
   "value": "highBurst"}]'
 ----

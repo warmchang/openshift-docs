@@ -42,7 +42,7 @@ conditions by running the following command:
 +
 [source,terminal,subs="attributes+"]
 ----
-$ oc get hyperconverged kubevirt-hyperconverged -n {CNVNamespace} \
+$ oc get {HCOCliKind} kubevirt-hyperconverged -n {CNVNamespace} \
   -o=jsonpath='{range .status.conditions[*]}{.type}{"\t"}{.status}{"\t"}{.message}{"\n"}{end}'
 ----
 +

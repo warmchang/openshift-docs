@@ -19,7 +19,7 @@ To expose PCI host devices in the cluster, add details about the PCI devices to 
 +
 [source,terminal,subs="attributes+"]
 ----
-$ oc edit hyperconverged kubevirt-hyperconverged -n {CNVNamespace}
+$ oc edit {HCOCliKind} kubevirt-hyperconverged -n {CNVNamespace}
 ----
 
 . Add the PCI device information to the `spec.permittedHostDevices.pciHostDevices` array.
@@ -28,7 +28,7 @@ Example configuration file:
 +
 [source,yaml,subs="attributes+"]
 ----
-apiVersion: hco.kubevirt.io/v1
+apiVersion: hco.kubevirt.io/v1beta1
 kind: HyperConverged
 metadata:
   name: kubevirt-hyperconverged

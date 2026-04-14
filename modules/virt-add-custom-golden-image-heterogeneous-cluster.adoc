@@ -23,7 +23,7 @@ Add a custom golden image in a heterogeneous cluster by setting the `ssp.kubevir
 +
 [source,terminal,subs="attributes+"]
 ----
-$ oc edit hyperconverged kubevirt-hyperconverged -n {CNVNamespace}
+$ oc edit {HCOCliKind} kubevirt-hyperconverged -n {CNVNamespace}
 ----
 
 . Edit the `HyperConverged` CR, to add the custom golden image. You must add the appropriate values for `ssp.kubevirt.io/dict.architectures` annotation in the `dataImportCronTemplates` section. For example:

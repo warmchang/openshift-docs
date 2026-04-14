@@ -19,7 +19,7 @@ Change the amount of persistent volume claim (PVC) space that the {VirtProductNa
 +
 [source,terminal,subs="attributes+"]
 ----
-$ oc edit hyperconverged kubevirt-hyperconverged -n {CNVNamespace}
+$ oc edit {HCOCliKind} kubevirt-hyperconverged -n {CNVNamespace}
 ----
 
 . Edit the `spec.filesystemOverhead` fields, populating them with your chosen values:
