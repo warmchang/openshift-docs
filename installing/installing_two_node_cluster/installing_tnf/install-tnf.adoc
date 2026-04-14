@@ -6,10 +6,14 @@ include::_attributes/common-attributes.adoc[]
 
 toc::[]
 
-:FeatureName: Two-node OpenShift cluster with fencing
-include::snippets/technology-preview.adoc[leveloffset=+1]
+[role="_abstract"]
 
-You can deploy a two-node OpenShift cluster with fencing by using either the installer-provisioned infrastructure or the user-provisioned infrastructure installation method. The following examples provide sample `install-config.yaml` configurations for both methods.
+You can deploy Two-Node with Fencing (TNF) clusters by using either the installer-provisioned infrastructure or the user-provisioned infrastructure installation method. The following examples provide sample `install-config.yaml` configurations for both methods.
+
+[IMPORTANT]
+====
+Configure node access during installation, for example, by including SSH keys in the `install-config.yaml` file. Two-Node with Fencing (TNF) clusters might require manual intervention in specific error scenarios that can only be resolved through direct node access.
+====
 
 // Sample install-config.yaml for a two-node installer-provisioned infrastructure cluster with fencing
 include::modules/installation-sample-install-config-two-node-fencing-ipi.adoc[leveloffset=+1]
