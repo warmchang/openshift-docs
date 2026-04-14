@@ -50,7 +50,7 @@ include::snippets/technology-preview.adoc[]
 endif::[]
 --
 
-[cols="1,1,2,2a", options="header"]
+[cols="1,1,2a,2a", options="header"]
 |===
 | Vendor
 | Status
@@ -59,31 +59,40 @@ endif::[]
 
 | {aws-first}
 | GA
-| Elastic Block Store (EBS), {odf-first}, Portworx, FSx (NetApp)
+| * Elastic Block Store (EBS)
+* {odf-first}
+* Portworx
+* FSx (NetApp)
 | * xref:../../installing/installing_aws/ipi/installing-aws-customizations.adoc#installing-aws-customizations[Installing a cluster on AWS with customizations]
 
 | {product-rosa} (ROSA)
 | GA
-| EBS, Portworx, FSx (Q3), {odf-short}
+| * EBS
+* Portworx
+* FSx (Q3)
+* {odf-short}
 | * link:https://docs.redhat.com/en/documentation/red_hat_openshift_service_on_aws/4/html/virtualization/index[{VirtProductName}] in the {product-rosa} documentation
 * link:https://docs.aws.amazon.com/rosa/latest/userguide/what-is-rosa.html[What is {product-rosa}?] in the {aws-short} documentation
 
 | {oci-first-no-rt}
 | GA
-| {oci} native storage
+| * {oci} native storage
 | * link:https://access.redhat.com/articles/7118050[{VirtProductName} and Oracle Cloud Infrastructure known issues and limitations] in the Red{nbsp}Hat Knowledgebase
 * link:https://github.com/oracle-quickstart/oci-openshift/blob/main/docs/openshift-virtualization.md[Installing {VirtProductName} on OCI] in the `oracle-quickstart/oci-openshift` GitHub repository
 
 | Azure Red{nbsp}Hat OpenShift (ARO)
 | GA
-| {odf-short}
+| * {odf-short}
 | * link:https://learn.microsoft.com/en-us/azure/openshift/howto-create-openshift-virtualization[{VirtProductName} for Azure Red Hat OpenShift (preview)] in the Microsoft documentation
 
 | {gcp-first}
 | GA, as of {VirtProductName} 4.21.1
-| {gcp-short} native storage
+| * {gcp-short} native storage
+* {gcp-short} NetApp Volumes (GCNV); requires {VirtProductName} 4.21.2 or later
 | * link:https://access.redhat.com/articles/7139046[Storage configuration for {VirtProductName} {product-version}.x on {gcp-full}] in the Red{nbsp}Hat Knowledgebase
 * link:https://access.redhat.com/articles/7139682[{VirtProductName} on {gcp-full}: Known issues and limitations] in the Red{nbsp}Hat Knowledgebase
+* link:https://access.redhat.com/articles/7141472[Storage configuration for {VirtProductName} with GCNV] in the Red{nbsp}Hat Knowledgebase
+* link:https://access.redhat.com/articles/7141471[{VirtProductName} with GCNV: Known errors and limitations] in the Red{nbsp}Hat Knowledgebase
 
 // tracker: https://issues.redhat.com/browse/XCMSTRAT-1191
 // | {product-dedicated}
