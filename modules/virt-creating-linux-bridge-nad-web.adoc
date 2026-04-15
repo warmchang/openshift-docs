@@ -9,7 +9,7 @@
 = Creating a Linux bridge NAD by using the web console
 
 [role="_abstract"]
-You can create a network attachment definition (NAD) to provide layer-2 networking to pods and virtual machines by using the {product-title} web console.
+Use the {product-title} web console to create a network attachment definition (NAD) that connects pods and virtual machines to a layer-2 network.
 
 [WARNING]
 ====
@@ -34,7 +34,7 @@ ifndef::openshift-dedicated[]
 +
 [NOTE]
 ====
-OSA interfaces on {ibm-z-name} do not support VLAN filtering and VLAN-tagged traffic is dropped. Avoid using VLAN-tagged NADs with OSA interfaces.
+Open Systems Adapter (OSA) interfaces on {ibm-z-name} do not support VLAN filtering and drop VLAN-tagged traffic. Avoid using VLAN-tagged NADs with OSA interfaces.
 ====
 +
 endif::openshift-dedicated[]
