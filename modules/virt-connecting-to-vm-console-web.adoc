@@ -53,9 +53,9 @@ endif::[]
 +
 [IMPORTANT]
 ====
-Only one connection to the VNC console is possible at a time. If you attempt to create a second connection to the same VNC console, a warning is displayed, and you are prompted to disconnect the existing session before you create the new session.
+Only one connection to the VNC console is possible at a time. If you try to create a second connection to the same VNC console, the console displays a warning and prompts you to disconnect the existing session before you create the new session.
 
-image::vnc-console-warning.png[]
+image::vnc-console-warning.png[VNC console connection warning]
 ====
 
 ifdef::desktop-viewer,serial-console[]
