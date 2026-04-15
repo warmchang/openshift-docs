@@ -6,6 +6,9 @@
 [id="networking-crs_{context}"]
 = Networking reference CRs
 
+[role="_abstract"]
+Use the following custom resources (CRs) to configure networking components for the telco core profile.
+
 .Networking CRs
 [cols="4*", options="header", format=csv]
 |====

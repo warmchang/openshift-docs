@@ -11,6 +11,7 @@
 [id="telco-core-software-stack_{context}_{context}"]
 = Telco core reference configuration software specifications
 
+[role="_abstract"]
 The Red{nbsp}Hat telco core {product-version} solution has been validated using the following Red{nbsp}Hat software products for {product-title} clusters.
 
 .Telco core cluster validated software components

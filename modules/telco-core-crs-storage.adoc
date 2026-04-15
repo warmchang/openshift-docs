@@ -6,6 +6,9 @@
 [id="storage-crs_{context}"]
 = Storage reference CRs
 
+[role="_abstract"]
+Use the following custom resources (CRs) to configure storage for the telco core profile.
+
 .Storage CRs
 [cols="4*", options="header", format=csv]
 |====
