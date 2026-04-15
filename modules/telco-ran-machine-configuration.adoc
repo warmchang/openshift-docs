@@ -6,6 +6,9 @@
 [id="telco-ran-machine-configuration_{context}"]
 = Machine configuration
 
+[role="_abstract"]
+Configure machine configuration settings for container runtime, kubelet, SCTP, kdump, and other system-level components in the telco RAN DU reference design.
+
 New in this release::
 * No reference design updates in this release
 

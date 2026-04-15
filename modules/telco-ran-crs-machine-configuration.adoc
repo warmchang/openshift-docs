@@ -6,6 +6,9 @@
 [id="machine-configuration-crs_{context}"]
 = Machine configuration reference CRs
 
+[role="_abstract"]
+Use the following custom resources (CRs) to configure machine settings for the telco RAN DU reference design.
+
 .Machine configuration CRs
 [cols="4*", options="header", format=csv]
 |====

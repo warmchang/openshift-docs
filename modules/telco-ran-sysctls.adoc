@@ -6,6 +6,9 @@
 [id="telco-ran-sysctls_{context}"]
 = Kubelet Settings
 
+[role="_abstract"]
+Configure kubelet settings and sysctls for the telco RAN DU use model, including `systemReserved` and unsafe sysctl parameters.
+
 New in this release::
 Support for configuring `systemReserved` settings (cpu and memory).
 

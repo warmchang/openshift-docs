@@ -6,6 +6,7 @@
 [id="ztp-telco-hub-cluster-software-versions_{context}"]
 = Telco RAN DU {product-version} hub cluster validated software components
 
+[role="_abstract"]
 The Red Hat telco RAN {product-version} solution has been validated using the following Red Hat software products for {product-title} hub clusters.
 
 .Telco hub cluster validated software components

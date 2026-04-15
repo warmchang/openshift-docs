@@ -6,6 +6,9 @@
 [id="cluster-tuning-crs_{context}"]
 = Cluster tuning reference CRs
 
+[role="_abstract"]
+Use the following custom resources (CRs) to configure cluster tuning for the telco RAN DU reference design.
+
 .Cluster tuning CRs
 [cols="4*", options="header", format=csv]
 |====

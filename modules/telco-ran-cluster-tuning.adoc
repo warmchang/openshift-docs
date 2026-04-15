@@ -6,6 +6,9 @@
 [id="telco-ran-cluster-tuning_{context}"]
 = Cluster tuning
 
+[role="_abstract"]
+Configure cluster tuning settings including cluster capabilities and monitoring for the telco RAN DU reference design.
+
 New in this release::
 * No reference design updates in this release
 
