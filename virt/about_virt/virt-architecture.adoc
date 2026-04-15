@@ -41,4 +41,4 @@ include::modules/virt-about-virt-operator.adoc[leveloffset=+1]
 [id="additional-resources_virt-architecture"]
 == Additional resources
 
-* xref:../../virt/getting_started/virt-using-the-cli-tools.adoc#virtctl-commands_virt-using-the-cli-tools[Virtctl client commands]
+* xref:../../virt/getting_started/virt-using-the-cli-tools.adoc#virt-using-the-cli-tools[virtctl client commands]
