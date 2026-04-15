@@ -45,3 +45,5 @@ include::modules/rosa-release-notes-Q1-2023.adoc[leveloffset=+1]
 endif::openshift-rosa[]
 
 include::modules/rosa-release-notes-known-issues.adoc[leveloffset=+1]
+
+include::modules/rosa-release-notes-deprecated-removed-features.adoc[leveloffset=+1]
