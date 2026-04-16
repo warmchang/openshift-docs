@@ -8,7 +8,7 @@
 [role="_abstract"]
 The following items were added during the second quarter of 2026.
 
-* **Support for excluding namespaces from default ingress load controller using label selectors.** You can now use the `ocm` CLI to configure default ingress namespace exclusions for your cluster. For more information, see link:https://docs.redhat.com/en/documentation/openshift_dedicated/4/html/networking_operators/configuring-ingress#configuring-default-ingress-namespace-exclusions[Configuring excluded namespaces for the default ingress controller].
+* **Support for excluding namespaces from default ingress load controller using label selectors.** You can now use the `ocm` CLI to configure default ingress namespace exclusions for your cluster. For more information, see link:https://docs.redhat.com/en/documentation/openshift_dedicated/4/html/networking_operators/configuring-ingress#osd-ingress-excluded-namespaces-ocm-cli_configuring-ingress[Configure excluded namespaces for the default ingress controller].
 
 * **Support for new {gcp-short} instances.** You can now create clusters with `g2` and `g4` instance types on {product-title} version 4.21 and later. For more information, see link:https://docs.redhat.com/en/documentation/openshift_dedicated/4/html/introduction_to_openshift_dedicated/policies-and-service-definition#gcp-compute-types_osd-service-definition[{gcp-full} instance types].
 
