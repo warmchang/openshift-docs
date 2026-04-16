@@ -6,7 +6,7 @@
 
 :_mod-docs-content-type: CONCEPT
 
-[id="rosa-network-prereqs_{context}"]
+[id="network-prereqs_{context}"]
 = Networking prerequisites
 
 [role="_abstract"]
