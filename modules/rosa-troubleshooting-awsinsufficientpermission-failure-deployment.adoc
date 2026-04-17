@@ -8,7 +8,8 @@
 [role="_abstract"]
 If a cluster creation action fails, you might receive the following error message.
 
-.Example {cluster-manager} output
+The following example shows the {cluster-manager} output:
+
 [source,terminal]
 ----
 Provisioning Error Code:    OCM3033
@@ -49,7 +50,7 @@ $ rosa create account-roles -f
 $ rosa create operator-roles -c ${CLUSTER} -f
 ----
 
-. Validate all the prerequisites and attempt cluster reinstallation.
+. Validate all the prerequisites and attempt cluster re-installation.
 
 
 

@@ -30,7 +30,7 @@ endif::openshift-rosa,openshift-rosa-hcp,openshift-dedicated[]
 +
 [NOTE]
 ====
-Denying an access request requires you to complete the *Justification* field. In this case, SRE can not directly act on the resources related to the incident. Customers can still use the link:https://access.redhat.com/support/cases/#/case/list[*Customer Support*] to help investigate and resolve any issues.
+Denying an access request requires you to complete the *Justification* field. In this case, Site Reliability Engineering (SRE) cannot directly act on the resources related to the incident. Customers can still use the link:https://access.redhat.com/support/cases/#/case/list[*Customer Support*] to help investigate and resolve any issues.
 ====
 
 . Click *Save*.
