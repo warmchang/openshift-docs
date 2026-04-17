@@ -6,6 +6,7 @@
 [id="rosa-applications-config-custom-domains_{context}"]
 = Configuring custom domains for applications
 
+[role="_abstract"]
 The top-level domains (TLDs) are owned by the customer that is operating the {product-title} cluster. The Custom Domains Operator sets up a new ingress controller with a custom certificate as a second day operation. The public DNS record for this ingress controller can then be used by an external DNS to create a wildcard CNAME record for use with a custom domain.
 
 [NOTE]
@@ -43,24 +44,29 @@ kind: CustomDomain
 metadata:
   name: <company_name>
 spec:
-  domain: apps.<company_name>.io <1>
+  domain: apps.<company_name>.io
   scope: External
-  loadBalancerType: Classic <2>
+  loadBalancerType: Classic
   certificate:
-    name: <name>-tls <3>
+    name: <name>-tls
     namespace: <my_project>
-  routeSelector: <4>
+  routeSelector:
     matchLabels:
      route: acme
-  namespaceSelector: <5>
+  namespaceSelector:
     matchLabels:
      type: sharded
 ----
-<1> The custom domain.
-<2> The type of load balancer for your custom domain. This type can be the default `classic` or `NLB` if you use a network load balancer.
-<3> The secret created in the previous step.
-<4> Optional: Filters the set of routes serviced by the CustomDomain ingress. If no value is provided, the default is no filtering.
-<5> Optional: Filters the set of namespaces serviced by the CustomDomain ingress. If no value is provided, the default is no filtering.
++
+--
+where:
+
+`spec.domain`:: Specifies the custom domain.
+`spec.loadBalancerType`:: Specifies the type of load balancer for your custom domain. This type can be the default `classic` or `NLB` if you use a network load balancer.
+`spec.certificate.name`:: Specifies the secret created in the previous step.
+`spec.routeSelector`:: Optional. Filters the set of routes serviced by the CustomDomain ingress. If no value is provided, the default is no filtering.
+`spec.namespaceSelector`:: Optional. Filters the set of namespaces serviced by the CustomDomain ingress. If no value is provided, the default is no filtering.
+--
 
 . Apply the CR:
 +
@@ -85,10 +91,10 @@ NAME               ENDPOINT                                                    D
 ----
 
 ifdef::openshift-rosa[]
-. Using the endpoint value, add a new wildcard CNAME recordset to your managed DNS provider, such as Route53.
+. Using the endpoint value, add a new wildcard CNAME record set to your managed DNS provider, such as Route53.
 endif::openshift-rosa[]
 ifndef::openshift-rosa[]
-. Using the endpoint value, add a new wildcard CNAME recordset to your managed DNS provider, such as Route53, Azure DNS, or Google DNS.
+. Using the endpoint value, add a new wildcard CNAME record set to your managed DNS provider, such as Route53, Azure DNS, or Google DNS.
 endif::openshift-rosa[]
 
 +
