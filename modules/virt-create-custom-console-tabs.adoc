@@ -17,7 +17,7 @@ As a cluster administrator, you can customize the {product-title} web console by
 
 .Procedure
 
-* Add the `kubevirt.tab/horizontalNav` extension to the `plugin-extensions.ts` file of the KubeVirt plugin:
+* Add the `kubevirt.tab/horizontalNav` extension to the `plugin-extensions.ts` file of the `KubeVirt` plugin:
 +
 [source,typescript]
 ----
@@ -54,7 +54,7 @@ const isKubevirtTabVisible = ({
 export default isKubevirtTabVisible;
 ----
 +
-This parameter is provided by the KubeVirt plugin, and is `true` if the referenced object has been already created. This flag ensures that the plugin author can prevent the custom tab from being displayed on certain pages, such as the *Create Virtual Machine* page.
+The `KubeVirt` plugin provides this parameter, and it is `true` if the referenced object has been already created. This flag ensures that the plugin author can prevent the custom tab from being displayed on certain pages, such as the *Create Virtual Machine* page.
 
 .Verification
 

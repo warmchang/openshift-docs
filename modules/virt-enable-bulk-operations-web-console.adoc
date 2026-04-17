@@ -7,9 +7,9 @@
 = Enable bulk operations for virtual machines
 
 [role="_abstract"]
-You can enable virtual machine (VM) owners to perform large-scale management tasks, such as backups and storage migrations, across multiple virtual machines simultaneously, by creating a dynamic plugin that enables bulk actions in the web console.
+You can enable virtual machine (VM) owners to perform large-scale management tasks, such as backups and storage migrations, across many virtual machines simultaneously, by creating a dynamic plugin that enables bulk actions in the web console.
 
-This integration reduces manual overhead for multi-VM environments and ensures that custom actions are available as native, selectable bulk actions from within the *Virtualization* page.
+This integration reduces manual tasks for multi-VM environments and ensures that custom actions are available as native, selectable bulk actions from within the *Virtualization* page.
 
 .Prerequisites
 
@@ -37,7 +37,7 @@ Example `console-extensions.json` file excerpt:
    },
  }
 ----
-** `properties.contextId` specifies a string for which the KubeVirt plugin declares support.
+** `properties.contextId` specifies a string for which the `KubeVirt` plugin declares support.
 ** `properties.provider` specifies the React hook or function in your source code that generates the action items.
 
 . In the source file referenced by the extension, implement a hook that handles the array of selected resources.

@@ -6,6 +6,7 @@
 [id="virt-using-virtctl-port-forward-command_{context}"]
 = Using the virtctl port-forward command
 
+
 [role="_abstract"]
 You can access a running virtual machine (VM) by using a local OpenSSH client and the `virtctl port-forward` command. You can use this method with Ansible to automate the configuration of VMs.
 
