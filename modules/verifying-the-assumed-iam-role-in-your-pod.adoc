@@ -6,6 +6,7 @@
 [id="verifying-the-assumed-iam-role-in-your-pod_{context}"]
 = Verifying the assumed IAM role in your pod
 
+[role="_abstract"]
 After deploying an `awsboto3sdk` pod in your project, verify that the pod identity webhook has mutated the pod. Check that the required AWS environment variables, volume mount, and OIDC token volume are present within the pod.
 
 You can also verify that the service account assumes the AWS Identity and Access Management (IAM) role for your AWS account when you run AWS SDK operations in the pod.
@@ -53,10 +54,12 @@ Volumes:
     TokenExpirationSeconds:  86400
 ...
 ----
-<1> Lists the `AWS_ROLE_ARN` environment variable that was injected into the pod by the pod identity webhook. The variable contains the ARN of the AWS IAM role to be assumed by the service account.
-<2> Lists the `AWS_WEB_IDENTITY_TOKEN_FILE` environment variable that was injected into the pod by the pod identity webhook. The variable contains the full path of the OIDC token that is used to verify the service account identity.
-<3> Lists the volume mount that was injected into the pod by the pod identity webhook.
-<4> Lists the `aws-iam-token` volume that is mounted onto the `/var/run/secrets/eks.amazonaws.com/serviceaccount` mount point. The volume contains the OIDC token that is used to authenticate the service account to assume the AWS IAM role.
+where::
+`<project_name>`:: The name of your project.
+`<aws_iam_role_arn>`:: Lists the `AWS_ROLE_ARN` environment variable that was injected into the pod by the pod identity webhook. The variable contains the ARN of the AWS IAM role to be assumed by the service account.
+`<aws_web_identity_token_file>`:: Lists the `AWS_WEB_IDENTITY_TOKEN_FILE` environment variable that was injected into the pod by the pod identity webhook. The variable contains the full path of the OIDC token that is used to verify the service account identity.
+`Mounts`:: Lists the volume mounts for the pod. The `aws-iam-token` volume mount that was injected into the pod by the pod identity webhook is listed here.
+`<aws-iam-token>`:: Lists the `aws-iam-token` volume that is mounted onto the `/var/run/secrets/eks.amazonaws.com/serviceaccount` mount point. The volume contains the OIDC token that is used to authenticate the service account to assume the AWS IAM role.
 
 . Start an interactive terminal in the `awsboto3sdk` pod:
 +
@@ -75,9 +78,9 @@ $ echo $AWS_ROLE_ARN
 .Example output
 [source,terminal]
 ----
-arn:aws:iam::<aws_account_id>:role/<aws_iam_role_name> <1>
+arn:aws:iam::<aws_account_id>:role/<aws_iam_role_name>
 ----
-<1> The output must specify the ARN for the AWS IAM role that has the permissions required to run AWS SDK operations.
+The output must specify the ARN for the AWS IAM role that has the permissions required to run AWS SDK operations.
 
 . In the interactive terminal for the pod, verify that the `$AWS_WEB_IDENTITY_TOKEN_FILE` environment variable was mutated into the pod by the pod identity webhook:
 +
@@ -89,9 +92,9 @@ $ echo $AWS_WEB_IDENTITY_TOKEN_FILE
 .Example output
 [source,terminal]
 ----
-/var/run/secrets/eks.amazonaws.com/serviceaccount/token <1>
+/var/run/secrets/eks.amazonaws.com/serviceaccount/token
 ----
-<1> The output must specify the full path in the pod to the OIDC token for the service account.
+The output must specify the full path in the pod to the OIDC token for the service account.
 
 . In the interactive terminal for the pod, verify that the `aws-iam-token` volume mount containing the OIDC token file was mounted by the pod identity webhook:
 +
@@ -118,7 +121,7 @@ $ ls /var/run/secrets/eks.amazonaws.com/serviceaccount/token
 ----
 /var/run/secrets/eks.amazonaws.com/serviceaccount/token <1>
 ----
-<1> The OIDC token file in the `aws-iam-token` volume that was mounted in the pod by the pod identity webhook. The token is used to authenticate the identity of the service account in AWS.
+The OIDC token file in the `aws-iam-token` volume that was mounted in the pod by the pod identity webhook. The token is used to authenticate the identity of the service account in AWS.
 
 . In the pod, verify that AWS Boto3 SDK operations run successfully:
 

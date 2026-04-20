@@ -6,6 +6,7 @@
 [id="how-service-accounts-assume-aws-iam-roles-in-user-defined-projects_{context}"]
 = How service accounts assume AWS IAM roles in user-defined projects
 
+[role="_abstract"]
 When you install a {product-title} cluster
 ifdef::openshift-rosa[]
 that uses the AWS Security Token Service (STS),

@@ -26,16 +26,16 @@ You can configure the following types of identity providers:
 |Configure a GitHub identity provider to validate usernames and passwords against GitHub or GitHub Enterprise's OAuth authentication server.
 
 |GitLab
-|Configure a GitLab identity provider to use link:https://gitlab.com/[GitLab.com] or any other GitLab instance as an identity provider.
+|Configure a GitLab identity provider to use GitLab.com or any other GitLab instance as an identity provider.
 
 |Google
-|Configure a Google identity provider using link:https://developers.google.com/identity/protocols/OpenIDConnect[Google's OpenID Connect integration].
+|Configure a Google identity provider using Google's OpenID Connect integration.
 
 |LDAP
 |Configure an LDAP identity provider to validate usernames and passwords against an LDAPv3 server, using simple bind authentication.
 
 |OpenID Connect
-|Configure an OpenID Connect (OIDC) identity provider to integrate with an OIDC identity provider using an link:http://openid.net/specs/openid-connect-core-1_0.html#CodeFlowAuth[Authorization Code Flow].
+|Configure an OpenID Connect (OIDC) identity provider to integrate with an OIDC identity provider using an Authorization Code Flow.
 
 |htpasswd
 |Configure an htpasswd identity provider for a single, static administration user. You can log in to the cluster as the user to troubleshoot issues.

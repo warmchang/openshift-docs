@@ -67,7 +67,7 @@ endif::openshift-rosa-hcp[]
 
 . Select *Use organizations* or *Use teams* to restrict access to a particular GitHub organization or a GitHub team.
 
-. Enter the name of the organization or team you would like to restrict access to. Click *Add more* to specify multiple organizations or teams that users can be a member of.
+. Enter the name of the organization or team you want to restrict access to. Click *Add more* to specify multiple organizations or teams that users can be a member of.
 
 . Click *Confirm*.
 
