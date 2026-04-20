@@ -6,6 +6,7 @@
 [id="support-version-matrix-for-monitoring-components_{context}"]
 = Support version matrix for monitoring components
 
+[role="_abstract"]
 The following matrix contains information about versions of monitoring components for {product-title} 4.12 and later releases:
 
 .{product-title} and component versions

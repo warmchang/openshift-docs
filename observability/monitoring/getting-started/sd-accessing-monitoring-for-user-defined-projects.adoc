@@ -6,6 +6,7 @@ include::_attributes/attributes-openshift-dedicated.adoc[]
 
 toc::[]
 
+[role="_abstract"]
 When you install a {product-title} cluster, monitoring for user-defined projects is enabled by default. With monitoring for user-defined projects enabled, you can monitor your own {product-title} projects without the need for an additional monitoring solution.
 
 The `dedicated-admin` user has default permissions to configure and access monitoring for user-defined projects.
