@@ -120,14 +120,6 @@ endif::openshift-rosa,openshift-dedicated,openshift-rosa-hcp[]
 
 include::modules/virt-aws-bm.adoc[leveloffset=+2]
 
-
-[role="_additional-resources"]
-.Additional resources
-ifndef::openshift-dedicated[]
-* xref:../../virt/vm_networking/virt-connecting-vm-to-ovn-secondary-network.adoc#virt-connecting-vm-to-ovn-secondary-network[Connecting a virtual machine to an OVN-Kubernetes secondary network]
-endif::openshift-dedicated[]
-* xref:../../virt/vm_networking/virt-exposing-vm-with-service.adoc#virt-exposing-vm-with-service[Exposing a virtual machine by using a service]
-
 //Hiding in OSD as not supported
 ifndef::openshift-dedicated[]
 [id="arm-compatibility_{context}"]
@@ -333,11 +325,6 @@ ifndef::openshift-rosa,openshift-dedicated,openshift-rosa-hcp[]
 include::modules/virt-sno-differences.adoc[leveloffset=+1]
 endif::openshift-rosa,openshift-dedicated,openshift-rosa-hcp[]
 
-[role="_additional-resources"]
-.Additional resources
-
-* xref:../../storage/index.adoc#openshift-storage-common-terms_storage-overview[Glossary of common terms for {product-title} storage]
-
 ifndef::openshift-rosa,openshift-dedicated,openshift-rosa-hcp[]
 [id="object-maximums_preparing-cluster-for-virt"]
 == Object maximums
@@ -380,4 +367,19 @@ endif::openshift-rosa,openshift-dedicated,openshift-rosa-hcp[]
 [role="_additional-resources"]
 [id="additional-resources_preparing-cluster-for-virt"]
 == Additional resources
+
+ifndef::openshift-dedicated[]
+* xref:../../virt/vm_networking/virt-connecting-vm-to-ovn-secondary-network.adoc#virt-connecting-vm-to-ovn-secondary-network[Connecting a virtual machine to an OVN-Kubernetes secondary network]
+endif::openshift-dedicated[]
+* xref:../../virt/vm_networking/virt-exposing-vm-with-service.adoc#virt-exposing-vm-with-service[Exposing a virtual machine by using a service]
 * xref:../../virt/nodes/virt-eviction-strategies.adoc#virt-runstrategies-vms_virt-eviction-strategies[Run strategies]
+ifdef::openshift-dedicated[]
+* link:https://cloud.google.com/netapp/volumes/docs[Google Cloud NetApp Volumes]
+* link:https://docs.cloud.google.com/netapp/volumes/docs/quotas#storage_pool_limits[GCNV storage pool limits]
+* link:https://access.redhat.com/articles/7139046[Storage configuration for OpenShift Virtualization 4.21.x on Google Cloud]
+* link:https://access.redhat.com/articles/7139682[OpenShift Virtualization on Google Cloud: Known Issues and Limitations]
+* link:https://access.redhat.com/articles/7141472[{GCP} with {GCP} NetApp Volumes - Configuration]
+* link:https://access.redhat.com/articles/7141471[{GCP} with {GCP} NetApp Volumes - Known errors and limits]
+endif::openshift-dedicated[]
+* link:https://docs.cloud.google.com/netapp/volumes/docs/discover/service-levels[GCNV service levels]
+* xref:../../storage/index.adoc#openshift-storage-common-terms_storage-overview[Glossary of common terms for {product-title} storage]

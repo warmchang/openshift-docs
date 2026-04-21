@@ -65,7 +65,7 @@ ifndef::openshift-dedicated[]
 AWS
 endif::openshift-dedicated[]
 ifdef::openshift-dedicated[]
-Google Cloud
+{gcp-short}
 endif::openshift-dedicated[]
 and manages its lifecycle. A security group is also created for the load balancer, and you can use annotations to attach existing security groups. When you remove the service, {product-title} removes the load balancer and its associated resources.
 ====
@@ -86,13 +86,14 @@ ifndef::openshift-dedicated[]
 * You can use any storage solution that is certified by the storage vendor to work with the underlying platform.
 endif::openshift-dedicated[]
 ifdef::openshift-dedicated[]
-* You can use {gcp-short} Hyperdisk storage with {VirtProductName} on {product-title} on {gcp-short}. {gcp-short} Hyperdisk storage provides high performance and flexibility for VM workloads. For more information about using Hyperdisk storage, see link:https://access.redhat.com/articles/7139046[Storage configuration for OpenShift Virtualization 4.21.x on Google Cloud].
 * In {product-title} on {gcp-short}, you must ensure your StorageClass uses the GCP PD CSI driver or {gcp-short} Filestore CSI driver.
-+
-[NOTE]
-====
-For more information about configuring {VirtProductName} on {product-title} on {gcp-short}, see link:https://access.redhat.com/articles/7139682[OpenShift Virtualization on Google Cloud: Known Issues and Limitations].
-====
+* You can use {gcp-short} Hyperdisk storage with {VirtProductName} on {product-title} on {gcp-short}. {gcp-short} Hyperdisk storage provides high performance and flexibility for VM workloads. For more information about using Hyperdisk storage, see "Storage configuration for OpenShift Virtualization 4.21.x on Google Cloud" in the _Additional resources_ section.
+* You can use {gcp-short} NetApp Volumes (GCNV) with {VirtProductName} on {product-title} on {gcp-short}. GCNV provides NFS-based shared storage that supports `ReadWriteMany` access in `Filesystem` mode, which is required for features such as virtual machine live migration.
+** Running {VirtProductName} with GCNV storage requires {product-title} 4.21 and {VirtProductName} 4.21.2, and Trident 26.02.0 or later versions.
+** Only the *Flex File* service level is supported in this release. When creating storage pools, select the *File* storage type. *Flex Unified* is not supported.
+** Flex File volumes are NFS-only and support `volumeMode: Filesystem` exclusively. `volumeMode: Block` is not available with Flex File.
+** GCNV Flex pools are limited to 50 volumes per pool. To support larger deployments, create multiple storage pools and list them all in the `TridentBackendConfig` file. For more information, see "GCNV storage pool limits" in the _Additional resources_ section.
+** Flex File pools can be *Zonal* or *Regional*. Regional pools replicate volumes across zones but only support default performance, not custom. For more information on service levels and performance, see "GCNV service levels" in the _Additional resources_ section.
 endif::openshift-dedicated[]
 +
 ifdef::openshift-rosa,openshift-rosa-hcp[]
