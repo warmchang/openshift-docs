@@ -1794,6 +1794,8 @@ Topics:
       File: ingress-controller-dnsmgt
     - Name: Gateway API with OpenShift Container Platform networking
       File: ingress-gateway-api
+    - Name: Controlling incoming traffic with Gateway listeners
+      File: controlling-incoming-traffic-gateway-listeners
     - Name: Assigning network addresses to gateways
       File: assigning-network-addresses-gateways
     - Name: Routing gRPC requests to services
