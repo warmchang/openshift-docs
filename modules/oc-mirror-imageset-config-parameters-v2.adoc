@@ -79,6 +79,14 @@ additionalImages:
 |String
 Example: `registry.redhat.io/ubi8/ubi:latest`
 
+|`mirror.additionalImages.targetRepo`
+|Optional. Specifies the custom repository path and URL for the target image on the disconnected registry. This value overrides the default repository path.
+|String
+
+|`mirror.additionalImages.targetTag`
+|Optional. Specifies the tag applied to the mirrored image. If you do not configure this field, the image is mirrored using the tag provided in the `name` field. If no tag is provided in the `name` field, `oc-mirror` calculates and applies a tag based on the image's partial digest.
+|String
+
 |`mirror.blockedImages`
 |List of images with a tag or digest (SHA) to block from mirroring.
 |Array of strings
@@ -391,6 +399,14 @@ additionalImages:
 |The tag or digest of the image to delete.
 |String
 Example: `registry.redhat.io/ubi8/ubi:latest`
+
+|`delete.additionalImages.targetRepo`
+|Specifies the repository path and URL of the image you want to delete.
+|String
+
+|`delete.additionalImages.targetTag`
+|Specifies the tag applied to the image you want to delete.
+|String
 
 |`delete.operators`
 |The Operators configuration of the delete image set.
