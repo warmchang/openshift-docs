@@ -5,7 +5,8 @@
 [id="rosa-aws-privatelink-create-cluster_{context}"]
 = Creating an AWS PrivateLink cluster
 
-You can create an AWS PrivateLink cluster using the {rosa-cli-first}.
+[role="_abstract"]
+You can create an AWS PrivateLink cluster by using the {rosa-cli-first}.
 
 [NOTE]
 ====
@@ -28,9 +29,7 @@ endif::openshift-rosa-hcp[]
 
 .Procedure
 
-Creating a cluster can take up to 40 minutes.
-
-. With AWS PrivateLink, you can create a cluster with a single availability zone (Single-AZ) or multiple availability zones (Multi-AZ). In either case, your machine's classless inter-domain routing (CIDR) must match your virtual private cloud's CIDR. See link:https://docs.redhat.com/en/documentation/openshift_container_platform/4.14/html/installing_on_aws/installing-aws-vpc#installation-custom-aws-vpc-requirements_installing-aws-vpc[Requirements for using your own VPC] and link:https://docs.redhat.com/en/documentation/openshift_container_platform/4.14/html/installing_on_aws/installing-aws-vpc#installation-custom-aws-vpc-validation_installing-aws-vpc[VPC validation] for more information.
+. With AWS PrivateLink, you can create a cluster with a single availability zone (Single-AZ) or many availability zones (Multi-AZ). In either case, your machine's classless inter-domain routing (CIDR) must match your virtual private cloud's CIDR. See link:https://docs.redhat.com/en/documentation/openshift_container_platform/4.14/html/installing_on_aws/installing-aws-vpc#installation-custom-aws-vpc-requirements_installing-aws-vpc[Requirements for using your own VPC] and link:https://docs.redhat.com/en/documentation/openshift_container_platform/4.14/html/installing_on_aws/installing-aws-vpc#installation-custom-aws-vpc-validation_installing-aws-vpc[VPC validation] for more information.
 +
 [IMPORTANT]
 ====
@@ -39,9 +38,12 @@ If you use a firewall, you must configure it so that {product-title} can access 
 For more information, see the AWS PrivateLink firewall prerequisites section.
 ====
 +
---
-include::snippets/rosa-long-cluster-name.adoc[]
---
+[NOTE]
+====
+If your cluster name is longer than 15 characters, it will contain an automatically generated domain prefix as a sub-domain for your provisioned cluster on `*.openshiftapps.com`.
+
+To customize the subdomain, use the `--domain-prefix` flag. The domain prefix cannot be longer than 15 characters, must be unique, and cannot be changed after cluster creation.
+====
 +
 ** To create a Single-AZ cluster:
 +
@@ -56,7 +58,7 @@ $ rosa create cluster --private-link --cluster-name=<cluster-name> [--machine-ci
 $ rosa create cluster --private-link --multi-az --cluster-name=<cluster-name> [--machine-cidr=<VPC CIDR>/16] --subnet-ids=<private-subnet-id1>,<private-subnet-id2>,<private-subnet-id3>
 ----
 
-. Enter the following command to check the status of your cluster. During cluster creation, the `State` field from the output will transition from `pending` to `installing`, and finally to `ready`.
+. Enter the following command to check the status of your cluster. During cluster creation, the `State` field from the output changesfrom `pending` to `installing`, and finally to `ready`.
 +
 [source,terminal]
 ----

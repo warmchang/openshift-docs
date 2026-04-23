@@ -5,6 +5,7 @@
 [id="rosa-govcloud-deploy-cluster_{context}"]
 = Preparing to deploy a {product-title} cluster in AWS GovCloud
 
+[role="_abstract"]
 To deploy a {product-title} cluster in AWS GovCloud, you must be logged in to your Red{nbsp}Hat FedRAMP account.
 
 .Prerequisites
@@ -20,19 +21,19 @@ To deploy a {product-title} cluster in AWS GovCloud, you must be logged in to yo
 +
 . In your terminal:
 +
-.. Run `rosa login` and paste your copied token in order to log into the service.
+.. Run `rosa login` and paste your copied token to log in to the service.
 +
 [source,terminal]
 ----
 $ rosa login --govcloud --token=<TOKEN>
 ----
 +
-====
 [NOTE]
-Depending on your AWS CLI configuration, you may need to add a government region to the end of the command string like `--region us-gov-west-1`.
+====
+Depending on your AWS CLI configuration, you might need to add a government region to the end of the command string, such as `--region us-gov-west-1`.
 ====
 +
-.. Run `rosa whoami` to confirm all information is correct ensuring that you are using the AWS Gov region and the OCM API is “https://api.openshiftusgov.com”..
+.. Run `rosa whoami` to confirm all information is correct ensuring that you are using the AWS Gov region and the {cluster-manager-first} API is “https://api.openshiftusgov.com”..
 +
 [source,terminal]
 ----

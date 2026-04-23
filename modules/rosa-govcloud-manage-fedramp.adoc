@@ -10,16 +10,16 @@ To change your FedRAMP account password, you must have access to your Red{nbsp}H
 
 .Procedure
 
-. Navigate to link:https://sso.openshiftusgov.com/realms/redhat-external/account[].
+. Navigate to link:https://sso.openshiftusgov.com/realms/redhat-external/account[the Red Hat FedRAMP account management page].
 . Sign in with your current username and password.
 . Under the middle box called _Account Security_, click *Signing In*.
-. Under _Basic Authentication_, select *Password*.
+. Under _Basic authentication_, select *Password*.
 . Click *Update* and choose a password that meets the following requirements:
 +
 * Minimum of fifteen (15) characters
 * At least one (1) upper-case letter
 * At least one (1) lower-case letter
 * At least one (1) number
-* At least one (1) special character (e.g. ~ ! @ # $ % ^ & * ( ) _ + = - ‘ [ ] / ? > <)
+* At least one (1) special character (e.g. ~ ! @ # $ % ^ & * ( ) _ + = - ' [ ] / ? > <)
 . Confirm your password.
 . Click *Submit*.

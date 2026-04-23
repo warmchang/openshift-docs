@@ -5,11 +5,12 @@
 [id="rosa-govcloud-support-ticket_{context}"]
 = Opening a support ticket
 
-To get access to open a support ticket please complete the following.
+[role="_abstract"]
+To get access to open a support ticket, complete the following steps.
 
 .Procedure
 
-. If you need to create an account, please contact fedramp-css@openshiftusgov.com.
-. Once access is granted, navigate to link:https://redhatgov.servicenowservices.com/css[].
+. If you need to create an account, contact fedramp-css@openshiftusgov.com.
+. After you receive access, navigate to the link:https://redhatgov.servicenowservices.com/css[Red Hat GovCloud support portal].
 . Click *Create Case* and complete the required information.
 . Click *Submit*.

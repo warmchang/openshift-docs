@@ -7,7 +7,7 @@ include::_attributes/attributes-openshift-dedicated.adoc[]
 toc::[]
 
 [role="_abstract"]
-Once you have access to the FedRAMP accounts, you can manage the credentials as needed.
+When you have access to the FedRAMP accounts, you can manage the credentials according to your needs.
 
 include::modules/rosa-govcloud-manage-fedramp.adoc[leveloffset=+1]
 
