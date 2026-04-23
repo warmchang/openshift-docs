@@ -226,6 +226,11 @@ Example: `elasticsearch-operator`
 
 |`mirror.operators.packages.channels.name`
 |The Operator channel name, unique within a package, to include in the image set.
++
+[NOTE]
+====
+You must use explicit registry hostnames for all images listed under `additionalImages`. Without explicit hostnames, the plugin mirrors the images to unexpected target paths.
+====
 |String
 Example: `fast` or `stable-v4.15`
 

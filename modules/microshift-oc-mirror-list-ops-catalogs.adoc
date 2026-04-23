@@ -7,7 +7,7 @@
 = Inspecting catalog contents by using the oc-mirror plugin
 
 [role="_abstract"]
-Use the following example procedure to select a catalog and list Operators to add to your oc-mirror plugin image set configuration file. You must use `oc mirror` v1 to select a catalog and list Operators.
+Use the following example procedure to select a catalog and list Operators to add to your oc-mirror plugin image set configuration file.
 
 [NOTE]
 ====
@@ -26,14 +26,14 @@ If you use your own catalogs and Operators, you can push the images directly to 
 +
 [source,terminal,subs="attributes+"]
 ----
-$ oc mirror list operators --version {product-version} --catalogs
+$ oc mirror list operators --version {product-version} --catalogs --v2
 ----
 
 . Get a list of Operators in the Red Hat Operators catalog by running the following command:
 +
 [source,terminal]
 ----
-$ oc mirror list operators <--catalog=<catalog_source>>
+$ oc mirror list operators --catalog=<catalog_source> --v2
 ----
 +
 Replace `<catalog_source>` with your catalog source, such as `registry.redhat.io/redhat/redhat-operator-index:v{product-version}` or `quay.io/operatorhubio/catalog:latest`.
@@ -46,13 +46,13 @@ Replace `<catalog_source>` with your catalog source, such as `registry.redhat.io
 +
 [source,terminal,subs="attributes+"]
 ----
-$ oc mirror list operators --catalog=registry.redhat.io/redhat/redhat-operator-index:v{product-version} --package=amq-broker-rhel9
+$ oc mirror list operators --catalog=registry.redhat.io/redhat/redhat-operator-index:v{product-version} --package=amq-broker-rhel9 --v2
 ----
 .. Get a list of versions within a channel by running the following command:
 +
 [source,terminal,subs="attributes+"]
 ----
-$ oc mirror list operators --catalog=registry.redhat.io/redhat/redhat-operator-index:v{product-version} --package=amq-broker-rhel9 --channel=7.13.x
+$ oc mirror list operators --catalog=registry.redhat.io/redhat/redhat-operator-index:v{product-version} --package=amq-broker-rhel9 --channel=7.13.x --v2
 ----
 
 .Next steps
