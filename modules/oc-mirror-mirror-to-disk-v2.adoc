@@ -4,11 +4,12 @@
 
 :_mod-docs-content-type: PROCEDURE
 [id="mirror-to-disk-v2_{context}"]
-== Mirroring from mirror to disk
+= Mirroring from mirror to disk
 
-You can use the oc-mirror plugin v2 to generate an image set and save the content to disk. Afterwards, you can transfer the generated image set to the disconnected environment and mirror it to the target registry.
+[role="_abstract"]
+You can use the oc-mirror plugin v2 to generate an image set and save the content to disk. Afterwards, you can transfer the generated image set to the disconnected environment and mirror it to the target registry. The plugin retrieves the container images from the source specified in the image set configuration file and packs them into a tar archive in a local directory.
 
-oc-mirror plugin v2 retrieves the container images from the source specified in the image set configuration file and packs them into a tar archive in a local directory.
+Additionally, the plugin automatically generates the `ImageSetConfiguration` and `DeleteImageSetConfiguration` files that are pinned by digest in your working directory and tar archive. Pinning by digest maintains consistency across your disconnected environments ensuring that you always deploy the same image, regardless of any later changes to the upstream tags.
 
 .Procedure
 
