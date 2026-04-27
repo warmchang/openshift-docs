@@ -6,6 +6,7 @@
 [id="telco-hub-oadp-operator_{context}"]
 = {oadp-full}
 
+[role="_abstract"]
 New in this release::
 * No reference design updates in this release
 

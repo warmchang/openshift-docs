@@ -6,6 +6,7 @@
 [id="telco-hub-local-storage-operator_{context}"]
 = Local Storage Operator
 
+[role="_abstract"]
 New in this release::
 * No reference design updates in this release
 

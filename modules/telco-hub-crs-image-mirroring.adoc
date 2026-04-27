@@ -6,6 +6,9 @@
 [id="image-mirroring-crs_{context}"]
 = Image mirroring reference CRs
 
+[role="_abstract"]
+The following custom resources (CRs) configure image mirroring for the telco hub cluster.
+
 .Image mirroring CRs
 [cols="4*", options="header", format=csv]
 |====

@@ -6,6 +6,7 @@
 [id="telco-hub-hub-cluster-openshift-deployment_{context}"]
 = {product-title} installation on the hub cluster
 
+[role="_abstract"]
 Description::
 +
 --

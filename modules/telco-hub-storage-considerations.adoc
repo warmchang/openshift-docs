@@ -6,6 +6,7 @@
 [id="telco-hub-storage-considerations_{context}"]
 = Storage considerations
 
+[role="_abstract"]
 Limits and requirements::
 +
 --

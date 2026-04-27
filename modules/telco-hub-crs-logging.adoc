@@ -6,6 +6,9 @@
 [id="logging-crs_{context}"]
 = Logging reference CRs
 
+[role="_abstract"]
+The following custom resources (CRs) configure logging for the telco hub cluster.
+
 .Logging CRs
 [cols="4*", options="header", format=csv]
 |====
